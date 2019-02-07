@@ -9,8 +9,6 @@ public class TripEasyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TripEasyApplication.class, args);
 	}
-	//kanak
 
-	//shabzan
 }
 
