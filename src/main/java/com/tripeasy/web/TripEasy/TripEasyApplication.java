@@ -10,9 +10,5 @@ public class TripEasyApplication {
 		SpringApplication.run(TripEasyApplication.class, args);
 	}
 
-	
-	//shubham
-	
-	//tejes
 }
 
