@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%-- <%@ taglib prefix="jstl" uri="http://java.sun.com/jstl/core"%> --%>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jstl/core_rt"%>
+<%-- <%@ page isELIgnored="false"%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,32 +11,33 @@
 </head>
 <body>
 
-Enter From City :<form> <input list="cities" name="cities">
-  <datalist id="cities">
-    <option value="Mumbai">
-    <option value="Delhi">
-    <option value="Hyderabad">
-    <option value="Bangalore">
-    <option value="Chennai">
-  </datalist>
-  
-  <br>
-  <br>
-  
- 
 
-Enter To city : 
+	Enter From City :
+	<form>
+		<input list="cities" name="cities">
+		<datalist id="cities">
+				<jstl:forEach var="flightList" items="${flightList}">
+					<option value="${flightList.city}">
+				<%-- 	<option value="${flightList.code}"> --%>
+					
+						
+				</jstl:forEach>
+		</datalist>
 
-<datalist id="cities">
-    <option value="Mumbai">
-    <option value="Delhi">
-    <option value="Hyderabad">
-    <option value="Bangalore">
-    <option value="Chennai">
-  </datalist>
+	<br>
+	<br>
 
-
- <input type="submit">
- </form>
+		Enter To City : <br>
+		<input list="cities" name="cities">
+		<datalist id="cities">
+				<jstl:forEach var="flightList" items="${flightList}">
+					<option value="${flightList.city}">
+						
+				</jstl:forEach>
+		</datalist>
+		<br>
+		<br><input
+			type="submit">
+	</form>
 </body>
 </html>

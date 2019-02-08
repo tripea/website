@@ -15,19 +15,12 @@ import com.tripeasy.web.TripEasy.entity.Hotel;
 @Controller
 public class AppController {
 
-<<<<<<< HEAD
-	
-
-=======
 	@RequestMapping("/")
 	public String index() {
 		System.out.println("HI");
 		return "index";
 	}
 
-
-	
->>>>>>> b1cac92aa256f3e679498a0a6811903bf8305fd4
 	@Autowired
 	private RestTemplate restTemplate;
 	
