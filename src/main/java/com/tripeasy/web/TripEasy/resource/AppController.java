@@ -23,6 +23,8 @@ public class AppController {
 
 	@Autowired
 	private RestTemplate restTemplate;
+
+	private static Hotel staticHotel =new Hotel();
 	
 	@RequestMapping("/hii")
 	public String addHotelForm() {
@@ -32,21 +34,31 @@ public class AppController {
 
 	@RequestMapping("/addhotel")
 	public String addHotel() {
+		System.out.println("in addhotel");
 		return "AddHotel";
 	}
 
 
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
-		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://localhost:9095/hotels/"+hotelId, Hotel.class);
-		 System.out.println(hotel.getBody().getDescription());
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://localhost:9095/hotels/" + hotelId, Hotel.class);
+		staticHotel = hotel.getBody();
+		System.out.println(hotel.getBody().getDescription());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
-		}
-	
-	@RequestMapping("/getAllhotels")
-	public ModelAndView getAllhotels() {
-		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels",List.class);
- 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
+	@RequestMapping("/getAllhotels")
+	public ModelAndView getAllhotels() {
+		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels", List.class);
+		return new ModelAndView("HotelList", "hotelList", hotelList);
+	}
+
+	@RequestMapping("/bookHotel")
+	public ModelAndView bookHotel(@RequestParam("hotelId") Integer hotelId, 
+			@RequestParam Integer numberOfGuest,
+			@RequestParam Boolean bookRoom) {
+		 restTemplate.put("http://localhost:9095/hotels/" + hotelId+
+				"?numberOfGuest=" +numberOfGuest+ "&bookRoom="+bookRoom, null);
+		return new ModelAndView("hello", "message", "SuccessFull");
+	}
 }
