@@ -32,6 +32,7 @@ margin: 10px;
 	${flights}
 
 	<div class="container">
+<<<<<<< HEAD
 
 		<jstl:forEach var="flight" items="${ flights}">
 			<div class="row flight" >
@@ -63,5 +64,13 @@ margin: 10px;
 
 	</div>
 
+=======
+		
+		<img alt="flight_logo" src="">
+
+	<input type="button" value="Book" >		
+	</div>	
+	
+>>>>>>> e484904fc5ac78aefcd52ca6c45d78856b009a29
 </body>
 </html>
