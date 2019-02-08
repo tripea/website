@@ -26,8 +26,6 @@ public class AppController {
 		return "index";
 	}
 
-
-	
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -83,6 +81,7 @@ public class AppController {
 		System.out.println("in hii");
 		return "BookHotel";
 	}
+<<<<<<< HEAD
  
 	@RequestMapping(value = "/saveHotel", method = RequestMethod.POST)
 	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
@@ -104,4 +103,8 @@ public class AppController {
 	
 	
 	
+=======
+	
+
+>>>>>>> 131b0309ab9668ef5ae899e845cd60657379ff08
 }
