@@ -15,7 +15,8 @@ public class Profile {
 	private LocalDate dateOfBirth;
 	private String maritialStatus;
 	private Address address;
-
+	private Integer numberOfGuest;
+	private Integer numberOfTravellers;
 	public Profile() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -107,6 +108,9 @@ public class Profile {
 		this.address = address;
 	}
 
+	 
+	 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -118,6 +122,8 @@ public class Profile {
 		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((maritialStatus == null) ? 0 : maritialStatus.hashCode());
+		result = prime * result + ((numberOfGuest == null) ? 0 : numberOfGuest.hashCode());
+		result = prime * result + ((numberOfTravellers == null) ? 0 : numberOfTravellers.hashCode());
 		result = prime * result + ((photo == null) ? 0 : photo.hashCode());
 		result = prime * result + ((profileId == null) ? 0 : profileId.hashCode());
 		return result;
@@ -167,6 +173,16 @@ public class Profile {
 				return false;
 		} else if (!maritialStatus.equals(other.maritialStatus))
 			return false;
+		if (numberOfGuest == null) {
+			if (other.numberOfGuest != null)
+				return false;
+		} else if (!numberOfGuest.equals(other.numberOfGuest))
+			return false;
+		if (numberOfTravellers == null) {
+			if (other.numberOfTravellers != null)
+				return false;
+		} else if (!numberOfTravellers.equals(other.numberOfTravellers))
+			return false;
 		if (photo == null) {
 			if (other.photo != null)
 				return false;
@@ -180,11 +196,28 @@ public class Profile {
 		return true;
 	}
 
+	public Integer getNumberOfGuest() {
+		return numberOfGuest;
+	}
+
+	public void setNumberOfGuest(Integer numberOfGuest) {
+		this.numberOfGuest = numberOfGuest;
+	}
+
+	public Integer getNumberOfTravellers() {
+		return numberOfTravellers;
+	}
+
+	public void setNumberOfTravellers(Integer numberOfTravellers) {
+		this.numberOfTravellers = numberOfTravellers;
+	}
+
 	@Override
 	public String toString() {
 		return "Profile [profileId=" + profileId + ", photo=" + photo + ", fullName=" + fullName + ", emailId="
 				+ emailId + ", contactNumber=" + contactNumber + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
-				+ ", maritialStatus=" + maritialStatus + ", address=" + address + "]";
+				+ ", maritialStatus=" + maritialStatus + ", address=" + address + ", numberOfGuest=" + numberOfGuest
+				+ ", numberOfTravellers=" + numberOfTravellers + "]";
 	}
 	
 	

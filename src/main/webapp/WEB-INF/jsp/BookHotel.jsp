@@ -9,7 +9,7 @@
 <body>
 
 
-	<form action="/saveHotel" method="post">
+	<form action="saveHotel" method="post">
 	<h1>Hotel Booking</h1>
 		<table>
 			<tr>
@@ -26,10 +26,13 @@
 					class="txtInput" placeholder="Enter Email ID" value="">
 					</td>
 			</tr>
+				<tr>
+			<td>
+				Enter Number Of Guests : <input name="numberOfGuest" type="number">
+					</td>
+			</tr>
 			<tr>
 				<td>Book:<input type="submit">
-				</td>
-				<td>Cancel:<input type="cancel">
 				</td>
 			</tr>
 		</table>
