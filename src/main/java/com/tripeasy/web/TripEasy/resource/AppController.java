@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+<<<<<<< HEAD
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+=======
+>>>>>>> 789c8e8bb4becf8755c1cf2f4b3bf3916634d10e
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -18,6 +21,14 @@ import com.tripeasy.web.TripEasy.entity.Hotel;
 @Controller
 public class AppController {
 
+	@RequestMapping("/")
+	public String index() {
+		System.out.println("HI");
+		return "index";
+	}
+
+
+	
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -31,8 +42,10 @@ public class AppController {
 
 	@RequestMapping("/addhotel")
 	public String addHotel() {
+		System.out.println("in addhotel");
 		return "AddHotel";
 	}
+
 
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {

@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,20 +11,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-<title>Flight</title>
+<title>Trip Easy</title>
 </head>
 <body>
-	<h1>Hello</h1>
-	
-	
-	${flights}
-	
-	<div class="container">
-		
-		<img alt="flight_logo" src="">
 
-	<input type="button" value="Book" >		
-	</div>	
-	
 </body>
 </html>
