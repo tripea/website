@@ -20,8 +20,6 @@ public class AppController {
 		return "index";
 	}
 
-
-	
 	@Autowired
 	private RestTemplate restTemplate;
 
