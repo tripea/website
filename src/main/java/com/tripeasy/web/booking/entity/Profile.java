@@ -2,6 +2,8 @@ package com.tripeasy.web.booking.entity;
 
 import java.time.LocalDate;
 
+import com.tripeasy.web.TripEasy.entity.Address;
+
 public class Profile {
 
 	private Integer profileId;

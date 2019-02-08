@@ -4,15 +4,17 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
-import com.tripeasy.bookings.bookingserviceTDD.hotelentity.Hotel;
+import com.tripeasy.web.TripEasy.entity.Hotel;
+import com.tripeasy.web.TripEasy.pojo.Flight;
 
-@Component
+
+
+
 public class Booking {
 
-	@Id
+	
 	private Integer bookingID;
 	private String bookingType;
 	private Object bookingDetails;
