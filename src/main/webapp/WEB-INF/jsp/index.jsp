@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%-- 	<%@include file="HeaderFooter.jsp" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,11 @@
 <title>Trip Easy</title>
 </head>
 <body>
+<div class="row">
 
+<div class="col-lg-12" >
+      <jsp:include page="HeaderFooter.jsp" flush="true"></jsp:include>
+</div>
+</div>
 </body>
 </html>

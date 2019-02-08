@@ -63,4 +63,6 @@ public class AppController {
 				"?numberOfGuest=" +numberOfGuest+ "&bookRoom="+bookRoom, null);
 		return new ModelAndView("hello", "message", "SuccessFull");
 	}
+	
+
 }
