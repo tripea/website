@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-<<<<<<< HEAD
+ 
     pageEncoding="ISO-8859-1"%>
-=======
-	pageEncoding="ISO-8859-1"%>
-<<<<<<< HEAD
->>>>>>> b1cac92aa256f3e679498a0a6811903bf8305fd4
-=======
+  
+ 
 <%-- 	<%@include file="HeaderFooter.jsp" %> --%>
 
 <!DOCTYPE html>
