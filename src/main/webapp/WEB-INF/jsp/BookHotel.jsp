@@ -8,9 +8,13 @@
 </head>
 <body>
 <form action="book" method="post">
-	Enter Account Number: <input name="accountNumber"/><br/>
-	Enter Amount : <input name="amount"/><br/>
-	<input type="submit"/>
-</form>
+	<select id="title" name="title" class="txtSelect"><option value="Mr">Mr</option>
+	<option value="Mrs">Mrs</option><option value="Ms">Ms</option></select>
+	<input id="fName" name="fName" type="text" class="txtInput" placeholder="Enter First Name" value="">
+	<input id="lName" name="lName" type="text" class="txtInput" placeholder="Enter Last Name" value="">
+	<input name="email" id="email" autocomplete="off" type="text" class="txtInput" placeholder="Enter Email ID" value="">
+	<input id="mNo" name="mNo" class="txtInputContactInfo txtInputContactInfo" type="text" value="">
+		<div class="btnPayNowOuter padding20"><a class="primaryBtn btnPayNow"><div>PAY NOW</div></a></div>
+	</form>
 </body>
 </html>
