@@ -9,8 +9,8 @@
 <body>
 
 
-	<form action="saveHotel" method="post">
-	<h1>Hotel Booking</h1>
+	<form action="saveFlight" method="post">
+	<h1>Flight Booking</h1>
 		<table>
 			<tr>
 				<td><select id="title" name="title" class="txtSelect"><option
@@ -28,7 +28,7 @@
 			</tr>
 				<tr>
 			<td>
-				Enter Number Of Guests : <input name="numberOfGuest" type="number">
+				Enter Number Of Guests : <input name="numberOfPassengers" type="number">
 					</td>
 			</tr>
 			<tr>

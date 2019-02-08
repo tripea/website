@@ -20,7 +20,7 @@ import com.tripeasy.web.booking.entity.Profile;
 @Controller
 public class AppController {
 
-	@RequestMapping("/")
+	@RequestMapping("/hotel")
 	public String index() {
 		return "index";
 	}
@@ -49,15 +49,15 @@ public class AppController {
 
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
-		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://localhost:9095/hotels/" + hotelId, Hotel.class);
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId, Hotel.class);
 		staticHotel = hotel.getBody();
-		System.out.println(hotel.getBody().getDescription());
+		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
 	}
 
 	@RequestMapping("/getAllhotels")
 	public ModelAndView getAllhotels() {
-		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels", List.class);
+		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels", List.class);
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
@@ -90,12 +90,18 @@ public class AppController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " +booking);
 
-		 restTemplate.postForEntity("http://localhost:8989/bookings", booking, null);
+		 restTemplate.postForEntity("http://10.246.92.145:8989/bookings", booking, null);
 		 System.out.println("below post");
-		 restTemplate.put("http://localhost:9095/hotels/" + staticHotel.getHotelId()+
+		 restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId()+
 					"?numberOfGuest=" +profile.getNumberOfGuest()+ "&bookRoom="+true, null);
 		//model.addAttribute("message", "Success!");
 		return "BookHotel";
 	}
 	
+<<<<<<< HEAD
+=======
+	
+	
+ 
+>>>>>>> b01c787f2217ef073a63ee8e9b8a8e1cd6039ed5
 }
