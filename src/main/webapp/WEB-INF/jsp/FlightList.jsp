@@ -31,7 +31,6 @@ margin: 10px;
 
 	<div class="container">
  
- ${flights }
 		<jstl:forEach var="flight" items="${ flights}">
 			<div class="row flight" >
 				<div class="col-lg-2">
