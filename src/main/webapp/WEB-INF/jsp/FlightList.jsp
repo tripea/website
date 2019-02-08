@@ -31,7 +31,7 @@ margin: 10px;
 
 	<div class="container">
  
- 
+ ${flights }
 		<jstl:forEach var="flight" items="${ flights}">
 			<div class="row flight" >
 				<div class="col-lg-2">
@@ -53,7 +53,7 @@ margin: 10px;
 				${flight.destination}
 				</div>	
 				
-				<a class="col-lg-2" href="">Book</a>
+				<a class="col-lg-2" href="bookFlight?flightId=${flight.flightId }">Book</a>
 								
 				
 			</div>
