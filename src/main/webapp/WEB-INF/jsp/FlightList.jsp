@@ -17,7 +17,6 @@
 <title>Flight</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<h1>Hello</h1>
 	
 	
@@ -30,8 +29,5 @@
 	<input type="button" value="Book" >		
 	</div>	
 	
-=======
-hello tejas
->>>>>>> 88b02d4d4b51f8686c9c12d65cb6f692c6e473bb
 </body>
 </html>
