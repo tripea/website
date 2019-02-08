@@ -18,11 +18,13 @@
 		<datalist id="cities">
 				<jstl:forEach var="flightList" items="${flightList}">
 					<option value="${flightList.city}">
-				<%-- 	<option value="${flightList.code}"> --%>
-					
 						
 				</jstl:forEach>
 		</datalist>
+				<%-- 	<option value="${flightList.code}"> --%>
+					
+						
+		
 
 	<br>
 	<br>
