@@ -26,13 +26,12 @@ margin: 10px;
 
 </head>
 <body>
-	<h1>Hello</h1>
 
 
-	${flights}
 
 	<div class="container">
-
+ 
+ 
 		<jstl:forEach var="flight" items="${ flights}">
 			<div class="row flight" >
 				<div class="col-lg-2">
