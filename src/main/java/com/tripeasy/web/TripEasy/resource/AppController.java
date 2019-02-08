@@ -51,15 +51,15 @@ public class AppController {
 
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
-		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://localhost:9095/hotels/" + hotelId, Hotel.class);
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId, Hotel.class);
 		staticHotel = hotel.getBody();
-		System.out.println(hotel.getBody().getDescription());
+		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
 	}
 
 	@RequestMapping("/getAllhotels")
 	public ModelAndView getAllhotels() {
-		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels", List.class);
+		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels", List.class);
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
@@ -81,7 +81,6 @@ public class AppController {
 		System.out.println("in hii");
 		return "BookHotel";
 	}
-<<<<<<< HEAD
  
 	@RequestMapping(value = "/saveHotel", method = RequestMethod.POST)
 	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
@@ -93,9 +92,9 @@ public class AppController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " +booking);
 
-		 restTemplate.postForEntity("http://localhost:8989/bookings", booking, null);
+		 restTemplate.postForEntity("http://10.246.92.145:8989/bookings", booking, null);
 		 System.out.println("below post");
-		 restTemplate.put("http://localhost:9095/hotels/" + staticHotel.getHotelId()+
+		 restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId()+
 					"?numberOfGuest=" +profile.getNumberOfGuest()+ "&bookRoom="+true, null);
 		//model.addAttribute("message", "Success!");
 		return "BookHotel";
@@ -103,8 +102,5 @@ public class AppController {
 	
 	
 	
-=======
-	
-
->>>>>>> 131b0309ab9668ef5ae899e845cd60657379ff08
+ 
 }

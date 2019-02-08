@@ -18,7 +18,7 @@
 						<option value="Mrs">Mrs</option>
 						<option value="Ms">Ms</option></select></td>
 				<td><input id="fName" name="fullName" type="text" class="txtInput"
-					placeholder="Enter First Name" value=""></td>
+					placeholder="Enter Full Name" value=""></td>
 			</tr>
 			<tr>
 			<td>
