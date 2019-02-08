@@ -28,7 +28,7 @@ public class FlightController {
 
 	@RequestMapping(value = "/flights", method = RequestMethod.GET)
 	public String flights(@RequestParam String source, @RequestParam String destination, Model model) {
-		String url = "http://10.246.92.123:7070/flight?source=" + source + "&destination=" + destination;
+		String url = "http://localhost:7070/flight?source=" + source + "&destination=" + destination;
 		ResponseEntity<List> list = restTemplate.getForEntity(url, List.class);
 
 		model.addAttribute("flights", list.getBody());
