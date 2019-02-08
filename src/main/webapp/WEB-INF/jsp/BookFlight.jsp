@@ -9,7 +9,7 @@
 <body>
 
 
-	<form action="saveFlight" method="post">
+	<form action="bookFlight" method="post">
 	<h1>Flight Booking</h1>
 		<table>
 			<tr>
@@ -28,8 +28,8 @@
 			</tr>
 				<tr>
 			<td>
-				Enter Number Of Guests : <input name="numberOfPassengers" type="number">
-					</td>
+				Enter Number Of Passengers : <input name="numberOfPassengers" type="number">
+			</td>
 			</tr>
 			<tr>
 				<td>Book:<input type="submit">

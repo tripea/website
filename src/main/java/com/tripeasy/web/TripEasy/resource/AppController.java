@@ -20,7 +20,9 @@ import com.tripeasy.web.booking.entity.Profile;
 @Controller
 public class AppController {
 
-	@RequestMapping("/hotel")
+	
+	
+	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
@@ -98,10 +100,4 @@ public class AppController {
 		return "BookHotel";
 	}
 	
-<<<<<<< HEAD
-=======
-	
-	
- 
->>>>>>> b01c787f2217ef073a63ee8e9b8a8e1cd6039ed5
 }

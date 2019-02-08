@@ -44,15 +44,15 @@ public class FlightController {
 
 	@RequestMapping("/bookFlight")
 	public String bookFlight(@RequestParam Integer flightId) {
-		return "";
+		return "BookFlight";
 	}
 	
 	@RequestMapping(value ="/bookFlight" ,method=RequestMethod.POST)
-	public String bookFlights(@RequestParam Integer flightId,Model model) {
+	public String bookFlights(Model model) {
 		//http://10.246.92.145:8989/?type=flight
 		
 //		restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", request, Booking.class);
 		model.addAttribute("message","Booked Successfully");
-		return "";
+		return "success";
 	}
 }
