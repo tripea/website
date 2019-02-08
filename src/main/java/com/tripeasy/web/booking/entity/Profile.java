@@ -16,7 +16,7 @@ public class Profile {
 	private String maritialStatus;
 	private Address address;
 	private Integer numberOfGuest;
-	private Integer numberOfTravellers;
+	private Integer numberOfPassengers;
 	public Profile() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -123,7 +123,7 @@ public class Profile {
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((maritialStatus == null) ? 0 : maritialStatus.hashCode());
 		result = prime * result + ((numberOfGuest == null) ? 0 : numberOfGuest.hashCode());
-		result = prime * result + ((numberOfTravellers == null) ? 0 : numberOfTravellers.hashCode());
+		result = prime * result + ((numberOfPassengers == null) ? 0 : numberOfPassengers.hashCode());
 		result = prime * result + ((photo == null) ? 0 : photo.hashCode());
 		result = prime * result + ((profileId == null) ? 0 : profileId.hashCode());
 		return result;
@@ -178,10 +178,10 @@ public class Profile {
 				return false;
 		} else if (!numberOfGuest.equals(other.numberOfGuest))
 			return false;
-		if (numberOfTravellers == null) {
-			if (other.numberOfTravellers != null)
+		if (numberOfPassengers == null) {
+			if (other.numberOfPassengers != null)
 				return false;
-		} else if (!numberOfTravellers.equals(other.numberOfTravellers))
+		} else if (!numberOfPassengers.equals(other.numberOfPassengers))
 			return false;
 		if (photo == null) {
 			if (other.photo != null)
@@ -204,12 +204,12 @@ public class Profile {
 		this.numberOfGuest = numberOfGuest;
 	}
 
-	public Integer getNumberOfTravellers() {
-		return numberOfTravellers;
+	public Integer getNumberOfPassengers() {
+		return numberOfPassengers;
 	}
 
-	public void setNumberOfTravellers(Integer numberOfTravellers) {
-		this.numberOfTravellers = numberOfTravellers;
+	public void setnumberOfPassengers(Integer numberOfPassengers) {
+		this.numberOfPassengers = numberOfPassengers;
 	}
 
 	@Override
@@ -217,7 +217,7 @@ public class Profile {
 		return "Profile [profileId=" + profileId + ", photo=" + photo + ", fullName=" + fullName + ", emailId="
 				+ emailId + ", contactNumber=" + contactNumber + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
 				+ ", maritialStatus=" + maritialStatus + ", address=" + address + ", numberOfGuest=" + numberOfGuest
-				+ ", numberOfTravellers=" + numberOfTravellers + "]";
+				+ ", numberOfPassengers=" + numberOfPassengers + "]";
 	}
 	
 	
