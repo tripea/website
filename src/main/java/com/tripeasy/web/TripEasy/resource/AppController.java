@@ -15,6 +15,7 @@ public class AppController {
 
 	@RequestMapping("/addhotel")
 	public String addHotel() {
+		System.out.println("in addhotel");
 		return "AddHotel";
 	}
 
