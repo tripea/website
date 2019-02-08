@@ -12,5 +12,9 @@ public class TripEasyApplication {
 		SpringApplication.run(TripEasyApplication.class, args);
 	}
 
+	@Bean
+	public RestTemplate restTempObject() {
+		return new RestTemplate();
+	}
 }
 
