@@ -17,7 +17,6 @@ public class AppController {
 
 	@RequestMapping("/")
 	public String index() {
-		System.out.println("HI");
 		return "index";
 	}
 
@@ -28,7 +27,6 @@ public class AppController {
 	
 	@RequestMapping("/hii")
 	public String addHotelForm() {
-		System.out.println("in hii");
 		return "hello";
 	}
 
