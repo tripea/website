@@ -11,20 +11,20 @@
 </head>
 <style type="text/css">
 table, th, td {
-	padding: 5px;
-	height: 80px;
-	width: 1100px;
-	font-size: 20px;
-	text-align: center;
-	font-family: inherit;
+    padding: 5px;
+    height: 80px;
+    width: 1100px;
+    font-size: 20px;
+    text-align: center;
+    font-family: inherit;
 }
-
+ 
 th, td {
-	padding: 1px;
-	background-color: lightblue
+    padding: 1px;
+    background-color: lightblue
 }
 </style>
-
+ 
 <body>
 
 	<div>
@@ -33,23 +33,31 @@ th, td {
 				<th>Hotel Name</th>
 				<th>Address</th>
 				<th>Review</th>
+				<th>Rooms</th>
 				<th>Photos</th>
+				<th>Facilities</th>
+				<th>Description</th>
 			</tr>
-
-
 			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
-			<jstl:forEach var="hotelList" items="${hotelList}">
+		 
 				<tr>
-
-					<td> <a href="/getHotel?hotelId=${hotelList.hotelId}">${hotelList.hotelName}</a></td>
-					<td>${hotelList.address.city}</td>
-					<td>${hotelList.review}</td>
-					<td>${hotelList.photos}</td>
-
+					<td>${hotel.hotelName}</td>
+					<td> landMark : ${hotel.address.landMark} <br>
+						city : ${hotel.address.city}<br>
+						pincode : ${hotel.address.pincode}<br>
+						state: ${hotel.address.state}<br>
+						nation : ${hotel.address.nation}<br>
+					
+					</td> 
+					<td>${hotel.review}</td>
+					<td>${hotel.photos}</td>
+					<td>${hotel.rooms}</td>
+					<td>${hotel.facilities}</td>
+					<td>${hotel.description}</td>
 
 
 				</tr>
-			</jstl:forEach>
+			 
 
 		</table>
 
