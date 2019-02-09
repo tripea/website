@@ -1,13 +1,8 @@
-package com.tripeasy.web.booking.entity;
+package com.tripeasy.web.TripEasy.pojo;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.stereotype.Component;
-
-import com.tripeasy.web.TripEasy.entity.Hotel;
-import com.tripeasy.web.TripEasy.pojo.Flight;
 
 
 

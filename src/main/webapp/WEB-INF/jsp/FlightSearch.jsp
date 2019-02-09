@@ -12,25 +12,19 @@
 <body>
 
 
-	Enter From City :
-	<form>
-		<input list="cities" name="cities">
+	Enter Source City :
+	<form action="searchFlight" method="post">
+		<input list="cities" name="source">
 		<datalist id="cities">
 				<jstl:forEach var="flightList" items="${flightList}">
 					<option value="${flightList.city}">
 						
 				</jstl:forEach>
 		</datalist>
-				<%-- 	<option value="${flightList.code}"> --%>
-					
-						
-		
-
-	<br>
 	<br>
 
-		Enter To City : <br>
-		<input list="cities" name="cities">
+		Enter Destination City : <br>
+		<input list="cities" name="destination">
 		<datalist id="cities">
 				<jstl:forEach var="flightList" items="${flightList}">
 					<option value="${flightList.city}">

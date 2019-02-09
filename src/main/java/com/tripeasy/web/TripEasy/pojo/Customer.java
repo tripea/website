@@ -1,4 +1,4 @@
-package com.tripeasy.web.booking.entity;
+package com.tripeasy.web.TripEasy.pojo;
 
 public class Customer {
 
