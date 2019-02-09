@@ -13,4 +13,4 @@ security:
 
   
 server:
-  port: 8780
+  port: 8781
