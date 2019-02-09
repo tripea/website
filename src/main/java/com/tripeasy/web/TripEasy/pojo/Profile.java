@@ -1,8 +1,6 @@
-package com.tripeasy.web.booking.entity;
+package com.tripeasy.web.TripEasy.pojo;
 
 import java.time.LocalDate;
-
-import com.tripeasy.web.TripEasy.entity.Address;
 
 public class Profile {
 

@@ -1,4 +1,4 @@
-package com.tripeasy.web.TripEasy.entity;
+package com.tripeasy.web.TripEasy.pojo;
 
 public class Address {
 	private String area;
