@@ -9,21 +9,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
+
+import com.tripeasy.web.TripEasy.service.FlightService;
 
 @Controller
 @RequestMapping("/flight")
 public class FlightController {
 
 	@Autowired
-	RestTemplate restTemplate;
+	FlightService flightService;
+	
 
 	@RequestMapping(value = "/flights", method = RequestMethod.GET)
 	public String flights(@RequestParam String source, @RequestParam String destination, Model model) {
-		String url = "http://localhost:7070/flight?source=" + source + "&destination=" + destination;
-		ResponseEntity<List> list = restTemplate.getForEntity(url, List.class);
+		
+		ResponseEntity<List> flights=flightService.flightsFromSourceToDestination(source,destination);
 
-		model.addAttribute("flights", list.getBody());
+		model.addAttribute("flights", flights.getBody());
 		return "FlightList";
 
 	}
@@ -44,6 +46,7 @@ public class FlightController {
 		//http://10.246.92.145:8989/?type=flight
 		
 //		restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", request, Booking.class);
+		
 		model.addAttribute("message","Booked Successfully");
 		return "success";
 	}

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Hotel;
 import com.tripeasy.web.TripEasy.pojo.Profile;
@@ -51,7 +50,7 @@ public class AppController {
 
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
-		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://localhost:9095/hotels/" + hotelId, Hotel.class);
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId, Hotel.class);
 		staticHotel = hotel.getBody();
 		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
@@ -91,7 +90,7 @@ public class AppController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " +booking);
 
-		 restTemplate.postForEntity("http://localhost:8989/bookings", booking, null);
+		 restTemplate.postForEntity("http://10.246.92.145:8989/bookings", booking, null);
 		 System.out.println("below post");
 		 restTemplate.put("http://http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId()+
 					"?numberOfGuest=" +profile.getNumberOfGuest()+ "&bookRoom="+true, null);
