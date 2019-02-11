@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.tripeasy.web.TripEasy.pojo.Booking;
+import com.tripeasy.web.TripEasy.pojo.Customer;
 import com.tripeasy.web.TripEasy.pojo.Hotel;
 import com.tripeasy.web.TripEasy.pojo.Profile;
 
 @Controller
 public class AppController {
 
-	
-	
 	@RequestMapping("/")
 	public String index() {
 		return "index";
@@ -29,13 +29,13 @@ public class AppController {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	private static  Integer bookingID ;
+	private static Integer bookingID;
 
-	static{
-		bookingID=10;
+	static {
+		bookingID = 10;
 	}
-	private static Hotel staticHotel =new Hotel();
-	
+	private static Hotel staticHotel = new Hotel();
+
 	@RequestMapping("/hii")
 	public String addHotelForm() {
 		return "hello";
@@ -47,10 +47,10 @@ public class AppController {
 		return "AddHotel";
 	}
 
-
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
-		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId, Hotel.class);
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://localhost:9095/hotels/" + hotelId,
+				Hotel.class);
 		staticHotel = hotel.getBody();
 		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
@@ -58,7 +58,7 @@ public class AppController {
 
 	@RequestMapping("/getAllhotels")
 	public ModelAndView getAllhotels() {
-		List<Hotel> hotelList = restTemplate.getForObject("http://http://10.246.92.124:9095/hotels", List.class);
+		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels/", List.class);
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
@@ -73,29 +73,41 @@ public class AppController {
 	 * +numberOfGuest+ "&bookRoom="+bookRoom, null); return new
 	 * ModelAndView("hello", "message", "SuccessFull"); }
 	 */
-	
-	 
+
 	@RequestMapping("/bookingForm")
 	public String bookingForm() {
 		return "BookHotel";
 	}
- 
+
 	@RequestMapping(value = "/saveHotel", method = RequestMethod.POST)
 	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
-		System.out.println("In save " +staticHotel);
+		System.out.println("In save " + staticHotel);
 		bookingID++;
 		Booking booking = new Booking();
-		booking.setBookingID(bookingID );
+		booking.setBookingID(bookingID);
 		booking.setHotel(staticHotel);
 		booking.setBookedBy(profile);
-		System.out.println("In save booking is " +booking);
+		System.out.println("In save booking is " + booking);
 
-		 restTemplate.postForEntity("http://10.246.92.145:8989/bookings", booking, null);
-		 System.out.println("below post");
-		 restTemplate.put("http://http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId()+
-					"?numberOfGuest=" +profile.getNumberOfGuest()+ "&bookRoom="+true, null);
-		//model.addAttribute("message", "Success!");
+		restTemplate.postForEntity("http://10.246.92.145:9292/bookings", booking, null);
+		System.out.println("below post");
+		restTemplate.put("http://http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
+				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
+		// model.addAttribute("message", "Success!");
 		return "BookHotel";
 	}
-	
+
+	@RequestMapping(value = "/showCustomers", method = RequestMethod.POST)
+	public String saveCustomers(@ModelAttribute List<Customer> customer, Model model) {
+		System.out.println("In showCustomers");
+		Booking booking = new Booking();
+		booking.setCustomers(customer);
+		System.out.println("in show customers" +booking);
+		restTemplate.postForEntity("http://10.246.92.145:9292/bookings", booking, null);
+		System.out.println("below post");
+		return "CustomersList";
+		
+
+	}
+
 }

@@ -40,7 +40,7 @@ public class FlightController {
 	public String bookFlight(@RequestParam Integer flightId) {
 		return "BookFlight";
 	}
-	
+	 
 	@RequestMapping(value ="/bookFlight" ,method=RequestMethod.POST)
 	public String bookFlights(Model model) {
 		//http://10.246.92.145:8989/?type=flight
