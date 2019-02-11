@@ -58,7 +58,7 @@ public class AppController {
 
 	@RequestMapping("/getAllhotels")
 	public ModelAndView getAllhotels() {
-		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels/", List.class);
+		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:9095/hotels", List.class);
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
@@ -91,7 +91,7 @@ public class AppController {
 
 		restTemplate.postForEntity("http://10.246.92.145:9292/bookings", booking, null);
 		System.out.println("below post");
-		restTemplate.put("http://http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
+		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
 		// model.addAttribute("message", "Success!");
 		return "BookHotel";
