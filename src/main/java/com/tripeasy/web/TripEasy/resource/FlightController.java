@@ -11,12 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * 
- * @author Shubham Raut
- *
- */
-
 @Controller
 @RequestMapping("/flight")
 public class FlightController {

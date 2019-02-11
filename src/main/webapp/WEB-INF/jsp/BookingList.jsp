@@ -30,13 +30,13 @@ th, td {
 	<div>
 		<table>
 			<tr>
-				<th>bookingType</th>
-				<th>date Of Booking</th>
-				<th>bookedBy</th>
-				<th>hotel</th>
-				<th>bookingType</th>
-				<th>date Of Booking</th>
-				<th>flight</th>
+				<th>BookingType</th>
+				<th>Date of Booking</th>
+				<th>Booked by</th>
+				<th>Hotel Name</th>
+				<th>Room Number</th>
+				<th>Flight Name</th>
+				<th>Seat Number</th>
 			</tr>
 
 
@@ -46,10 +46,8 @@ th, td {
 					<td>${bookingList.bookingType}</td>
 					<td>${bookingList.dateOfBooking}</td>
 					<td>${bookingList.bookedBy.fullName}</td>
-					<td>${bookingList.hotel.hotelName}</td>
-
-
-
+					<td>${bookingList.hotel.hotelName}${bookingList.hotel.room.roomNumber}</td>
+					<td>${bookingList.flight.flightName}${bookingList.flight.seat.row}${bookingList.flight.seat.column}</td>
 				</tr>
 			</jstl:forEach>
 

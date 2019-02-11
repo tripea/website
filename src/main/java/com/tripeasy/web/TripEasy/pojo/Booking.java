@@ -4,12 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class Booking {
 
-	
 	private Integer bookingID;
 	private String bookingType;
 	private Object bookingDetails;

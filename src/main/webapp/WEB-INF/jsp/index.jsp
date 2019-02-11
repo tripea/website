@@ -15,8 +15,8 @@
 <ul>
 <li><a href="flights">Book Flight Here</a></li>
 <li><a href="getAllhotels">Book Hotels Here</a></li>
- -->
-</ul>
+
+</ul> -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script
