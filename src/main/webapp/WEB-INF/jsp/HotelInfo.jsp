@@ -60,7 +60,9 @@ th, td {
 					<td>No Rooms Available</td>
 					</jstl:if>
 					<jstl:if test="${hotel.totalAvailableRooms != 0}">
-					<td>Available Rooms :${hotel.totalAvailableRooms}</td>
+					<td>Available Rooms :${hotel.totalAvailableRooms}<br>
+					<a href ="bookingForm">Book Room </a></td>
+					
 					</jstl:if>
 					
 	
