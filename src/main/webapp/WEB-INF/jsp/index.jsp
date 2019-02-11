@@ -15,11 +15,8 @@
 <title>Trip Easy</title>
 </head>
 <body>
-<div class="row">
-
-<div class="col-lg-12" >
-      <jsp:include page="HeaderFooter.jsp" flush="true"></jsp:include>
-</div>
-</div>
+	<div class="row">
+		<jsp:include page="HeaderFooter.jsp" flush="true"></jsp:include>
+	</div>
 </body>
 </html>
