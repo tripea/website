@@ -36,7 +36,7 @@
 			</ul>
 			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="#"><span
+					<li class="nav-item"><a href="/s"><span
 							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 					<li class="nav-item"><a href="logout"><span
 							class="glyphicon glyphicon-log-in"></span> Logout</a></li>
