@@ -7,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.tripeasy.web.TripEasy.pojo.Booking;
+import com.tripeasy.web.TripEasy.pojo.Flight;
+
 @Service
 public class FlightServiceImpl implements FlightService {
 
@@ -17,6 +20,11 @@ public class FlightServiceImpl implements FlightService {
 	public ResponseEntity<List> flightsFromSourceToDestination(String source, String destination) {
 		String url = "http://10.246.92.123:7070/flight?source=" + source + "&destination=" + destination;
 		return restTemplate.getForEntity(url, List.class);
+	}
+
+	@Override
+	public void bookFlight(Flight flight) {
+		Booking b=restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", flight, Booking.class);		
 	}
 
 }
