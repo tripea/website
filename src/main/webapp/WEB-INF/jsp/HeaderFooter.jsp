@@ -38,8 +38,8 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="#"><span
 							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li class="nav-item"><a href="#"><span
-							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li class="nav-item"><a href="logout"><span
+							class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 				</ul>
 			</div>
 		</nav>

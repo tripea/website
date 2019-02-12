@@ -13,7 +13,7 @@
 
 
 	Enter Source City :
-	<form action="searchFlight" method="post">
+	<form action="searchFlight" method="get">
 		<input list="cities" name="source">
 		<datalist id="cities">
 				<jstl:forEach var="flightList" items="${flightList}">
