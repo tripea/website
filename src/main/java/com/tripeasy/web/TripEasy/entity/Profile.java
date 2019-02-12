@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.tripeasy.web.TripEasy.pojo.Address;
+
 public class Profile {
 	private Integer profileId;
 	private String photo;
