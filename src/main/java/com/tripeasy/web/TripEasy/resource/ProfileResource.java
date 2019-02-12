@@ -33,6 +33,6 @@ public class ProfileResource {
 	public String createProfile(@ModelAttribute Profile profile,Model model) {
 		restTemplate.postForEntity("http://10.246.92.165:9090/profiles", profile, Profile.class);
 		model.addAttribute("message", "success!");
-		return "SignUp";
+		return "index";
 	}
 }
