@@ -18,12 +18,11 @@ public class FlightController {
 
 	@Autowired
 	FlightService flightService;
-	
 
 	@RequestMapping(value = "/flights", method = RequestMethod.GET)
 	public String flights(@RequestParam String source, @RequestParam String destination, Model model) {
-		
-		ResponseEntity<List> flights=flightService.flightsFromSourceToDestination(source,destination);
+
+		ResponseEntity<List> flights = flightService.flightsFromSourceToDestination(source, destination);
 
 		model.addAttribute("flights", flights.getBody());
 		return "FlightList";
@@ -40,14 +39,14 @@ public class FlightController {
 	public String bookFlight(@RequestParam Integer flightId) {
 		return "BookFlight";
 	}
-	 
-	@RequestMapping(value ="/bookFlight" ,method=RequestMethod.POST)
+
+	@RequestMapping(value = "/bookFlight", method = RequestMethod.POST)
 	public String bookFlights(Model model) {
-		//http://10.246.92.145:8989/?type=flight
-		
+		// http://10.246.92.145:8989/?type=flight
+
 //		restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", request, Booking.class);
-		
-		model.addAttribute("message","Booked Successfully");
+
+		model.addAttribute("message", "Booked Successfully");
 		return "success";
 	}
 }

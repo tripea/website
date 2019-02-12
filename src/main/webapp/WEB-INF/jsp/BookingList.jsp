@@ -43,7 +43,8 @@ th, td {
 			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
 			<jstl:forEach var="bookingList" items="${bookingList}">
 				<tr>
-					<td>${bookingList.bookingType}</td>
+					<td><a
+						href="/getBookingById?bookingID=${bookingList.bookingID}">${bookingList.bookingType}</a></td>
 					<td>${bookingList.dateOfBooking}</td>
 					<td>${bookingList.bookedBy.fullName}</td>
 					<td>${bookingList.hotel.hotelName}${bookingList.hotel.room.roomNumber}</td>
