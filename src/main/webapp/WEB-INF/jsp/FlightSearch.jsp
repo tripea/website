@@ -8,6 +8,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+
+</style>
+
 </head>
 <body>
 
@@ -16,24 +20,19 @@
 	<form action="searchFlight" method="get">
 		<input list="cities" name="source">
 		<datalist id="cities">
-				<jstl:forEach var="flightList" items="${flightList}">
-					<option value="${flightList.city}">
-						
-				</jstl:forEach>
+			<jstl:forEach var="flightList" items="${flightList}">
+				<option value="${flightList.city}">
+			</jstl:forEach>
 		</datalist>
-	<br>
-
-		Enter Destination City : <br>
-		<input list="cities" name="destination">
+		<br> Enter Destination City : <br> <input list="cities"
+			name="destination">
 		<datalist id="cities">
-				<jstl:forEach var="flightList" items="${flightList}">
-					<option value="${flightList.city}">
-						
-				</jstl:forEach>
+			<jstl:forEach var="flightList" items="${flightList}">
+				<option value="${flightList.city}">
+			</jstl:forEach>
 		</datalist>
-		<br>
-		<br><input
-			type="submit">
+		<br> <br>
+		<input type="submit">
 	</form>
 </body>
 </html>

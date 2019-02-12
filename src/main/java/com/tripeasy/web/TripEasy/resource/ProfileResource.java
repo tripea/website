@@ -9,23 +9,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.tripeasy.web.TripEasy.entity.Profile;
-
+/**
+ * 
+ * @author Shabzan 
+ *
+ */
 @Controller
 public class ProfileResource {
 
 	@Autowired
 	private RestTemplate restTemplate;
-//
-//	@RequestMapping("/")
-//	public String signUp() {
-//		return "SignUp";
-//	}
-	@RequestMapping("/loginPage")
+
+	@RequestMapping("/signin")
 	public String logIn() {
 		return "Login";
 	}
 	
-	@RequestMapping("/create")
+	@RequestMapping("/s")
+	public String signup() {
+		return "SignUp";
+	}
+	@RequestMapping("/signup")
 	public String createProfile(@ModelAttribute Profile profile,Model model) {
 		restTemplate.postForEntity("http://10.246.92.165:9090/profiles", profile, Profile.class);
 		model.addAttribute("message", "success!");
