@@ -15,11 +15,11 @@ public class ProfileResource {
 
 	@Autowired
 	private RestTemplate restTemplate;
-
-	@RequestMapping("/")
-	public String signUp() {
-		return "SignUp";
-	}
+//
+//	@RequestMapping("/")
+//	public String signUp() {
+//		return "SignUp";
+//	}
 	@RequestMapping("/loginPage")
 	public String logIn() {
 		return "Login";
@@ -27,9 +27,7 @@ public class ProfileResource {
 	
 	@RequestMapping("/create")
 	public String createProfile(@ModelAttribute Profile profile,Model model) {
-		System.out.println(profile);
-		restTemplate.postForEntity("http://localhost:9090/profiles", profile, Profile.class);
-		System.out.println(profile);
+		restTemplate.postForEntity("http://10.246.92.165:9090/profiles", profile, Profile.class);
 		model.addAttribute("message", "success!");
 		return "SignUp";
 	}
