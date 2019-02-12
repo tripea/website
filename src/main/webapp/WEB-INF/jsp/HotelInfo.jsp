@@ -37,6 +37,7 @@ th, td {
 				<th>Photos</th>
 				<th>Facilities</th>
 				<th>Description</th>
+				<th>Availability</th>
 			</tr>
 			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
 		 
@@ -54,8 +55,17 @@ th, td {
 					<td>${hotel.rooms}</td>
 					<td>${hotel.facilities}</td>
 					<td>${hotel.description}</td>
-
-
+					
+					<jstl:if test="${hotel.totalAvailableRooms==0}">
+					<td>No Rooms Available</td>
+					</jstl:if>
+					<jstl:if test="${hotel.totalAvailableRooms != 0}">
+					<td>Available Rooms :${hotel.totalAvailableRooms}<br>
+					<a href ="bookingForm">Book Room </a></td>
+					
+					</jstl:if>
+					
+	
 				</tr>
 			 
 

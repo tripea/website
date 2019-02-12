@@ -21,7 +21,7 @@ table, th, td {
 
 th, td {
 	padding: 1px;
-	background-color: lightblue
+	background-color: cyan
 }
 </style>
 
@@ -30,22 +30,16 @@ th, td {
 	<div>
 		<table>
 			<tr>
-				<th>Hotel Name</th>
-				<th>Address</th>
-				<th>Review</th>
-				<th>Photos</th>
+				<th>City Name</th>
+				<th>Code</th>
 			</tr>
 
 
-			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
-			<jstl:forEach var="hotelList" items="${hotelList}">
+		
+			<jstl:forEach var="flightList" items="${flightList}">
 				<tr>
-					<td> <a href="/getHotel?hotelId=${hotelList.hotelId}">${hotelList.hotelName}</a></td>
-					<td>${hotelList.address.city}</td>
-					<td>${hotelList.review}</td>
-					<td>${hotelList.photos}</td>
-
-
+				<td>${flightList.city}</td>
+				<td>${flightList.code}</td>
 
 				</tr>
 			</jstl:forEach>
