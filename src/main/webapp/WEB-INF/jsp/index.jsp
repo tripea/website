@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<<<<<<< HEAD
 </head>
 <body>
 
@@ -17,6 +18,8 @@
 <li><a href="getAllhotels">Book Hotels Here</a></li>
 
 </ul> -->
+=======
+>>>>>>> 4accda30044e92d3ee5d81213698db6a94747228
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script

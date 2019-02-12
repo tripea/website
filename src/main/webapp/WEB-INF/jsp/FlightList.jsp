@@ -52,7 +52,7 @@ margin: 10px;
 				${flight.destination}
 				</div>	
 				
-				<a class="col-lg-2" href="bookFlight?flightId=${flight.flightId }">Book</a>
+				<a class="col-lg-2" href="bookFlight?flightId=${flight.flightId}">Book</a>
 								
 				
 			</div>

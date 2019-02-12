@@ -30,7 +30,7 @@ public class SearchController {
 		return new ModelAndView("FlightSearch", "flightList", flightList);
 	}
 
-	@RequestMapping(value= "/searchFlight", method=RequestMethod.POST)
+	@RequestMapping(value= "/searchFlight", method=RequestMethod.GET)
 	public String searchFlight(@RequestParam String source,@RequestParam String destination) {
 		return "redirect:http://10.246.92.123:8764/flight/flights?source="+source+"&destination="+destination;
 	}
