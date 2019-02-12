@@ -9,6 +9,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+
 //@EnableOAuth2Sso
 public class TripEasyApplication /* extends WebSecurityConfigurerAdapter */ {
 

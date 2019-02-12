@@ -1,3 +1,4 @@
+
 package com.tripeasy.web.TripEasy.resource;
 
 import java.time.LocalDateTime;
