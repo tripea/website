@@ -1,22 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+.flight {
+	background-color: #ddd;
+	margin: 10px;
+}
+</style>
+
 </head>
 <body>
-	<form action="/showCustomers" method="post">
-		<h1>Customer's info:</h1>
-		Please enter names as mentioned on your government ID proof
+
+	<form action="customerInformation">
+
+		<h1>Fill Customer's info:</h1>
+
+		<%-- <jstl:forEach var="customer" items="${customers}"> --%>
 		<table>
 			<tr>
 				<td><input type="text" name="firstName"
 					placeholder="Enter First Name"></td>
 
 				<td><input type="text" name="lastName"
-					placeholder="Enter First Name"></td>
+					placeholder="Enter Last Name"></td>
 			</tr>
 			<tr>
 
@@ -31,6 +50,7 @@
 				</td>
 			</tr>
 		</table>
+		<%-- 	</jstl:forEach> --%>
 
 	</form>
 </body>

@@ -35,28 +35,42 @@ public class BookingController {
 
 	@RequestMapping("/getAllBookings")
 	public ModelAndView getAllBookings() {
-		List<Booking> bookingList = restTemplate.getForObject("http://localhost:9292/bookings", List.class);
+		//TODO delete SYSO
+		System.out.println("inside get all bookings");
+		List<Booking> bookingList = restTemplate.getForObject("http://localhost:7878/bookings", List.class);
+		//return new ModelAndView("BookingList", "bookingList", bookingList);
 		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
-
-	@RequestMapping("/getBookingById")
-	public ModelAndView getHotel(@RequestParam("bookingID") Integer bookingID) {
-		ResponseEntity<Booking> booking = restTemplate.getForEntity("http://localhost:9292/bookings/" + bookingID,
-				Booking.class);
-		staticBooking = booking.getBody();
-		System.out.println(booking.getBody().getBookingType());
-		return new ModelAndView("BookingInfo", "booking", booking.getBody());
+	
+	@RequestMapping("/customerInformation")
+	public String fillCustomerInformation() {
+		//TODO delete SYSO
+		System.out.println("inside customer info");
+		/*
+		 * ResponseEntity<Booking> booking =
+		 * restTemplate.getForEntity("http://localhost:7878/bookings/" + bookingID,
+		 * Booking.class);
+		 */
+		//staticBooking = booking.getBody();
+		//System.out.println(booking.getBody().getBookingType());
+		return "CustomersInformation";
 	}
 
-	@RequestMapping(value = "/showCustomers", method = RequestMethod.POST)
-	public String saveCustomers(@ModelAttribute List<Customer> customer, Model model) {
-		System.out.println("In showCustomers");
-		Booking booking = new Booking();
-		booking.setCustomers(customer);
-		System.out.println("in show customers" + booking);
-		restTemplate.postForEntity("http://10.246.92.145:9292/bookings", booking, null);
-		System.out.println("below post");
-		return "CustomersList";
+	/*
+	 * @RequestMapping(value = "/showCustomers", method = RequestMethod.POST) public
+	 * String saveCustomers(@ModelAttribute List<Customer> customer, Model model) {
+	 * System.out.println("In showCustomers"); Booking booking = new Booking();
+	 * booking.setCustomers(customer); System.out.println("in show customers" +
+	 * booking); restTemplate.postForEntity("http://10.246.92.145:9292/bookings",
+	 * booking, null); System.out.println("below post"); return "CustomersList"; }
+	 */
+
+	@RequestMapping("/bookhotel")
+	public String bookhotel(@RequestParam Booking booking) {
+		System.out.println("in booking");
+		restTemplate.postForEntity("http://localhost:7878/bookings", booking, null);
+		// model.addAttribute("message", "Booking Successful");
+		return "hiiPoonam";
 	}
 
 }

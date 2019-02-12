@@ -30,25 +30,26 @@ th, td {
 	<div>
 		<table>
 			<tr>
-				<th>BookingType</th>
+				<th>Booking Id</th>
+				<th>Booking Type</th>
 				<th>Date of Booking</th>
 				<th>Booked by</th>
-				<th>Hotel Name</th>
-				<th>Room Number</th>
-				<th>Flight Name</th>
-				<th>Seat Number</th>
+				<th>Hotel Name and Room Number</th>
+				<th>Flight Name and Seat Number</th>
+				<th>Number of Customers</th>
 			</tr>
-
 
 			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
 			<jstl:forEach var="bookingList" items="${bookingList}">
 				<tr>
 					<td><a
-						href="/getBookingById?bookingID=${bookingList.bookingID}">${bookingList.bookingType}</a></td>
+						href="customerInformation">${bookingList.bookingID}</a></td>
+						<td>${bookingList.bookingType}</td>
 					<td>${bookingList.dateOfBooking}</td>
 					<td>${bookingList.bookedBy.fullName}</td>
 					<td>${bookingList.hotel.hotelName}${bookingList.hotel.room.roomNumber}</td>
 					<td>${bookingList.flight.flightName}${bookingList.flight.seat.row}${bookingList.flight.seat.column}</td>
+					<td>${bookingList.numberOfCustomers}</td>
 				</tr>
 			</jstl:forEach>
 

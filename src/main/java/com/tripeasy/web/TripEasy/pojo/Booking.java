@@ -17,6 +17,7 @@ public class Booking {
 	private Flight flight;
 	private LocalDateTime checkInDate;
 	private LocalDateTime checkOutDate;
+	private Integer numberOfCustomers;
 
 	public Booking() {
 		super();
@@ -68,16 +69,12 @@ public class Booking {
 		this.checkOutDate = checkOutDate;
 	}
 
-	/*
-	 * public Booking(Integer bookingID, String bookingType, Object bookingDetails,
-	 * LocalDateTime dateOfBooking, Double totalCost, List<Customer> customers,
-	 * Profile bookedBy, Hotel hotel, LocalDateTime checkInDate, LocalDateTime
-	 * checkOutDate) { super(); this.bookingID = bookingID; this.bookingType =
-	 * bookingType; this.bookingDetails = bookingDetails; this.dateOfBooking =
-	 * dateOfBooking; this.totalCost = totalCost; this.customers = customers;
-	 * this.bookedBy = bookedBy; this.hotel = hotel; this.checkInDate = checkInDate;
-	 * this.checkOutDate = checkOutDate; }
-	 */
+	
+
+	public Booking(Integer numberOfCustomers) {
+		super();
+		this.numberOfCustomers = numberOfCustomers;
+	}
 
 	public Integer getBookingID() {
 		return bookingID;
@@ -165,6 +162,15 @@ public class Booking {
 
 	public void setFlight(Flight flight) {
 		this.flight = flight;
+	}
+
+	
+	public Integer getNumberOfCustomers() {
+		return numberOfCustomers;
+	}
+
+	public void setNumberOfCustomers(Integer numberOfCustomers) {
+		this.numberOfCustomers = numberOfCustomers;
 	}
 
 	@Override
