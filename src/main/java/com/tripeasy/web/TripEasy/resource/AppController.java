@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tripeasy.web.TripEasy.entity.Hotel;
 
-@Controller
+//@Controller
 public class AppController {
 
 	@RequestMapping("/")

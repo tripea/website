@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+
 public class TripEasyApplication {
 
 	public static void main(String[] args) {
