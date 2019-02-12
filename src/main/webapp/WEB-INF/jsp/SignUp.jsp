@@ -9,7 +9,7 @@
 <body>
 <h1>${message}</h1>
 <h1>SIGN UP PAGE</h1>
-<form action="create" method="post">
+<form action="signup" method="get">
       Enter Full Name <input type="text" name="fullName"/><br/>
       Enter  EmailId <input type="text" name="emailId"/><br/>
       Date Of Birth <input type="date" name="dateOfBirth" /><br/>      
