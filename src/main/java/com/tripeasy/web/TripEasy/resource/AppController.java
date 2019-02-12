@@ -17,7 +17,7 @@ import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Hotel;
 import com.tripeasy.web.TripEasy.pojo.Profile;
 
-@Controller
+//@Controller
 public class AppController {
 
 	
