@@ -70,7 +70,7 @@ public class FlightController {
 		Booking booking=new Booking();
 		booking.setBookedBy(p);
 		booking.setBookingDetails(null);
-		booking.setBookingID(19);
+		booking.setBookingID(18);
 		booking.setBookingType("Flight");
 		booking.setCustomers(null);
 		booking.setDateOfBooking(LocalDateTime.now());
