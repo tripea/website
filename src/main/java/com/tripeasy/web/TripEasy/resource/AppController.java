@@ -63,11 +63,11 @@ public class AppController {
 
 	@RequestMapping("/getAllhotels")
 	public ModelAndView getAllhotels() {
-<<<<<<< HEAD
+
 		List<Hotel> hotelList = restTemplate.getForObject("http://http://localhost:9095/hotels", List.class);
-=======
-		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels", List.class);
->>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
+
+		//List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels", List.class);
+
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
@@ -98,19 +98,18 @@ public class AppController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " + booking);
 
-<<<<<<< HEAD
 		 restTemplate.postForEntity("http://localhost:8989/bookings", booking, null);
 		 System.out.println("below post");
 		 restTemplate.put("http://http://localhost:9095/hotels/" + staticHotel.getHotelId()+
 					"?numberOfGuest=" +profile.getNumberOfGuest()+ "&bookRoom="+true, null);
 		//model.addAttribute("message", "Success!");
-=======
+
 		restTemplate.postForEntity("http://10.246.92.145:8989/bookings", booking, null);
 		System.out.println("below post");
 		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
 		// model.addAttribute("message", "Success!");
->>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
+
 		return "BookHotel";
 	}
 
