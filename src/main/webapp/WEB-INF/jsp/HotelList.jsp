@@ -28,19 +28,21 @@
 <style type="text/css">
 .hotel {
 	border: medium;
-	background-color: gainsboro	;
+	background-color: gainsboro;
 	margin: 10px
 }
 
-
 p.resort {
-	 width: 4em; 
-  border: 2px double salmon;
-  color: indigo;
- border-right-style: double;
-  word-wrap: break-word;
+	width: 4em;
+	border: 2px double salmon;
+	color: indigo;
+	border-right-style: double;
+	word-wrap: break-word;
 }
-  
+
+.hotelname {
+	
+}
 </style>
 </head>
 
@@ -52,28 +54,26 @@ p.resort {
 			<jstl:forEach var="hotelList" items="${hotelList}">
 
 				<jstl:forEach var="photos" items="${hotelList.photos}">
-
-
-
-					<div class="row hotel" href="">
-						<div class="col-sm-4">
+					<div class="row hotel">
+						<%-- <a href ="/hotel/getHotel?hotelId=${hotelList.hotelId}"> --%>
+						<div class="col-sm-5">
 							<div class="container">
-								<br> <img class="img-responsive" src=${photos }
-									alt=${hotelList.hotelName } width="460" height="345">
+								<br> <img class="img-responsive" src=${photos}
+									alt=${hotelList.hotelName } width="460"
+									height="345">
 							</div>
 
 						</div>
-						<div class="col-sm-6">
-							<div class="container">
-							<p class="resort">Resort</p>
+						<a href="/hotel/getHotel?hotelId=${hotelList.hotelId}"><div class="col-sm-5">
+							<div class="container hotelname text-left">
+								<p class="resort">Resort</p>
 								<h1>${hotelList.hotelName}</h1>
- 
+
 								<p>${hotelList.address.city}</p>
 								<p>Area :${hotelList.address.area}</p>
 
-							</div>
-							
-							
+							</div></a>
+
 						</div>
 
 
@@ -83,10 +83,11 @@ p.resort {
 							<!--     <div class="col-sm-4" style="background-color:lavenderblush;"> -->
 							<h4>INCLUDED IN THIS PRICE</h4>
 							<jstl:forEach var="room" items="${hotelList.rooms}">
-								
-								<h2>${room.price} </h2>
+
+								<h2>${room.price}</h2>
 								<p>per night</p>
-								<p>LOGIN & UNLOCK A SECRET DEAL!<p>
+								<p>LOGIN & UNLOCK A SECRET DEAL!
+								<p>
 							</jstl:forEach>
 
 							<!-- </div> -->
