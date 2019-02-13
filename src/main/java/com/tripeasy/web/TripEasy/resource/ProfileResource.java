@@ -16,11 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tripeasy.web.TripEasy.entity.Profile;
 
-
-
 /**
  * 
- * @author Shabzan 
+ * @author Shabzan
  *
  */
 @Controller
@@ -33,28 +31,28 @@ public class ProfileResource {
 	public String logIn() {
 		return "Login";
 	}
-	
+
 	@RequestMapping("/s")
 	public String signup() {
 		return "SignUp";
 	}
+
 	@RequestMapping("/signup")
-	public String createProfile(@ModelAttribute Profile profile,Model model) {
+	public String createProfile(@ModelAttribute Profile profile, Model model) {
 		restTemplate.postForEntity("http://localhost:9090/profiles", profile, Profile.class);
 		model.addAttribute("message", "success!");
 		return "index";
 	}
-	/*
-	 * @RequestMapping("/login") public ModelAndView login(@ModelAttribute Profile
-	 * profile,@RequestParam String userName,
-	 * 
-	 * @RequestParam String password,@RequestParam String profileId) {
-	 * 
-	 * if (profile.getUserName() == userName && profile.getPassword() == password) {
-	 * return new mo;
-	 * 
-	 * } return new ResponseEntity<Profile>(HttpStatus.NOT_FOUND);
-	 * 
-	 * }
-	 */
+
+	@RequestMapping("/loginPage") 
+	public ModelAndView login(@ModelAttribute Profile profile,@RequestParam String userName,@RequestParam String password,@RequestParam String profileId) {
+		restTemplate.getForEntity("http://localhost:9090/profiles/profileId", Profile.class);
+	  if (profile.getUserName() == userName && profile.getPassword() == password) {
+	  return new ModelAndView("Login","message", "login successful"); 
+	  }
+	  else 
+	  {
+		  return new ModelAndView("Login","message", "Invalid credantials"); 
+	 }
+}
 }
