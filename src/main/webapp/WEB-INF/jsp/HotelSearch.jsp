@@ -16,21 +16,25 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
-    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+<script type='text/javascript'
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 <script type='text/javascript'>
-$(function(){
-$('.input-group.date').datepicker({
-    calendarWeeks: true,
-    todayHighlight: true,
-    autoclose: true
-});  
-});
-
+	$(function() {
+		$('.input-group.date').datepicker({
+			calendarWeeks : true,
+			todayHighlight : true,
+			autoclose : true
+		});
+	});
 </script>
 <style>
 .signupbtn {
@@ -47,22 +51,24 @@ $('.input-group.date').datepicker({
 
 			<div class="form-group">
 				<b> Enter City </b>: <input list="cities" class="form-control"
-					list="cities" name="city" required="required"> <datalist
-						id="cities">
-						<jstl:forEach var="list" items="${hotelCityList}">
-							<option value="${list.city}">
-						</jstl:forEach>
-					</datalist>
+					list="cities" name="city" required="required">
+				<datalist id="cities">
+					<jstl:forEach var="list" items="${hotelCityList}">
+						<option value="${list.city}">
+					</jstl:forEach>
+				</datalist>
 			</div>
-				<div class="input-group date">
-  <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-</div>
-		
+			<div class="input-group date">
+				<input type="text" class="form-control"><span
+					class="input-group-addon"><i
+					class="glyphicon glyphicon-calendar"></i></span>
+			</div>
+
 
 
 			<button type="submit" class="signupbtn">Search</button>
-</form>
-</div>
+		</form>
+	</div>
 </body>
 </html>
 

@@ -51,7 +51,7 @@
     <div class="container"
         style="padding: 20px; background-color: cyan; margin-top: 150px;">
         <!-- -->
-        <form class="form-inline" action="searchFlight" method="post">
+        <form class="form-inline" action="searchFlight" method="get">
  
             <div class="form-group">
                 <b> Source<span class="required">*</span>: <input list="cities"
@@ -73,7 +73,7 @@
                     </datalist>
             </div>
             <div class="input-group date">
-                <input type="text" class="form-control" placeholder="dd/mm/yy"><span
+                <input type="text" class="form-control" placeholder="dd/mm/yy" name="date"><span
                     class="input-group-addon"><i
                     class="glyphicon glyphicon-calendar"></i></span>
             </div>
