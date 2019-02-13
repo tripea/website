@@ -1,4 +1,3 @@
-
 package com.tripeasy.web.TripEasy.resource;
 
 import java.time.LocalDateTime;
@@ -15,14 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Flight;
+import com.tripeasy.web.TripEasy.pojo.Profile;
 import com.tripeasy.web.TripEasy.pojo.Seat;
 import com.tripeasy.web.TripEasy.service.FlightService;
-
-/**
- * 
- * @author Shubham Raut
- *
- */
 
 @Controller
 @RequestMapping("/flight")
@@ -30,12 +24,11 @@ public class FlightController {
 
 	@Autowired
 	FlightService flightService;
-	
 
 	@RequestMapping(value = "/flights", method = RequestMethod.GET)
 	public String flights(@RequestParam String source, @RequestParam String destination, Model model) {
-		
-		ResponseEntity<List> flights=flightService.flightsFromSourceToDestination(source,destination);
+
+		ResponseEntity<List> flights = flightService.flightsFromSourceToDestination(source, destination);
 
 		model.addAttribute("flights", flights.getBody());
 		return "FlightList";
@@ -53,10 +46,13 @@ public class FlightController {
 		return "BookFlight";
 	}
 	
-	@RequestMapping(value ="/bookFlight" ,method=RequestMethod.POST)
+	@RequestMapping(value ="/bookFlights" ,method=RequestMethod.GET)
 	public String bookFlights(Model model) {
 		
-		
+		Profile p=new Profile();
+		p.setFullName("Shubham Raut");
+		p.setGender("Male");
+
 		Flight flight1 = new Flight();
 		flight1.setFlightId(3);
 		flight1.setFlightName("AI-852 Updated");
@@ -70,12 +66,11 @@ public class FlightController {
 		seats.add(new Seat("Economy", 2, 'B', true, 2500.00));
 		seats.add(new Seat("Economy", 2, 'A', true, 3500.00));
 		flight1.setSeats(seats);
-
-
+		
 		Booking booking=new Booking();
-		booking.setBookedBy(null);
+		booking.setBookedBy(p);
 		booking.setBookingDetails(null);
-		booking.setBookingID(18);
+		booking.setBookingID(19);
 		booking.setBookingType("Flight");
 		booking.setCustomers(null);
 		booking.setDateOfBooking(LocalDateTime.now());
@@ -86,7 +81,7 @@ public class FlightController {
 		Booking b=flightService.bookFlight(booking);
 		
 		
-		model.addAttribute("message","Booked Successfully"+"\n"+b);
+		model.addAttribute("message",b);
 		return "success";
 	}
 }

@@ -5,7 +5,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <title>Project</title>
+=======
+>>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -42,6 +45,14 @@
 	background-color: #f44336;
 }
 </style>
+<<<<<<< HEAD
+=======
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+
+>>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 </head>
 <body>
 	<div class="container"
@@ -68,16 +79,47 @@
 						</jstl:forEach>
 					</datalist>
 			</div>
+<<<<<<< HEAD
 			<div class="input-group date">
 			
 			Date:	<input type="text" class="form-control"><span
 					class="input-group-addon"><i
 					class="glyphicon glyphicon-calendar"></i></span>                                     
+=======
+
+
+			<div class="form-group">
+
+				<b>Date : <input type="date" name="traveldate">
+>>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 			</div>
 
 
 			<button type="submit" class="signupbtn">Search</button>
 		</form>
+<<<<<<< HEAD
 	</div>
+=======
+
+
+	</div>
+	Enter Source City :
+	<form action="searchFlight" method="get">
+		<input list="cities" name="source">
+		<datalist id="cities">
+			<jstl:forEach var="flightList" items="${flightList}">
+				<option value="${flightList.city}">
+			</jstl:forEach>
+		</datalist>
+		<br> Enter Destination City : <br> <input list="cities"
+			name="destination">
+		<datalist id="cities">
+			<jstl:forEach var="flightList" items="${flightList}">
+				<option value="${flightList.city}">
+			</jstl:forEach>
+		</datalist>
+		<br> <br> <input type="submit">
+	</form>
+>>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 </body>
 </html>

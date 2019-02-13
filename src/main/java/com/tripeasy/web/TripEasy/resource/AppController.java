@@ -31,21 +31,13 @@ public class AppController {
 		return "index";
 	}
 
-	@Autowired
-	private RestTemplate restTemplate;
-
-	private static Integer bookingID;
-
-	static {
-		bookingID = 10;
-	}
-	private static Hotel staticHotel = new Hotel();
-
+ 
 	@RequestMapping("/hii")
 	public String addHotelForm() {
 		return "hello";
 	}
 
+<<<<<<< HEAD
 	@RequestMapping("/addhotel")
 	public String addHotel() {
 		System.out.println("in addhotel");
@@ -112,6 +104,11 @@ public class AppController {
 
 		return "BookHotel";
 	}
+=======
+	
+	
+	
+>>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {

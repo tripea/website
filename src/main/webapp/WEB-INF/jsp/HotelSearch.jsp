@@ -60,8 +60,26 @@ $('.input-group.date').datepicker({
         
  
 
+<<<<<<< HEAD
             <button type="submit" class="signupbtn">Search</button>
 </form>
 </div>
+=======
+
+	Enter Source City :
+	<form action="searchHotel" method="get">
+		<input list="cities" name="city">
+		<datalist id="cities">
+				<jstl:forEach var="hotelCityList" items="${hotelCityList}">
+					<option value="${hotelCityList.city}">
+						
+				</jstl:forEach>
+		</datalist>
+	<br>
+		<br>
+		<br><input
+			type="submit">
+	</form>
+>>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 </body>
 </html>
