@@ -27,32 +27,32 @@ public class BookingController {
 	RestTemplate restTemplate;
 
 	private static Integer bookingID;
-
 	static {
 		bookingID = 10;
 	}
+
 	private static Booking staticBooking = new Booking();
 
 	@RequestMapping("/getAllBookings")
 	public ModelAndView getAllBookings() {
-		//TODO delete SYSO
+		// TODO delete SYSO
 		System.out.println("inside get all bookings");
 		List<Booking> bookingList = restTemplate.getForObject("http://localhost:7878/bookings", List.class);
-		//return new ModelAndView("BookingList", "bookingList", bookingList);
+		// return new ModelAndView("BookingList", "bookingList", bookingList);
 		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
-	
+
 	@RequestMapping("/customerInformation")
 	public String fillCustomerInformation() {
-		//TODO delete SYSO
+		// TODO delete SYSO
 		System.out.println("inside customer info");
 		/*
 		 * ResponseEntity<Booking> booking =
 		 * restTemplate.getForEntity("http://localhost:7878/bookings/" + bookingID,
 		 * Booking.class);
 		 */
-		//staticBooking = booking.getBody();
-		//System.out.println(booking.getBody().getBookingType());
+		// staticBooking = booking.getBody();
+		// System.out.println(booking.getBody().getBookingType());
 		return "CustomersInformation";
 	}
 
@@ -70,6 +70,7 @@ public class BookingController {
 		System.out.println("in booking");
 		restTemplate.postForEntity("http://localhost:7878/bookings", booking, null);
 		// model.addAttribute("message", "Booking Successful");
+		// TODO delete this
 		return "hiiPoonam";
 	}
 
