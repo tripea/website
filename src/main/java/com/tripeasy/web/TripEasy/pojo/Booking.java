@@ -3,13 +3,13 @@ package com.tripeasy.web.TripEasy.pojo;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
+/**
+ * 
+ * @author pparaska
+ *
+ */
 public class Booking {
 
-	
 	private Integer bookingID;
 	private String bookingType;
 	private Object bookingDetails;
@@ -21,6 +21,7 @@ public class Booking {
 	private Flight flight;
 	private LocalDateTime checkInDate;
 	private LocalDateTime checkOutDate;
+	private Integer numberOfCustomers;
 
 	public Booking() {
 		super();
@@ -57,7 +58,7 @@ public class Booking {
 
 	public Booking(Integer bookingID, String bookingType, Object bookingDetails, LocalDateTime dateOfBooking,
 			Double totalCost, List<Customer> customers, Profile bookedBy, Hotel hotel, Flight flight,
-			LocalDateTime checkInDate, LocalDateTime checkOutDate) {
+			LocalDateTime checkInDate, LocalDateTime checkOutDate, Integer numberOfCustomers) {
 		super();
 		this.bookingID = bookingID;
 		this.bookingType = bookingType;
@@ -70,18 +71,8 @@ public class Booking {
 		this.flight = flight;
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
+		this.numberOfCustomers = numberOfCustomers;
 	}
-
-	/*
-	 * public Booking(Integer bookingID, String bookingType, Object bookingDetails,
-	 * LocalDateTime dateOfBooking, Double totalCost, List<Customer> customers,
-	 * Profile bookedBy, Hotel hotel, LocalDateTime checkInDate, LocalDateTime
-	 * checkOutDate) { super(); this.bookingID = bookingID; this.bookingType =
-	 * bookingType; this.bookingDetails = bookingDetails; this.dateOfBooking =
-	 * dateOfBooking; this.totalCost = totalCost; this.customers = customers;
-	 * this.bookedBy = bookedBy; this.hotel = hotel; this.checkInDate = checkInDate;
-	 * this.checkOutDate = checkOutDate; }
-	 */
 
 	public Integer getBookingID() {
 		return bookingID;
@@ -171,6 +162,14 @@ public class Booking {
 		this.flight = flight;
 	}
 
+	public Integer getNumberOfCustomers() {
+		return numberOfCustomers;
+	}
+
+	public void setNumberOfCustomers(Integer numberOfCustomers) {
+		this.numberOfCustomers = numberOfCustomers;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -185,6 +184,7 @@ public class Booking {
 		result = prime * result + ((dateOfBooking == null) ? 0 : dateOfBooking.hashCode());
 		result = prime * result + ((flight == null) ? 0 : flight.hashCode());
 		result = prime * result + ((hotel == null) ? 0 : hotel.hashCode());
+		result = prime * result + ((numberOfCustomers == null) ? 0 : numberOfCustomers.hashCode());
 		result = prime * result + ((totalCost == null) ? 0 : totalCost.hashCode());
 		return result;
 	}
@@ -248,6 +248,11 @@ public class Booking {
 				return false;
 		} else if (!hotel.equals(other.hotel))
 			return false;
+		if (numberOfCustomers == null) {
+			if (other.numberOfCustomers != null)
+				return false;
+		} else if (!numberOfCustomers.equals(other.numberOfCustomers))
+			return false;
 		if (totalCost == null) {
 			if (other.totalCost != null)
 				return false;
@@ -261,7 +266,7 @@ public class Booking {
 		return "Booking [bookingID=" + bookingID + ", bookingType=" + bookingType + ", bookingDetails=" + bookingDetails
 				+ ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", customers=" + customers
 				+ ", bookedBy=" + bookedBy + ", hotel=" + hotel + ", flight=" + flight + ", checkInDate=" + checkInDate
-				+ ", checkOutDate=" + checkOutDate + "]";
+				+ ", checkOutDate=" + checkOutDate + ", numberOfCustomers=" + numberOfCustomers + "]";
 	}
 
 }
