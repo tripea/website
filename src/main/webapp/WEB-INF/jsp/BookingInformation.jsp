@@ -22,20 +22,7 @@
 				<th>Flight Name and Seat Number</th>
 				<th>Number of passengers</th>
 			</tr>
-			
-	<!-- private String bookingType;
-	private Object bookingDetails;
-	private LocalDateTime dateOfBooking;
-	private Double totalCost;
-	private List<Customer> customers;
-	private Profile bookedBy;
-	private Hotel hotel;
-	private Flight flight;
-	private LocalDateTime checkInDate;
-	private LocalDateTime checkOutDate; -->
-			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
-		 
-				<tr>
+					<tr>
 					<td>${hotel.hotelName}</td>
 					<td> landMark : ${hotel.address.landMark} <br>
 						city : ${hotel.address.city}<br>
