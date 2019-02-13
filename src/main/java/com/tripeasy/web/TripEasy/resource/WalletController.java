@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import com.tripeasy.web.TripEasy.pojo.Statement;
 import com.tripeasy.web.TripEasy.pojo.Wallet;
 /**
  * 
@@ -24,7 +25,7 @@ public class WalletController {
 	
 	@RequestMapping("/statements")
 	public String getStatement(Model model,@RequestParam Integer profileId) {
-		ResponseEntity<Wallet> statement=restTemplate.getForEntity("http://localhost:8080/wallet?profileId="+profileId, Wallet.class);
+		ResponseEntity<Set> statement=restTemplate.getForEntity("http://localhost:8080/wallet?profileId="+profileId, Set.class);
 		model.addAttribute("statements",statement.getBody());
-		return "Statement";}
+		return "Wallet";}
 }
