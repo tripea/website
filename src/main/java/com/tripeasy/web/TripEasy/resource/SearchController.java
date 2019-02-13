@@ -32,6 +32,7 @@ public class SearchController {
 
 	@RequestMapping(value= "/searchFlight", method=RequestMethod.GET)
 	public String searchFlight(@RequestParam String source,@RequestParam String destination) {
-		return "redirect:http://10.246.92.123:8764/flight/flights?source="+source+"&destination="+destination;
+		//TODO change localhost to ip 10.246.92.123
+		return "redirect:http://localhost:8764/flight/flights?source="+source+"&destination="+destination;
 	}
 }

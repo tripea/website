@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Flight;
+import com.tripeasy.web.TripEasy.pojo.Profile;
 import com.tripeasy.web.TripEasy.pojo.Seat;
 import com.tripeasy.web.TripEasy.service.FlightService;
 
@@ -53,10 +54,12 @@ public class FlightController {
 		return "BookFlight";
 	}
 	
-	@RequestMapping(value ="/bookFlight" ,method=RequestMethod.POST)
+	@RequestMapping(value ="/bookFlights" ,method=RequestMethod.GET)
 	public String bookFlights(Model model) {
 		
-		
+		Profile p=new Profile();
+		p.setFullName("Shubham Raut");
+		p.setGender("Male");
 		Flight flight1 = new Flight();
 		flight1.setFlightId(3);
 		flight1.setFlightName("AI-852 Updated");
@@ -73,9 +76,9 @@ public class FlightController {
 
 
 		Booking booking=new Booking();
-		booking.setBookedBy(null);
+		booking.setBookedBy(p);
 		booking.setBookingDetails(null);
-		booking.setBookingID(18);
+		booking.setBookingID(19);
 		booking.setBookingType("Flight");
 		booking.setCustomers(null);
 		booking.setDateOfBooking(LocalDateTime.now());
@@ -86,7 +89,7 @@ public class FlightController {
 		Booking b=flightService.bookFlight(booking);
 		
 		
-		model.addAttribute("message","Booked Successfully"+"\n"+b);
+		model.addAttribute("message",b);
 		return "success";
 	}
 }
