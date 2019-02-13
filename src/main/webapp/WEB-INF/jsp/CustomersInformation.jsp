@@ -31,7 +31,7 @@ $(document).ready(function(){
 			name="Gender"><option value="Male">Male</option>
 			<option value="Female">Female</option>
 			<option value="Other">Other</option></select>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" href="bookingInformation"class="btn btn-primary">Submit</button>
 	</form>
 </body>
 </html>
