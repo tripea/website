@@ -42,7 +42,7 @@ public class BookingController {
 	public ModelAndView getAllBookings() {
 		// TODO delete SYSO
 		System.out.println("inside get all bookings");
-		List<Booking> bookingList = restTemplate.getForObject("http://localhost:7878/bookings", List.class);
+		List<Booking> bookingList = restTemplate.getForObject("http://10.246.92.145:7878/bookings", List.class);
 		// return new ModelAndView("BookingList", "bookingList", bookingList);
 		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
@@ -57,7 +57,7 @@ public class BookingController {
 	@RequestMapping("/bookhotel")
 	public String bookhotel(@RequestParam Booking booking) {
 		System.out.println("in booking");
-		restTemplate.postForEntity("http://localhost:7878/bookings", booking, null);
+		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
 		// model.addAttribute("message", "Booking Successful");
 		// TODO delete this
 		return "hiiPoonam";
