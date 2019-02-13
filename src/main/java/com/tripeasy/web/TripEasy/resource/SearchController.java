@@ -26,9 +26,9 @@ public class SearchController {
 
 	@RequestMapping("/searchHotels")
 	public ModelAndView getAllCityForHotel() {
-		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
-		return new ModelAndView("HotelSearch", "hotelList", hotelList);
 
+		List<Hotel> hotelCityList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
+		return new ModelAndView("HotelSearch", "hotelCityList", hotelCityList);
 	}
 
 	@RequestMapping(value = "/searchFlight", method = RequestMethod.GET)
@@ -37,8 +37,10 @@ public class SearchController {
 		return "redirect:http://localhost:8764/flight/flights?source=" + source + "&destination=" + destination;
 	}
 
-	@RequestMapping(value = "/searchHotel", method = RequestMethod.POST)
+	@RequestMapping(value = "/searchHotel", method = RequestMethod.GET)
 	public String searchHotel(@RequestParam String city) {
-		return "redirect:http://localhost:9095/hotels/?city=" + city;
+		// TODO change localhost to ip 10.246.92.124
+		return "redirect:http://localhost:8764/hotel/hotels?city="+city;
+
 	}
 }
