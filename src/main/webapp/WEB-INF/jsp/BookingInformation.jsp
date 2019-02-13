@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@ th, td {
 				<th>Flight Name and Seat Number</th>
 				<th>Number of passengers</th>
 			</tr>
-			private Integer bookingID;
+			
 	<!-- private String bookingType;
 	private Object bookingDetails;
 	private LocalDateTime dateOfBooking;

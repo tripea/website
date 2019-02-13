@@ -35,6 +35,8 @@ th, td {
 				<th>Date of Booking</th>
 				<th>Booked by</th>
 				<th>Hotel Name and Room Number</th>
+				<th>CheckIn Date</th>
+				<th>CheckOut Date</th>
 				<th>Flight Name and Seat Number</th>
 				<th>Number of Customers</th>
 			</tr>
@@ -42,12 +44,13 @@ th, td {
 			<%-- <jstl:set var="rooms" value="" scope="sesion"></jstl:set> --%>
 			<jstl:forEach var="bookingList" items="${bookingList}">
 				<tr>
-					<td><a
-						href="customerInformation">${bookingList.bookingID}</a></td>
-						<td>${bookingList.bookingType}</td>
+					<td><a href="customerInformation">${bookingList.bookingID}</a></td>
+					<td>${bookingList.bookingType}</td>
 					<td>${bookingList.dateOfBooking}</td>
 					<td>${bookingList.bookedBy.fullName}</td>
 					<td>${bookingList.hotel.hotelName}${bookingList.hotel.room.roomNumber}</td>
+					<td>${bookingList.checkInDate}</td>
+					<td>${bookingList.checkOutDate}</td>
 					<td>${bookingList.flight.flightName}${bookingList.flight.seat.row}${bookingList.flight.seat.column}</td>
 					<td>${bookingList.numberOfCustomers}</td>
 				</tr>

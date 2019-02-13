@@ -18,7 +18,11 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Customer;
-
+/**
+ * 
+ * @author pparaska
+ *
+ */
 @Controller
 @RequestMapping("/bookings")
 public class BookingController {
