@@ -45,7 +45,6 @@ public class FlightController {
 	public String bookFlight(@RequestParam Integer flightId) {
 		return "BookFlight";
 	}
-<<<<<<< HEAD
 	
 	@RequestMapping(value ="/bookFlights" ,method=RequestMethod.GET)
 	public String bookFlights(Model model) {
@@ -53,15 +52,7 @@ public class FlightController {
 		Profile p=new Profile();
 		p.setFullName("Shubham Raut");
 		p.setGender("Male");
-=======
 
-	@RequestMapping(value = "/bookFlight", method = RequestMethod.POST)
-	public String bookFlights(Model model) {
-		// http://10.246.92.145:8989/?type=flight
-
-//		restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", request, Booking.class);
-
->>>>>>> 12f12172ccf980cd8429e820adf2ff901301c0c3
 		Flight flight1 = new Flight();
 		flight1.setFlightId(3);
 		flight1.setFlightName("AI-852 Updated");
@@ -75,7 +66,6 @@ public class FlightController {
 		seats.add(new Seat("Economy", 2, 'B', true, 2500.00));
 		seats.add(new Seat("Economy", 2, 'A', true, 3500.00));
 		flight1.setSeats(seats);
-		// http://10.246.92.145:8989/?type=flight
 		
 		Booking booking=new Booking();
 		booking.setBookedBy(p);
