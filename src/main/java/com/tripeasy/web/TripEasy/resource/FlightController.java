@@ -46,11 +46,16 @@ public class FlightController {
 
 	@RequestMapping(value = "/bookFlight", method = RequestMethod.POST)
 	public String bookFlights(Model model) {
+<<<<<<< HEAD
 		// http://10.246.92.145:8989/?type=flight
 
 //		restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", request, Booking.class);
 
 		model.addAttribute("message", "Booked Successfully");
+=======
+		
+		
+>>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 		Flight flight1 = new Flight();
 		flight1.setFlightId(3);
 		flight1.setFlightName("AI-852 Updated");
@@ -65,10 +70,29 @@ public class FlightController {
 		seats.add(new Seat("Economy", 2, 'A', true, 3500.00));
 		flight1.setSeats(seats);
 
+<<<<<<< HEAD
 		// http://10.246.92.145:8989/?type=flight
 		flightService.bookFlight(flight1);
 
 		model.addAttribute("message", "Booked Successfully");
+=======
+
+		Booking booking=new Booking();
+		booking.setBookedBy(null);
+		booking.setBookingDetails(null);
+		booking.setBookingID(18);
+		booking.setBookingType("Flight");
+		booking.setCustomers(null);
+		booking.setDateOfBooking(LocalDateTime.now());
+		booking.setFlight(flight1);
+		booking.setTotalCost(15000.00);
+		
+		//http://10.246.92.145:8989/?type=flight
+		Booking b=flightService.bookFlight(booking);
+		
+		
+		model.addAttribute("message","Booked Successfully"+"\n"+b);
+>>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 		return "success";
 	}
 }
