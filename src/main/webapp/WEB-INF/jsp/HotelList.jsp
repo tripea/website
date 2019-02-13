@@ -55,7 +55,7 @@ p.resort {
 
 
 
-					<div class="row hotel">
+					<div class="row hotel" href="">
 						<div class="col-sm-4">
 							<div class="container">
 								<br> <img class="img-responsive" src=${photos }
