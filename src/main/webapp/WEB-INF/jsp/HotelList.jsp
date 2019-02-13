@@ -55,11 +55,11 @@ p.resort {
 
 
 
-					<div class="row hotel" href="">
-						<div class="col-sm-4">
+					<div class="row hotel" >
+						<a href ="/hotel/getHotel?hotelId=${hotelList.hotelId}"><div class="col-sm-4">
 							<div class="container">
-								<br> <img class="img-responsive" src=${photos }
-									alt=${hotelList.hotelName } width="460" height="345">
+								<br> <img class="img-responsive" src=${photos}
+									alt=${hotelList.hotelName} width="460" height="345">
 							</div>
 
 						</div>
@@ -67,13 +67,13 @@ p.resort {
 							<div class="container">
 							<p class="resort">Resort</p>
 								<h1>${hotelList.hotelName}</h1>
- 
+ 						
 								<p>${hotelList.address.city}</p>
 								<p>Area :${hotelList.address.area}</p>
 
 							</div>
 							
-							
+							</a>
 						</div>
 
 
