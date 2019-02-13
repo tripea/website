@@ -43,11 +43,11 @@ $('.input-group.date').datepicker({
 	<div class="container" align="center"
 		style="padding: 20px; background-color: cyan; margin-top: 150px;">
 		<!-- -->
-		<form class="form-inline" action="searchHotel" method="post">
+		<form class="form-inline" action="searchHotel" method="get">
 
 			<div class="form-group">
 				<b> Enter City </b>: <input list="cities" class="form-control"
-					list="cities" name="Enter city" required="required"> <datalist
+					list="cities" name="city" required="required"> <datalist
 						id="cities">
 						<jstl:forEach var="list" items="${hotelCityList}">
 							<option value="${list.city}">
