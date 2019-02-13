@@ -31,8 +31,6 @@ public class AppController {
 		return "index";
 	}
 
-<<<<<<< HEAD
-=======
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -69,7 +67,6 @@ public class AppController {
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
 
->>>>>>> b33090722aa5f046ad0d2df5b06e2e950313e465
 	/*
 	 * @Autowired private RestTemplate restTemplate;
 	 * 
@@ -175,8 +172,6 @@ public class AppController {
 	 * "&bookRoom=" + true, null); // model.addAttribute("message", "Success!");
 	 * >>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764 return "BookHotel"; }
 	 */
-<<<<<<< HEAD
-=======
 
 	@RequestMapping("/bookingForm")
 	public String bookingForm() {
@@ -207,7 +202,6 @@ public class AppController {
 		return "BookHotel";
 	}
 
->>>>>>> b33090722aa5f046ad0d2df5b06e2e950313e465
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 

@@ -26,23 +26,15 @@ public class SearchController {
 
 	@RequestMapping("/searchHotels")
 	public ModelAndView getAllCityForHotel() {
-<<<<<<< HEAD
 		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
 		return new ModelAndView("HotelSearch", "hotelList", hotelList);
-=======
-		List<Hotel> flightList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
-		return new ModelAndView("FlightSearch", "flightList", flightList);
->>>>>>> b33090722aa5f046ad0d2df5b06e2e950313e465
+
 	}
 
 	@RequestMapping(value = "/searchFlight", method = RequestMethod.GET)
 	public String searchFlight(@RequestParam String source, @RequestParam String destination) {
-<<<<<<< HEAD
-		return "redirect:http://10.246.92.123:8764/flight/flights?source=" + source + "&destination=" + destination;
-=======
 		// TODO change localhost to ip 10.246.92.123
 		return "redirect:http://localhost:8764/flight/flights?source=" + source + "&destination=" + destination;
->>>>>>> b33090722aa5f046ad0d2df5b06e2e950313e465
 	}
 
 	@RequestMapping(value = "/searchHotel", method = RequestMethod.POST)
