@@ -39,11 +39,8 @@ public class SearchController {
 
 	@RequestMapping(value = "/searchHotel", method = RequestMethod.GET)
 	public String searchHotel(@RequestParam String city) {
-<<<<<<< HEAD
 		// TODO change localhost to ip 10.246.92.124
 		return "redirect:http://localhost:8764/hotel/hotels?city="+city;
-=======
-		return "redirect:http://10.246.92.124:8764/hotel/hotels?city=" + city;
->>>>>>> c770a739e953320015fb4a1e9bd1755c87d76efe
+
 	}
 }
