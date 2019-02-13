@@ -41,14 +41,12 @@
 	background-color: #f44336;
 }
 </style>
-=======
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
 
 </style>
 
->>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 </head>
 <body>
 	<div class="container"
@@ -109,9 +107,7 @@
 		</form>
 
 
-<<<<<<< HEAD
 	</div>
-=======
 	Enter Source City :
 	<form action="searchFlight" method="get">
 		<input list="cities" name="source">

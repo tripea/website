@@ -13,11 +13,11 @@
 
 
 	Enter Source City :
-	<form action="searchHotel" method="post">
+	<form action="searchHotel" method="get">
 		<input list="cities" name="city">
 		<datalist id="cities">
-				<jstl:forEach var="hotelList" items="${hotelList}">
-					<option value="${hotelList.city}">
+				<jstl:forEach var="hotelCityList" items="${hotelCityList}">
+					<option value="${hotelCityList.city}">
 						
 				</jstl:forEach>
 		</datalist>
