@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.tripeasy.web.TripEasy.entity.Profile;
+import com.tripeasy.web.TripEasy.pojo.Profile;
+
+
 /**
  * 
  * @author Shabzan 
