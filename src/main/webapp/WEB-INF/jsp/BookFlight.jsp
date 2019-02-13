@@ -9,7 +9,7 @@
 <body>
 
 
-	<form action="bookFlight" method="post">
+	<form action="bookFlights" method="get">
 		<h1>Flight Booking</h1>
 		<table>
 			<tr>

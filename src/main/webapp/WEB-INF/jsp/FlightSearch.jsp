@@ -5,8 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-<title>Project</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -44,7 +42,6 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
-
 </style>
 
 </head>
@@ -74,7 +71,7 @@
 					</datalist>
 			</div>
 
-			
+
 			<div class="form-group">
 
 				<b>Date : <input type="date" name="traveldate">
@@ -123,9 +120,7 @@
 				<option value="${flightList.city}">
 			</jstl:forEach>
 		</datalist>
-		<br> <br>
-		<input type="submit">
+		<br> <br> <input type="submit">
 	</form>
->>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 </body>
 </html>
