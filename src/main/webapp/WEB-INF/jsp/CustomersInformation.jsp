@@ -13,43 +13,20 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-<style type="text/css">
-.flight {
-	background-color: #ddd;
-	margin: 10px;
-}
-</style>
-
 </head>
 <body>
 
-	<form action="customerInformation">
+	<form class="form-inline" action="customerInformation">
 
-		<h1>Fill Customer's info:</h1>
-
-
-		<table>
-			<tr>
-				<td><input type="text" name="firstName"
-					placeholder="Enter First Name"></td>
-
-				<td><input type="text" name="lastName"
-					placeholder="Enter Last Name"></td>
-			</tr>
-			<tr>
-
-				<td><select name="Gender"><option value="Male">Male</option>
-						<option value="Female">Female</option>
-						<option value="Other">Other</option></select></td>
-				<td><input type="number" name="age" placeholder="Enter age">
-				</td>
-			</tr>
-			<tr>
-				<td>Book:<input type="submit">
-				</td>
-			</tr>
-		</table>
+		<label for="fName">First name:</label> <input type="text"
+			class="form-control" id="fName"> <label for="lName">Last N:</label>
+		<input type="password" class="form-control" id="pwd">
+		<div class="form-check">
+			<label class="form-check-label"> <input
+				class="form-check-input" type="checkbox"> Remember me
+			</label>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 </body>
 </html>
