@@ -9,7 +9,7 @@
 <body>
 
 
-	<form action="/saveHotel" method="post">
+	<form action="saveHotel" method="GET">
 	<h1>Hotel Booking</h1>
 		<table>
 			<tr>
