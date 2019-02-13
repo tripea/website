@@ -1,46 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<style type="text/css">
-table, th, td {
-	padding: 5px;
-	height: 80px;
-	width: 1100px;
-	font-size: 20px;
-	text-align: center;
-	font-family: inherit;
-}
-
-th, td {
-	padding: 1px;
-	background-color: lightblue
-}
-</style>
-
 <body>
-
-	<div>
-		<table>
+	<table class="table">
+		<thead class="table table-bordered table-dark">
 			<tr>
-				<th>Booking Id</th>
-				<th>Booking Type</th>
-				<th>Date of Booking</th>
-				<th>Booked by</th>
-				<th>Hotel Name and Room Number</th>
-				<th>CheckIn Date</th>
-				<th>CheckOut Date</th>
-				<th>Flight Name and Seat Number</th>
-				<th>Number of Customers</th>
+				<th scope="col">Booking Id</th>
+				<th scope="col">Booking Type</th>
+				<th scope="col">Date of Booking</th>
+				<th scope="col">Booked by</th>
+				<th scope="col">Hotel Name and Room Number</th>
+				<th scope="col">CheckIn Date</th>
+				<th scope="col">CheckOut Date</th>
+				<th scope="col">Flight Name and Seat Number</th>
+				<th scope="col">Number of Customers</th>
 			</tr>
-
+		</thead>
+		<tbody>
 			<jstl:forEach var="bookingList" items="${bookingList}">
 				<tr>
+					<!-- <th scope="row"></th> -->
 					<td><a href="customerInformation">${bookingList.bookingID}</a></td>
 					<td>${bookingList.bookingType}</td>
 					<td>${bookingList.dateOfBooking}</td>
@@ -52,10 +48,7 @@ th, td {
 					<td>${bookingList.numberOfCustomers}</td>
 				</tr>
 			</jstl:forEach>
-
-		</table>
-
-	</div>
-
+		</tbody>
+	</table>
 </body>
 </html>
