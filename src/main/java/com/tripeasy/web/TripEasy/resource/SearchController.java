@@ -26,33 +26,19 @@ public class SearchController {
 
 	@RequestMapping("/searchHotels")
 	public ModelAndView getAllCityForHotel() {
-<<<<<<< HEAD
 
-		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:8989/cities/Hotel", List.class);
-		return new ModelAndView("HotelSearch", "hotelList", hotelList);
-
-	//	List<Hotel> flightList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
-	//	return new ModelAndView("FlightSearch", "flightList", flightList);
-
+		List<Hotel> hotelCityList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
+		return new ModelAndView("HotelSearch", "hotelCityList", hotelCityList);
 	}
-=======
- 		List<Hotel> hotelCityList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
- 		return new ModelAndView("HotelSearch", "hotelCityList", hotelCityList);
- 		}
-
->>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 
 	@RequestMapping(value = "/searchFlight", method = RequestMethod.GET)
 	public String searchFlight(@RequestParam String source, @RequestParam String destination) {
 		// TODO change localhost to ip 10.246.92.123
 		return "redirect:http://localhost:8764/flight/flights?source=" + source + "&destination=" + destination;
 	}
-	
-	
-	
-	
-	@RequestMapping(value= "/searchHotel", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/searchHotel", method = RequestMethod.GET)
 	public String searchHotel(@RequestParam String city) {
-		return "redirect:http://10.246.92.124:8764/hotel/hotels?city="+city;
+		return "redirect:http://10.246.92.124:8764/hotel/hotels?city=" + city;
 	}
 }
