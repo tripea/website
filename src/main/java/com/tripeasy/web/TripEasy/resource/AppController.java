@@ -37,10 +37,6 @@ public class AppController {
 		return "hello";
 	}
 
-	
-	
-	
-
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 
