@@ -28,7 +28,7 @@
 
 		<h1>Fill Customer's info:</h1>
 
-		<%-- <jstl:forEach var="customer" items="${customers}"> --%>
+
 		<table>
 			<tr>
 				<td><input type="text" name="firstName"
@@ -50,8 +50,6 @@
 				</td>
 			</tr>
 		</table>
-		<%-- 	</jstl:forEach> --%>
-
 	</form>
 </body>
 </html>

@@ -18,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Customer;
+
 /**
  * 
  * @author pparaska
@@ -50,24 +51,8 @@ public class BookingController {
 	public String fillCustomerInformation() {
 		// TODO delete SYSO
 		System.out.println("inside customer info");
-		/*
-		 * ResponseEntity<Booking> booking =
-		 * restTemplate.getForEntity("http://localhost:7878/bookings/" + bookingID,
-		 * Booking.class);
-		 */
-		// staticBooking = booking.getBody();
-		// System.out.println(booking.getBody().getBookingType());
 		return "CustomersInformation";
 	}
-
-	/*
-	 * @RequestMapping(value = "/showCustomers", method = RequestMethod.POST) public
-	 * String saveCustomers(@ModelAttribute List<Customer> customer, Model model) {
-	 * System.out.println("In showCustomers"); Booking booking = new Booking();
-	 * booking.setCustomers(customer); System.out.println("in show customers" +
-	 * booking); restTemplate.postForEntity("http://10.246.92.145:9292/bookings",
-	 * booking, null); System.out.println("below post"); return "CustomersList"; }
-	 */
 
 	@RequestMapping("/bookhotel")
 	public String bookhotel(@RequestParam Booking booking) {
