@@ -16,8 +16,8 @@
 body{
 background-color: #d2d2d2;
 }
-.row{
-background-color: #ffffff;
+.seats{
+background-color: #f1f1f1;
 }
 </style>
 </head>
@@ -28,12 +28,16 @@ background-color: #ffffff;
 
 	<a href="">Book Flight</a>
 
-	<div class="row">
+<div class="container">
+	<div class="row seats">
 		<div class="col-lg-3">
 			<img alt="cockpit"
 				src="https://github.com/tripea/website-images/blob/master/cockpit.png?raw=true">
 		</div>
 		<div class="col-lg-6">
+		
+			
+		
 		</div>
 		<div class="col-lg-3">
 			<img alt="tail"
@@ -41,6 +45,6 @@ background-color: #ffffff;
 		</div>
 
 	</div>
-
+</div>
 </body>
 </html>
