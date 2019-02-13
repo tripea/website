@@ -60,11 +60,9 @@ $('.input-group.date').datepicker({
         
  
 
-<<<<<<< HEAD
             <button type="submit" class="signupbtn">Search</button>
 </form>
 </div>
-=======
 
 	Enter Source City :
 	<form action="searchHotel" method="get">
@@ -80,6 +78,5 @@ $('.input-group.date').datepicker({
 		<br><input
 			type="submit">
 	</form>
->>>>>>> e7495102762c0beb2e7cc2bcee3e8c8c93b23b52
 </body>
 </html>
