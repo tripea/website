@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Flight;
+import com.tripeasy.web.TripEasy.pojo.Profile;
 import com.tripeasy.web.TripEasy.pojo.Seat;
 import com.tripeasy.web.TripEasy.service.FlightService;
 
@@ -44,12 +45,13 @@ public class FlightController {
 	public String bookFlight(@RequestParam Integer flightId) {
 		return "BookFlight";
 	}
-
-	@RequestMapping(value = "/bookFlight", method = RequestMethod.POST)
+	
+	@RequestMapping(value ="/bookFlights" ,method=RequestMethod.GET)
 	public String bookFlights(Model model) {
-		// http://10.246.92.145:8989/?type=flight
-
-//		restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", request, Booking.class);
+		
+		Profile p=new Profile();
+		p.setFullName("Shubham Raut");
+		p.setGender("Male");
 
 		Flight flight1 = new Flight();
 		flight1.setFlightId(3);
@@ -64,12 +66,11 @@ public class FlightController {
 		seats.add(new Seat("Economy", 2, 'B', true, 2500.00));
 		seats.add(new Seat("Economy", 2, 'A', true, 3500.00));
 		flight1.setSeats(seats);
-		// http://10.246.92.145:8989/?type=flight
 		
 		Booking booking=new Booking();
-		booking.setBookedBy(null);
+		booking.setBookedBy(p);
 		booking.setBookingDetails(null);
-		booking.setBookingID(18);
+		booking.setBookingID(19);
 		booking.setBookingType("Flight");
 		booking.setCustomers(null);
 		booking.setDateOfBooking(LocalDateTime.now());
@@ -80,7 +81,7 @@ public class FlightController {
 		Booking b=flightService.bookFlight(booking);
 		
 		
-		model.addAttribute("message","Booked Successfully"+"\n"+b);
+		model.addAttribute("message",b);
 		return "success";
 	}
 }

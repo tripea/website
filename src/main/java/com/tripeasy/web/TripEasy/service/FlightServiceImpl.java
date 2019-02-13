@@ -24,7 +24,7 @@ public class FlightServiceImpl implements FlightService {
 
 	@Override
 	public Booking bookFlight(Booking booking) {
-		return restTemplate.postForObject("http://10.246.92.145:8989/?type=flight", booking, Booking.class);
+		return restTemplate.postForObject("http://10.246.92.145:7878/bookings/type/?bookingType=flight", booking, Booking.class);
 	}
 
 

@@ -31,6 +31,45 @@ public class AppController {
 		return "index";
 	}
 
+<<<<<<< HEAD
+=======
+	@Autowired
+	private RestTemplate restTemplate;
+
+	private static Integer bookingID;
+
+	static {
+		bookingID = 10;
+	}
+	private static Hotel staticHotel = new Hotel();
+
+	@RequestMapping("/hii")
+	public String addHotelForm() {
+		return "hello";
+	}
+
+	@RequestMapping("/addhotel")
+	public String addHotel() {
+		System.out.println("in addhotel");
+		return "AddHotel";
+	}
+
+	@RequestMapping("/getHotel")
+	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId,
+				Hotel.class);
+		staticHotel = hotel.getBody();
+		System.out.println(hotel.getBody().getTotalAvailableRooms());
+		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
+	}
+
+	@RequestMapping("/getAllhotels")
+	public ModelAndView getAllhotels() {
+		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels", List.class);
+		return new ModelAndView("HotelList", "hotelList", hotelList);
+	}
+
+>>>>>>> b33090722aa5f046ad0d2df5b06e2e950313e465
 	/*
 	 * @Autowired private RestTemplate restTemplate;
 	 * 
@@ -136,6 +175,39 @@ public class AppController {
 	 * "&bookRoom=" + true, null); // model.addAttribute("message", "Success!");
 	 * >>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764 return "BookHotel"; }
 	 */
+<<<<<<< HEAD
+=======
+
+	@RequestMapping("/bookingForm")
+	public String bookingForm() {
+		return "BookHotel";
+	}
+
+	@RequestMapping(value = "/saveHotel", method = RequestMethod.POST)
+	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
+		System.out.println("In save " + staticHotel);
+		bookingID++;
+		Booking booking = new Booking();
+		booking.setBookingID(bookingID);
+		booking.setHotel(staticHotel);
+		booking.setBookedBy(profile);
+		System.out.println("In save booking is " + booking);
+
+		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
+		 restTemplate.postForEntity("http://localhost:8989/bookings", booking, null);
+		 System.out.println("below post");
+		 restTemplate.put("http://http://localhost:9095/hotels/" + staticHotel.getHotelId()+
+					"?numberOfGuest=" +profile.getNumberOfGuest()+ "&bookRoom="+true, null);
+		//model.addAttribute("message", "Success!");
+		restTemplate.postForEntity("http://10.246.92.145:8989/bookings", booking, null);
+		System.out.println("below post");
+		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
+				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
+		// model.addAttribute("message", "Success!");
+		return "BookHotel";
+	}
+
+>>>>>>> b33090722aa5f046ad0d2df5b06e2e950313e465
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 
