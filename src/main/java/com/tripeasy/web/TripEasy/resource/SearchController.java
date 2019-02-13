@@ -20,19 +20,24 @@ public class SearchController {
 
 	@RequestMapping("/searchFlights")
 	public ModelAndView getAllCityForFlight() {
-		List<Hotel> flightList = restTemplate.getForObject("http://localhost:8989/cities/Flight", List.class);
+		List<Hotel> flightList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Flight", List.class);
 		return new ModelAndView("FlightSearch", "flightList", flightList);
 	}
 
 	@RequestMapping("/searchHotels")
 	public ModelAndView getAllCityForHotel() {
+<<<<<<< HEAD
 		List<Hotel> hotelList = restTemplate.getForObject("http://localhost:8989/cities/Hotel", List.class);
 		return new ModelAndView("HotelSearch", "hotelList", hotelList);
+=======
+		List<Hotel> flightList = restTemplate.getForObject("http://10.246.92.61:8989/cities/Hotel", List.class);
+		return new ModelAndView("FlightSearch", "flightList", flightList);
+>>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 	}
 
-	@RequestMapping(value= "/searchFlight", method=RequestMethod.POST)
+	@RequestMapping(value= "/searchFlight", method=RequestMethod.GET)
 	public String searchFlight(@RequestParam String source,@RequestParam String destination) {
-		return "redirect:http://localhost:8764/flight/flights?source="+source+"&destination="+destination;
+		return "redirect:http://10.246.92.123:8764/flight/flights?source="+source+"&destination="+destination;
 	}
 	@RequestMapping(value= "/searchHotel", method=RequestMethod.POST)
 	public String searchHotel(@RequestParam String city) {

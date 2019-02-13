@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <title>Project</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +41,14 @@
 	background-color: #f44336;
 }
 </style>
+=======
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+
+>>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 </head>
 <body>
 	<div class="container"
@@ -100,6 +109,27 @@
 		</form>
 
 
+<<<<<<< HEAD
 	</div>
+=======
+	Enter Source City :
+	<form action="searchFlight" method="get">
+		<input list="cities" name="source">
+		<datalist id="cities">
+			<jstl:forEach var="flightList" items="${flightList}">
+				<option value="${flightList.city}">
+			</jstl:forEach>
+		</datalist>
+		<br> Enter Destination City : <br> <input list="cities"
+			name="destination">
+		<datalist id="cities">
+			<jstl:forEach var="flightList" items="${flightList}">
+				<option value="${flightList.city}">
+			</jstl:forEach>
+		</datalist>
+		<br> <br>
+		<input type="submit">
+	</form>
+>>>>>>> 5c838fcf6f582ad9cb953e1b11c509ca6cee2764
 </body>
 </html>

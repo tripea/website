@@ -21,7 +21,8 @@
 background-color: #ddd;
 margin: 10px;
 }
-
+body{
+}
 </style>
 
 </head>
@@ -32,6 +33,7 @@ margin: 10px;
 	<div class="container">
  
 		<jstl:forEach var="flight" items="${ flights}">
+			
 			<div class="row flight" >
 				<div class="col-lg-2">
 					<img alt="flight_logo"
@@ -52,7 +54,7 @@ margin: 10px;
 				${flight.destination}
 				</div>	
 				
-				<a class="col-lg-2" href="bookFlight?flightId=${flight.flightId }">Book</a>
+				<a class="col-lg-2" href="bookFlight?flightId=${flight.flightId}">Book</a>
 								
 				
 			</div>
