@@ -13,9 +13,10 @@ alert("Invalid Credentials");
 </script> -->
 </head>
 <body>
-<form action="loginPage" method="post">
+<h1>${message}</h1>
+<form action="loginPage" method="get">
 	Enter UserName: <input type="text" name="userName" required="required"/><br/>
-	Enter PassWord : <input type="passWord" name="passWord" required="required"/><br/>
+	Enter PassWord : <input type="password" name="password" required="required"/><br/>
 	<input type="submit" />
 </form>
 </body>
