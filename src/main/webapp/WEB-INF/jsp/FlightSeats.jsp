@@ -1,5 +1,7 @@
+<!-- Shubham Raut -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +15,12 @@
 
 <title>Select Seats</title>
 <style type="text/css">
-body{
-background-color: #d2d2d2;
+body {
+	background-color: #d2d2d2;
 }
-.seats{
-background-color: #f1f1f1;
+
+.seats {
+	background-color: #f1f1f1;
 }
 </style>
 </head>
@@ -28,23 +31,24 @@ background-color: #f1f1f1;
 
 	<a href="">Book Flight</a>
 
-<div class="container">
-	<div class="row seats">
-		<div class="col-lg-3">
-			<img alt="cockpit"
-				src="https://github.com/tripea/website-images/blob/master/cockpit.png?raw=true">
-		</div>
-		<div class="col-lg-6">
-		
-			
-		
-		</div>
-		<div class="col-lg-3">
-			<img alt="tail"
-				src="https://github.com/tripea/website-images/blob/master/tail.png?raw=true">
-		</div>
+	<div class="container">
+		<div class="row seats">
+			<div class="col-lg-3">
+				<img alt="cockpit"
+					src="https://github.com/tripea/website-images/blob/master/cockpit.png?raw=true">
+			</div>
+			<div class="col-lg-6">
 
+				<input type="checkbox" checked="checked">
+
+
+			</div>
+			<div class="col-lg-3">
+				<img alt="tail"
+					src="https://github.com/tripea/website-images/blob/master/tail.png?raw=true">
+			</div>
+
+		</div>
 	</div>
-</div>
 </body>
 </html>
