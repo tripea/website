@@ -30,9 +30,9 @@ a {padding: 10px 10px; display:inline-block;}
 						src="https://raw.githubusercontent.com/kanaksoni714/MyProject/master/logoo.jpg"
 						alt="TripEasy" style="width: 100px;"></a></li>
 
-				<li><a href="search/searchFlights">Flight Booking</a></li>
-				<li><a href="search/searchHotels">Hotel Booking</a></li>
-				<li><a href="bookings/getAllBookings">Booking History</a></li>
+				<li><a href="/search/searchFlights">Flight Booking</a></li>
+				<li><a href="/search/searchHotels">Hotel Booking</a></li>
+				<li><a href="/bookings/getAllBookings">Booking History</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/s"><span class="glyphicon glyphicon-user"></span>

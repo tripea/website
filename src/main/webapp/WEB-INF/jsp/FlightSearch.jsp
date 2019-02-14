@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +55,7 @@
 	<div class="container"
 		style="padding: 20px; background-color: grey; margin-top: 150px;">
 		<!-- -->
-		<form class="form-inline" action="searchFlight" method="post">
+		<form class="form-inline" action="searchFlight" method="get">
 
 			<div class="form-group">
 				<b> <label class="whiteText"> Source</label><span
