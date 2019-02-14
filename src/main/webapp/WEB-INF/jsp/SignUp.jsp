@@ -101,15 +101,15 @@ button:hover {
     <hr>
 
     <label class="whiteText"  for="email"><b>Email<span class="required">*</span></b></label>
-    <input type="text" placeholder="Enter Email"  pattern="[^ @]*@[^ @]*" name="email" required="required">
+    <input type="text" placeholder="Enter Email"  pattern="[^ @]*@[^ @]*" name="email" value="" required="required">
       <label class="whiteText"  for="userName"><b>UserName<span class="required">*</span></b></label>
     <input type="text" placeholder="Enter userName" name="userName" required="required">
      
     <label class="whiteText" for="password"><b>Password<span class="required">*</span></b></label>
-    <input type="password" placeholder="Enter Password" name="password" required="required">
+    <input type="password" id="txtPassword" placeholder="Enter Password" name="password" value="" required="required">
 
     <label class="whiteText"  for="password"><b>Confirm Password<span class="required">*</span></b></label>
-    <input type="password" placeholder="Confirm Password" name="password" required="required">
+    <input type="password" id="txtConfirmPassword" placeholder="Confirm Password" name="password" value="" required="required">
     
     <label class="whiteText">
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -119,11 +119,22 @@ button:hover {
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit" class="signupbtn" onclick="return Validate()">Sign Up</button>
     </div>
   </div>
-  
+
 </form>
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>
 
 </body>
 </html>
