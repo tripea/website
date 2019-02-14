@@ -100,8 +100,9 @@
 			var destination = document.getElementById("destination").value;
 			if (source == destination) {
 				alert("Source and Destination shouldn't be same, Please Select Another One");
+				return false;
 			}
-
+			return true;
 		}
 	</script>
 </body>
