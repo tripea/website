@@ -48,59 +48,66 @@ p.resort {
 
 <!-- <table class="table table-striped w-auto"> -->
 
-<body style="font: 13px Verdana;">
+<body style="background-color: #5E4485">
 	<div class="container-fluid">
 		<div style="width: auto; padding: 10px; position: relative;">
 			<jstl:forEach var="hotelList" items="${hotelList}">
 
-				<jstl:forEach var="photos" items="${hotelList.photos}">
+				<%-- <jstl:forEach var="photos" items="${hotelList.photos}"> --%>
 					<div class="row hotel">
 						<%-- <a href ="/hotel/getHotel?hotelId=${hotelList.hotelId}"> --%>
 						<div class="col-sm-5">
 							<div class="container">
-								<br> <img class="img-responsive" src=${photos}
-									alt=${hotelList.hotelName } width="460"
+							<jstl:set var="first" value="${hotelList.photos[0]}"/>
+								<br> <img class="img-responsive" src=${first}
+									alt=${hotelList.hotelName} width="460"
 									height="345">
+									
+									
+									
+									
+									
 							</div>
 
 						</div>
-						<a href="/hotel/getHotel?hotelId=${hotelList.hotelId}"><div class="col-sm-5">
-							<div class="container hotelname text-left">
-								<p class="resort">Resort</p>
-								<h1>${hotelList.hotelName}</h1>
+						<a href="/hotel/getHotel?hotelId=${hotelList.hotelId}"><div
+								class="col-sm-5">
+								<div class="container hotelname text-left">
+									<p class="resort">Resort</p>
+									<h1>${hotelList.hotelName}</h1>
+									<p>${hotelList.address.city}</p>
+									<p>Area :${hotelList.address.area}</p>
 
-								<p>${hotelList.address.city}</p>
-								<p>Area :${hotelList.address.area}</p>
+								</div></a>
 
-							</div></a>
-
-						</div>
-
-
-						<div class="col-sm-2"
-							;style="width: 70px; height: auto; background: #CC0000; color: #FFF; padding: 7px 1px; text-align: center; top: 4; position: absolute; right: 11;">
-
-							<!--     <div class="col-sm-4" style="background-color:lavenderblush;"> -->
-							<h4>INCLUDED IN THIS PRICE</h4>
-							<jstl:forEach var="room" items="${hotelList.rooms}">
-
-								<h2>${room.price}</h2>
-								<p>per night</p>
-								<p>LOGIN & UNLOCK A SECRET DEAL!
-								<p>
-							</jstl:forEach>
-
-							<!-- </div> -->
-
-						</div>
 					</div>
 
 
-				</jstl:forEach>
+					<div class="col-sm-2"
+						;style="width: 70px; height: auto; background: #CC0000; color: #FFF; padding: 7px 1px; text-align: center; top: 4; position: absolute; right: 11;">
 
+						<!--     <div class="col-sm-4" style="background-color:lavenderblush;"> -->
+						<h4>INCLUDED IN THIS PRICE</h4>
+						<jstl:forEach var="room" items="${hotelList.rooms}">
 
-			</jstl:forEach>
+							<h2>${room.price}</h2>
+							<p>per night</p>
+							<p>LOGIN & UNLOCK A SECRET DEAL!
+							<p>
+						</jstl:forEach>
+
+						<!-- </div> -->
+
+					</div>
 		</div>
+
+
+		</jstl:forEach>
+
+
+		<%-- </jstl:forEach> --%>
+		
+	</div>
 	</div>
 </body>
 
