@@ -260,16 +260,18 @@ th, td {
 					<div class="panel panel-default text-center">
 						<div class="panel-body">
 							<p>
-								<strong>Reviews ${fn:length(hotel.review)}</strong><br>
-								<jstl:forEach var="hash" items="${hotel.review">
-											<option><jstl:out value="${hash}" /></option>
-										</jstl:forEach>
-							</p>
-							<div class="col-sm-9 "></div>
-							<div class="col-sm-3 ">
+								<strong>Reviews ${fn:length(hotel.review)}</strong></p>
+								<p class="text-left"><jstl:forEach items="${hotel.review}" var="current">
+									<jstl:if test="${current.key==1}">
+										${current.value}<br>	
+									</jstl:if>
+								</jstl:forEach></p>
+							
+							<div class="col-sm-6"></div>
+							<div class="col-sm-6 ">
 								<p>
+								<!-- TODO link the more reviews -->
 									<a href=""><strong>More Reviews </strong><br></a>
-
 								</p>
 							</div>
 						</div>
@@ -278,6 +280,7 @@ th, td {
 				</div>
 
 			</div>
+		</div>
 		</div>
 </body>
 </html>
