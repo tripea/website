@@ -89,7 +89,7 @@ p.resort {
 						<!--     <div class="col-sm-4" style="background-color:lavenderblush;"> -->
 						<h4>INCLUDED IN THIS PRICE</h4>
 						<jstl:forEach var="room" items="${hotelList.rooms}">
-
+							<jstl:if test="room."></jstl:if>
 							<h2>${room.price}</h2>
 							<p>per night</p>
 							<p>LOGIN & UNLOCK A SECRET DEAL!
