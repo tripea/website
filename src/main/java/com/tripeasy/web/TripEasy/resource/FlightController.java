@@ -17,7 +17,11 @@ import com.tripeasy.web.TripEasy.pojo.Flight;
 import com.tripeasy.web.TripEasy.pojo.Profile;
 import com.tripeasy.web.TripEasy.pojo.Seat;
 import com.tripeasy.web.TripEasy.service.FlightService;
-
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 @Controller
 @RequestMapping("/flight")
 public class FlightController {

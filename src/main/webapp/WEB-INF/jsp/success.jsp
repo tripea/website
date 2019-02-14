@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>${message} </h1>
-
+<h1>Booked Success full</h1>
 
  <jstl:forEach  var="seat" items="${message.flight.seats}">
  	${seat.flightClass }

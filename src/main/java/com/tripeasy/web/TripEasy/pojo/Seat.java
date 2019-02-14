@@ -1,5 +1,9 @@
 package com.tripeasy.web.TripEasy.pojo;
-
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 public class Seat {
 
 	private String flightClass;

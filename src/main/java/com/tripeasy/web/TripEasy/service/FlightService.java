@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Flight;
 
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 @Service
 public interface FlightService {
 
