@@ -37,21 +37,25 @@
 	});
 </script>
 <style>
-.signupbtn {
-	padding: 4px 8px;
-	background-color: #f44336;
+.btn {
+	background-color: red;
+}
+
+.whiteText {
+	color: #ffffff;
 }
 </style>
 </head>
 <body>
 	<div class="container" align="center"
-		style="padding: 20px; background-color: cyan; margin-top: 150px;">
+		style="padding: 20px; background-color: grey; margin-top: 150px;">
 		<!-- -->
-		<form class="form-inline" action="searchHotel" method="get">
+		<form class="form-inline" action="searchHotel" method="post">
 
 			<div class="form-group">
-				<b> Enter City </b>: <input list="cities" class="form-control"
-					list="cities" name="city" required="required">
+				<b> <label class="whiteText">Enter City </label>
+				</b>: <input list="cities" class="form-control" list="cities"
+					name="Enter city" required="required">
 				<datalist id="cities">
 					<jstl:forEach var="list" items="${hotelCityList}">
 						<option value="${list.city}">
@@ -65,10 +69,8 @@
 			</div>
 
 
-
-			<button type="submit" class="signupbtn">Search</button>
+			<button type="submit" class="btn">Search</button>
 		</form>
 	</div>
 </body>
 </html>
-
