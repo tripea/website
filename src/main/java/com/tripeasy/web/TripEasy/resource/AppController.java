@@ -34,7 +34,7 @@ public class AppController {
  
 	@RequestMapping("/hii")
 	public String addHotelForm() {
-		return "hello";
+		return "Header";
 	}
 
 	@RequestMapping("/logout")

@@ -28,4 +28,11 @@ public class WalletController {
 		ResponseEntity<Set> statement=restTemplate.getForEntity("http://localhost:8080/wallet?profileId="+profileId, Set.class);
 		model.addAttribute("statements",statement.getBody());
 		return "Wallet";}
+	@RequestMapping("/wallet")
+	public String getWallet(Model model,@RequestParam Integer profileId) {
+		ResponseEntity<Wallet> w=restTemplate.getForEntity("http://localhost:8080/wallet/getWallet?profileId="+profileId, Wallet.class);
+		model.addAttribute("wallet",w.getBody() );
+		return "Wallet";
+		
+	}
 }

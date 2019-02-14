@@ -1,18 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jstl/core_rt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 
+<!-- jQuery library -->
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+<!-- Latest compiled JavaScript -->
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <title>Wallet UI</title>
 </head>
 <body>
-${statements}
+${wallet.currentBalance}
 	<div class="container">
 		<div class="col-md-6">
 			<h4>My Cash</h4>
-			<jstl items="$">
+			<jstl items="${currentBalance}">
+			<tr>
+			<td><a href="/getWallet/currentBalance=${wallet.currentBalance}">${wallet.currentBalance}</a>
+			</td>
+			</tr>
+			</jstl>
 			<h4>My Statement</h4>
 			<jstl:forEach var="statement" items="${statements}">
 				<tr>
@@ -26,12 +43,7 @@ ${statements}
 				</tr>
 			</jstl:forEach>
 		</div>
-		<div class="col-md-6">
-			<h4>Reward Bonus</h4>
-			<form action="Reward" method="get">
-     Enter Reward Bonus Card Secret Digit <input type="text" name="bonusCard"/><br/>
-     </form>
-		</div>
+		
 	</div>
 </body>
 </html>

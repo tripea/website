@@ -12,11 +12,18 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<style>
+.navbar-header {
+    float: none;
+}
+</style>
 </head>
 <body>
 
 
-
+<div class="row">
+<div class="col-lg-12">
 	<div class="navbar-header">
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			
@@ -44,6 +51,8 @@
 				</ul>
 			</div>
 		</nav>
+	</div>
+	</div>
 	</div>
 
 </body>
