@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jstl/core_rt"%>
-
+<%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,9 +31,7 @@ Latest compiled JavaScript
 <title>Wallet UI</title>
 </head>
 <body>
-	<header>
-		<jsp:include page="Header.jsp"></jsp:include>
-	</header>
+
 	<br>
 	<!-- <div class="panel panel-default">
     <div class="panel-body">A Basic Panel</div>

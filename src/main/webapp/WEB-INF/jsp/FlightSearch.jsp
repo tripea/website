@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +52,12 @@
 </style>
 </head>
 <body>
+
+
 	<div class="container"
 		style="padding: 20px; background-color: grey; margin-top: 150px;">
 		<!-- -->
-		<form class="form-inline" action="searchFlight" method="post">
+		<form class="form-inline" action="searchFlight" method="get">
 
 			<div class="form-group">
 				<b> <label class="whiteText"> Source</label><span
@@ -72,7 +74,7 @@
 				<b> <label class="whiteText"> Destination</label><span
 					class="required">*</span>: <input list="cities"
 					class="form-control" list="cities" name="destination"
-					id="destination" required="required"> <datalist>
+					id="destination" required="required"> <datalist id="cities">
 						<jstl:forEach var="list" items="${flightList}">
 							<option value="${list.city} (${list.code}) ">
 						</jstl:forEach>
@@ -98,8 +100,9 @@
 			var destination = document.getElementById("destination").value;
 			if (source == destination) {
 				alert("Source and Destination shouldn't be same, Please Select Another One");
+				return false;
 			}
-
+			return true;
 		}
 	</script>
 </body>
