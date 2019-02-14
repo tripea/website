@@ -56,7 +56,7 @@
 			<div class="form-group">
 				<b> <label class="whiteText">Enter City </label>
 				</b>: <input list="cities" class="form-control" list="cities"
-					name="Enter city" required="required">
+					name="city" required="required">
 				<datalist>
 					<jstl:forEach var="list" items="${hotelCityList}">
 						<option value="${list.city}">
