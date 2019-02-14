@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.tripeasy.web.TripEasy.pojo.Statement;
 import com.tripeasy.web.TripEasy.pojo.Wallet;
+
 /**
  * 
  * @author kanak soni
@@ -22,17 +23,21 @@ import com.tripeasy.web.TripEasy.pojo.Wallet;
 public class WalletController {
 	@Autowired
 	RestTemplate restTemplate;
-	
+
 	@RequestMapping("/statements")
-	public String getStatement(Model model,@RequestParam Integer profileId) {
-		ResponseEntity<Set> statement=restTemplate.getForEntity("http://localhost:8080/wallet?profileId="+profileId, Set.class);
-		model.addAttribute("statements",statement.getBody());
-		return "Wallet";}
-	@RequestMapping("/wallet")
-	public String getWallet(Model model,@RequestParam Integer profileId) {
-		ResponseEntity<Wallet> w=restTemplate.getForEntity("http://localhost:8080/wallet/getWallet?profileId="+profileId, Wallet.class);
-		model.addAttribute("wallet",w.getBody() );
+	public String getStatement(Model model, @RequestParam Integer profileId) {
+		ResponseEntity<Set> statement = 
+				restTemplate.getForEntity("http://localhost:8080/wallet?profileId=" + profileId,Set.class);
+		model.addAttribute("statements", statement.getBody());
 		return "Wallet";
-		
+	}
+
+	@RequestMapping("/wallet")
+	public String getWallet(Model model, @RequestParam Integer profileId) {
+		ResponseEntity<Wallet> wallet = restTemplate
+				.getForEntity("http://localhost:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
+		model.addAttribute("wallet", wallet.getBody());
+		return "Wallet";
+
 	}
 }

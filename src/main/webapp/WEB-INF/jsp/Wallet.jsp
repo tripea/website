@@ -20,10 +20,9 @@
 <title>Wallet UI</title>
 </head>
 <body>
-${wallet.currentBalance}
 	<div class="container">
 		<div class="col-md-6">
-			<h4>My Cash</h4>
+			<h4>My TripEasy Money</h4>
 			<jstl items="${currentBalance}">
 			<tr>
 			<td><a href="/getWallet/currentBalance=${wallet.currentBalance}">${wallet.currentBalance}</a>
@@ -31,7 +30,7 @@ ${wallet.currentBalance}
 			</tr>
 			</jstl>
 			<h4>My Statement</h4>
-			<jstl:forEach var="statement" items="${statements}">
+			<jstl:forEach var="statement" items="${wallet.statements}">
 				<tr>
 				<td><a href="/getStatement?statementId=${statement.statementId}">${statement.statementId}</a></td>
 				<td>${statement.wallet.profileId}</td>
@@ -42,6 +41,8 @@ ${wallet.currentBalance}
 				<td>${statement.dateTime}</td>
 				</tr>
 			</jstl:forEach>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
+</button>
 		</div>
 		
 	</div>
