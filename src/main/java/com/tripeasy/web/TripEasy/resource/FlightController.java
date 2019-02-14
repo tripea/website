@@ -17,11 +17,19 @@ import com.tripeasy.web.TripEasy.pojo.Flight;
 import com.tripeasy.web.TripEasy.pojo.Profile;
 import com.tripeasy.web.TripEasy.pojo.Seat;
 import com.tripeasy.web.TripEasy.service.FlightService;
-
+import com.tripeasy.web.TripEasy.service.NotificationService;
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 @Controller
 @RequestMapping("/flight")
 public class FlightController {
 
+	@Autowired
+	NotificationService notificationService;
+	
 	@Autowired
 	FlightService flightService;
 
@@ -35,6 +43,13 @@ public class FlightController {
 
 	}
 
+	@RequestMapping("/mail")
+	public String sendMail(Model model){
+		notificationService.sendNotification();
+		model.addAttribute("message","Mail Sent");
+		return "hello";
+	}
+	
 	@RequestMapping("/selectSeats")
 	public String selectSeats(@RequestParam Integer flightId) {
 
@@ -70,7 +85,7 @@ public class FlightController {
 		Booking booking=new Booking();
 		booking.setBookedBy(p);
 		booking.setBookingDetails(null);
-		booking.setBookingID(19);
+		booking.setBookingID(18);
 		booking.setBookingType("Flight");
 		booking.setCustomers(null);
 		booking.setDateOfBooking(LocalDateTime.now());

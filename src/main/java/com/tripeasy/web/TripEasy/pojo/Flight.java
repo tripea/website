@@ -2,7 +2,11 @@ package com.tripeasy.web.TripEasy.pojo;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 public class Flight {
 
 	private Integer flightId;

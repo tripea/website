@@ -1,5 +1,9 @@
 package com.tripeasy.web.TripEasy.pojo;
-
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 public class Seat {
 
 	private String flightClass;
@@ -59,6 +63,12 @@ public class Seat {
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Seat [flightClass=" + flightClass + ", row=" + row + ", column=" + column + ", available=" + available
+				+ ", price=" + price + "]";
 	}
 	
 }
