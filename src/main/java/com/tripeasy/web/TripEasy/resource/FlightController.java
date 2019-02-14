@@ -51,8 +51,9 @@ public class FlightController {
 	}
 	
 	@RequestMapping("/selectSeats")
-	public String selectSeats(@RequestParam Integer flightId) {
-
+	public String selectSeats(Model model,@RequestParam Integer flightId) {
+		ResponseEntity<Seat> seats=flightService.getSeatsOfFlight(flightId);
+		model.addAttribute("seats",seats);
 		return "FlightSeats";
 	}
 

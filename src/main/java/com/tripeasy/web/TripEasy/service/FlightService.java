@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Flight;
+import com.tripeasy.web.TripEasy.pojo.Seat;
 
 /**
  * 
@@ -20,5 +21,8 @@ public interface FlightService {
 
 
 	Booking bookFlight(Booking booking);
+
+
+	ResponseEntity<Seat> getSeatsOfFlight(Integer flightId);
 
 }
