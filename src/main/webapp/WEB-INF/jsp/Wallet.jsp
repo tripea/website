@@ -17,8 +17,8 @@ jQuery library
 Latest compiled JavaScript
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
-	
-	
+
+
 <style>
 .btn {
 	float: right;
@@ -37,23 +37,30 @@ Latest compiled JavaScript
     <div class="panel-body">A Basic Panel</div>
   </div> -->
 	<div class="container">
-		<div class="col-md-6">
-			<h4>My TripEasy Money</h4>
+		<div class="panel panel-default" style="background-color:#ffffff;border:1px solid black;">
+		<div style="text-align:center;border:1px #5E4485 ">
+			<h4 style="font-family:fantasy; font-size: 2vw; color:black;">My TripEasy Money</h4>
+			</div>
+			<div class="col-sm-6" style="float: right; font-size:2vw">
 			<jstl items="${currentBalance}">
 			<tr>
-				<td><a
-					href="/getWallet/currentBalance=${wallet.currentBalance}">${wallet.currentBalance}</a>
+				<td><h3>${wallet.currentBalance}</h3>
 				</td>
 			</tr>
-			<a href="#" class="btn btn-info" role="button">Add Money</a> 
-			</jstl >
+			
+			</div>
+			<br>
+			<div class="col-sm-6" style="float: left;">
+			<a href="#" class="btn btn-info" role="button" style="background-color:black;">Add Money</a> </jstl>
+			</div>
 			<br> <br> <br>
+			</div>
 			<h4>My Statement</h4>
 
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Profile-Id</th>
+						<th>Profile-ID</th>
 						<th>Transaction Type</th>
 						<th>Amount</th>
 						<th>Transaction Remarks</th>
@@ -76,7 +83,7 @@ Latest compiled JavaScript
 					</jstl:forEach>
 				</tbody>
 			</table>
-		</div>
+		
 
 	</div>
 </body>
