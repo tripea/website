@@ -12,7 +12,8 @@
 </style>
  
 <body>
-${message}
+<%-- ${message}
+ --%>hiii
 
 </body>
 </html>
