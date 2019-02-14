@@ -10,6 +10,11 @@ import org.springframework.web.client.RestTemplate;
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Flight;
 
+/**
+ * 
+ * @author Shubham Raut
+ *
+ */
 @Service
 public class FlightServiceImpl implements FlightService {
 
