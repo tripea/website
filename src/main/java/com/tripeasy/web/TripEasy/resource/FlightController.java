@@ -17,6 +17,7 @@ import com.tripeasy.web.TripEasy.pojo.Flight;
 import com.tripeasy.web.TripEasy.pojo.Profile;
 import com.tripeasy.web.TripEasy.pojo.Seat;
 import com.tripeasy.web.TripEasy.service.FlightService;
+import com.tripeasy.web.TripEasy.service.NotificationService;
 /**
  * 
  * @author Shubham Raut
@@ -26,6 +27,9 @@ import com.tripeasy.web.TripEasy.service.FlightService;
 @RequestMapping("/flight")
 public class FlightController {
 
+	@Autowired
+	NotificationService notificationService;
+	
 	@Autowired
 	FlightService flightService;
 
@@ -39,6 +43,13 @@ public class FlightController {
 
 	}
 
+	@RequestMapping("/mail")
+	public String sendMail(Model model){
+		notificationService.sendNotification();
+		model.addAttribute("message","Mail Sent");
+		return "hello";
+	}
+	
 	@RequestMapping("/selectSeats")
 	public String selectSeats(@RequestParam Integer flightId) {
 

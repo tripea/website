@@ -22,7 +22,8 @@ public class AppController {
 	public String addHotelForm() {
 		return "hello";
 	}
-
+	
+	
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 

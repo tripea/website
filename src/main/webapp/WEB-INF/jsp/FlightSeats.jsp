@@ -37,6 +37,7 @@ background-color: #f1f1f1;
 		</div>
 		<div class="col-lg-6">
 		
+		<input type="checkbox" checked="checked">
 			
 		
 		</div>
