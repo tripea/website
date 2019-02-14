@@ -157,7 +157,7 @@ body {
 
 .navbar {
 	margin-bottom: 0;
-	background-color: #f4511e;
+/* 	background-color: #c0c0c0; */
 	z-index: 9999;
 	border: 0;
 	font-size: 12px !important;
@@ -407,246 +407,8 @@ translateY
 
 <body id="myPage" data-spy="scroll" data-target=".navbar"
 	data-offset="60">
-	<<%-- div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-5">
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-					</ol>
-
-
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<jstl:set var="first" value="${hotel.photos[0]}" />
-							<img src="${first}" alt="Image">
-							<div class="carousel-caption">
-								<h3>See More Photos</h3>
-
-							</div>
-						</div>
-
-						<jstl:forEach var="photos" items="${hotel.photos}">
-							<div class="item">
-								<img src="${photos}" alt="Image">
-
-							</div>
-						</jstl:forEach>
-					</div>
-
-					<!-- Left and right controls -->
-					<a class="left carousel-control" href="#myCarousel" role="button"
-						data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a> <a class="right carousel-control" href="#myCarousel" role="button"
-						data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="col-sm-3 col-xs-12">
-				<div class="col-sm-3 col-xs-12"></div>
-				<div class="panel panel-default text-center">
-					<div class="panel-heading">
-						<h1>Google map</h1>
-					</div>
-				</div>
-				<a href="#"><img src="${first}" class="img-responsive"
-					style="width: 100%" alt="Image"></a>
-				<div class="carousel-caption">
-					<h3>See More Room Photos</h3>
-
-				</div>
-			</div>
-			<div class="row slideanim">
-				<div class="col-sm-3 col-xs-12">
-					<div class="panel panel-default text-center">
-						<div class="panel-heading">
-							<p>Hurry! Last few rooms remaining for your dates</p>
-						</div>
-						<div class="panel-body">
-							<p>
-								<strong> Non Refundable </strong><br> <strong>
-									Breakfast</strong>
-							</p>
-
-
-
-						</div>
-						<div class="panel-footer">
-							<button class="btn btn-lg">Book Now</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-12">
-					<div class="panel panel-default text-center">
-						<div class="panel-body">
-							<p>
-								<strong>Reviews ${fn:length(hotel.review)}</strong>
-							</p>
-							<p class="text-left">
-								<jstl:forEach items="${hotel.review}" var="current">
-									<jstl:if test="${current.key==1}">
-										${current.value}<br>
-									</jstl:if>
-								</jstl:forEach>
-							</p>
-
-							<div class="col-sm-6"></div>
-							<div class="col-sm-6 ">
-								<p>
-
-									<a href=""><strong>More Reviews </strong><br></a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav navbar-center">
-						<li><a href="#about"> ROOMS</a></li>
-						<li><a href="#facilities">FACILITIES</a></li>
-						<li><a href="#portfolio">LOCATION</a></li>
-						<li><a href="#pricing">USER REVIEWS</a></li>
-						<li><a href="#contact">CONTACT</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<br> <br> <br> <br> <br> <br> <br>
-		<br> <br> <br> <br> <br>
-
-		<div id="about" class="container-fluid">
-			<div class="row">
-				<div class="col-sm-8">
-					<h2>Rooms formation</h2>
-					<br>
-
-
-					<table class="table">
-						<thead>
-							<tr>
-								<th>ROOM TYPE</th>
-								<th>OPTIONS AND BEDCOUNTS</th>
-								<th>INCLUDED IN THIS PRICE</th>
-								<th>PRICE</th>
-							</tr>
-						</thead>
-						<jstl:forEach items="${hotel.rooms}" var="room">
-							<tbody>
-								<tr>
-									<td>${room.roomType}</td>
-									<td>
-
-										<table>
-											<tbody>
-												<tr>
-													<td>Break Fast Available</td>
-												</tr>
-												<tr>
-													<td>Number Of Beds Are ${room.bedCount}</td>
-												</tr>
-											</tbody>
-										</table>
-									</td>
-									<td>
-
-										<table>
-											<tbody>
-												<tr>
-													<td>Type Of Beds Are ${room.bedType}</td>
-												</tr>
-												<tr>
-													<jstl:if test="${room.miniBar==true}">
-														<td>Also Minibar Is Available</td>
-													</jstl:if>
-													<jstl:if test="${room.miniBar==false}">
-														<td>Minibar Is Not Available</td>
-													</jstl:if>
-												</tr>
-											</tbody>
-										</table>
-									</td>
-									<td>${room.price}<a href=""> <br>Select Room
-									</a></td>
-
-								</tr>
-							</tbody>
-
-						</jstl:forEach>
-
-
-
-					</table>
-
-				</div>
-
-			</div>
-		</div>
-
-
-
-		<div id="facilities" class="container-fluid text-center">
-			<h2>SERVICES</h2>
-			<h4>What we offer</h4>
-			<br>
-			<div class="row slideanim">
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-off logo-small"></span>
-					<h4>POWER</h4>
-					<p>Lorem ipsum dolor sit amet..</p>
-				</div>
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-heart logo-small"></span>
-					<h4>LOVE</h4>
-					<p>Lorem ipsum dolor sit amet..</p>
-				</div>
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-lock logo-small"></span>
-					<h4>JOB DONE</h4>
-					<p>Lorem ipsum dolor sit amet..</p>
-				</div>
-			</div>
-			<br> <br>
-			<div class="row slideanim">
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-leaf logo-small"></span>
-					<h4>GREEN</h4>
-					<p>Lorem ipsum dolor sit amet..</p>
-				</div>
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-certificate logo-small"></span>
-					<h4>CERTIFIED</h4>
-					<p>Lorem ipsum dolor sit amet..</p>
-				</div>
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-wrench logo-small"></span>
-					<h4 style="color: #303030;">HARD WORK</h4>
-					<p>Lorem ipsum dolor sit amet..</p>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-	</div> --%>
 	
+	<br>
 	
 	
 	<div class="container-fluid">
@@ -714,15 +476,20 @@ translateY
 						</div>
 						<div class="panel-body">
 							<p>
-								<strong> Non Refundable </strong><br> <strong>
-									Breakfast</strong>
+								<jstl:if test="${hotel.totalAvailableRooms==0}">
+										<strong>No Rooms Available</strong>
+							       </jstl:if>
+							<jstl:if test="${hotel.totalAvailableRooms != 0}">
+							 <strong> Only ${hotel.totalAvailableRooms} rooms are available</strong> 
+								</jstl:if>
 							</p>
 
 
 
 						</div>
 						<div class="panel-footer">
-							<button class="btn btn-lg">Book Now</button>
+						<a href="bookingForm">
+							<button class="btn btn-lg">Book Now</button></a>
 						</div>
 					</div>
 				</div>
@@ -761,7 +528,7 @@ translateY
 		<div class="row">
 			<div class="col-sm-12">
 			
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
          <span class="icon-bar"></span>
@@ -770,11 +537,12 @@ translateY
     </div>
    <div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-center">
+						<li><a href="http://localhost:8764/">HOME</a></li>
 						<li><a href="#rooms"> ROOMS</a></li>
 						<li><a href="#facilities">FACILITIES</a></li>
-						<li><a href="#portfolio">LOCATION</a></li>
-						<li><a href="#pricing">USER REVIEWS</a></li>
-						<li><a href="#contact">CONTACT</a></li>
+						<li><a href="#location">LOCATION</a></li>
+						<li><a href="#description">DESCCRIPTION</a></li>
+						<li><a href="#reviews">USER REVIEWS</a></li>
 					</ul>
 				</div>
   </div>
@@ -784,7 +552,7 @@ translateY
 
 
 <div class="jumbotron text-center">
-  <h1>hotel ${hotel.hotelName} </h1> 
+  <h1>Hotel ${hotel.hotelName} </h1> 
   <p>We are happy to help you</p> 
   <form>
     <div class="input-group">
@@ -866,7 +634,7 @@ translateY
   </div>
  
 
- 
+ <br><br>
 
 
 <div id="facilities" class="container-fluid">
@@ -874,66 +642,82 @@ translateY
  		<div class="col-sm-12 col-xs-12">
 			
 				<div class="panel panel-default ">
+				<div class = "row">
 				<jstl:forEach items="${hotel.facilities}" var="facility">
-					
-					 
-					<div class="col-sm-3">
-						<%-- <p>${facility.key}</p> --%>
-						
-						<table class="table">
-						<thead>
-							<tr>
-								<th>ROOM TYPE</th>
-								<th>OPTIONS AND BEDCOUNTS</th>
-								<th>INCLUDED IN THIS PRICE</th>
-								<th>PRICE</th>
-							</tr>
-						</thead>
+				
+					<div class=" col-sm-3">
+						<div class="panel-heading">
+							<h3>${facility.key}</h3>
+						</div>
 					</div>
-					 
 					</jstl:forEach>
+						</div>
+					</div>
+					<div class = "row"> 
+					<jstl:forEach items="${hotel.facilities}" var="facility">
 					
-				</div>
+					
+					
+					 	<div class="col-sm-3">
+					 	<table>
+									 
+								<tr>	<jstl:forEach items="${facility.value}" var="fac">
+												<tr><td>${fac}</td></tr>
+											</jstl:forEach>	
+										 </tr>
+						</table>
+						 </div>
+						 
+					 </jstl:forEach>
+					</div>
+					
+					
+					
+			
 				 
 			</div>
 </div>
 
+ <br><br> <br><br>
 
-
-
-
-
-
-
-
-<div id="portfolio" class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2><br>
-  <h4>What we have created</h4>
-  <div class="row text-center slideanim">
+<div id="location" class="container-fluid   bg-grey">
+  <h2>Address</h2><br>
+  <div class="row   slideanim">
     <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Yes, we built Paris</p>
-      </div>
+      
+         <p>Area  : ${hotel.address.area}</p>
+        <p>landMark: ${hotel.address.landMark}</p>
+         <p>City  :${hotel.address.city}</p>
+         <p>Pincode :${hotel.address.pincode}</p>
+        
+      
     </div>
     <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York" width="400" height="300">
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
+    
+        <p>State  : ${hotel.address.state}</p>
+        <p>Country: ${hotel.address.nation}</p>
+        
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
-      </div>
-    </div>
+     
   </div><br>
+ <br><br> <br><br> <br><br>
+<div id="description" class="container-fluid   bg-grey">
+  <h2>Hotel Policies of ${hotel.hotelName}</h2><br>
+  <div class="row   slideanim">
+    <div class="col-sm-12">
+      
+         <p> ${hotel.description}</p>
+        
+        
+      
+    </div>
+     
+     
+  </div><br>
+    <br><br>
   
   <h2>What our customers say</h2>
+  <div id="reviews">
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -947,12 +731,11 @@ translateY
       <div class="item active">
         <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
       </div>
+      <jstl:forEach var="review" items="${hotel.review}">
       <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        <h4>"${review.value}"</span></h4>
       </div>
-      <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
-      </div>
+      </jstl:forEach>
     </div>
 
     <!-- Left and right controls -->
@@ -964,6 +747,7 @@ translateY
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+  </div>
   </div>
 </div>
 
