@@ -876,11 +876,21 @@ translateY
 				<div class="panel panel-default ">
 				<jstl:forEach items="${hotel.facilities}" var="facility">
 					
-					<div class="panel-heading">
+					 
 					<div class="col-sm-3">
-						<p>${facility.key}</p>
+						<%-- <p>${facility.key}</p> --%>
+						
+						<table class="table">
+						<thead>
+							<tr>
+								<th>ROOM TYPE</th>
+								<th>OPTIONS AND BEDCOUNTS</th>
+								<th>INCLUDED IN THIS PRICE</th>
+								<th>PRICE</th>
+							</tr>
+						</thead>
 					</div>
-					</div>
+					 
 					</jstl:forEach>
 					
 				</div>
