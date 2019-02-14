@@ -52,11 +52,12 @@ public class FlightController {
 	
 	@RequestMapping("/selectSeats")
 	public String selectSeats(Model model,@RequestParam Integer flightId) {
-		ResponseEntity<Seat> seats=flightService.getSeatsOfFlight(flightId);
+		ResponseEntity<Flight> flight=flightService.getFlight(flightId);
+		List<Seat> seats=flight.getBody().getSeats();
 		model.addAttribute("seats",seats);
 		return "FlightSeats";
 	}
-
+	
 	@RequestMapping("/bookFlight")
 	public String bookFlight(@RequestParam Integer flightId) {
 		return "BookFlight";

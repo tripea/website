@@ -23,6 +23,7 @@ public interface FlightService {
 	Booking bookFlight(Booking booking);
 
 
-	ResponseEntity<Seat> getSeatsOfFlight(Integer flightId);
+
+	ResponseEntity<Flight> getFlight(Integer flightId);
 
 }

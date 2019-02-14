@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Bookin History</title>
 </head>
 <body>
 	<table class="table">
