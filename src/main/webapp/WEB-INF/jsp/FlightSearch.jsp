@@ -52,10 +52,12 @@
 </style>
 </head>
 <body>
+
+
 	<div class="container"
 		style="padding: 20px; background-color: grey; margin-top: 150px;">
 		<!-- -->
-		<form class="form-inline" action="searchFlight" method="post">
+		<form class="form-inline" action="searchFlight" method="get">
 
 			<div class="form-group">
 				<b> <label class="whiteText"> Source</label><span
@@ -72,7 +74,7 @@
 				<b> <label class="whiteText"> Destination</label><span
 					class="required">*</span>: <input list="cities"
 					class="form-control" list="cities" name="destination"
-					id="destination" required="required"> <datalist>
+					id="destination" required="required"> <datalist id="cities">
 						<jstl:forEach var="list" items="${flightList}">
 							<option value="${list.city} (${list.code}) ">
 						</jstl:forEach>

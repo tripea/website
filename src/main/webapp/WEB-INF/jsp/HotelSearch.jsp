@@ -47,16 +47,17 @@
 </style>
 </head>
 <body>
+
 	<div class="container" align="center"
 		style="padding: 20px; background-color: grey; margin-top: 150px;">
 		<!-- -->
-		<form class="form-inline" action="searchHotel" method="post">
+		<form class="form-inline" action="searchHotel" method="get">
 
 			<div class="form-group">
 				<b> <label class="whiteText">Enter City </label>
 				</b>: <input list="cities" class="form-control" list="cities"
 					name="Enter city" required="required">
-				<datalist id="cities">
+				<datalist>
 					<jstl:forEach var="list" items="${hotelCityList}">
 						<option value="${list.city}">
 					</jstl:forEach>
