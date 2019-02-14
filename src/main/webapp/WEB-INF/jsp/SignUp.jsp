@@ -115,7 +115,7 @@ button:hover {
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
     
-    <p class="whiteText">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <p class="whiteText">By creating an account you agree to our <a href="/TermsAndPrivacy.jsp" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
