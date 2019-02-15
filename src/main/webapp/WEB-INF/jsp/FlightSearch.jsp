@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="Header.jsp" %>
+<%@ include file="HeaderFooter.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,9 +91,12 @@
 			<button type="submit" class="btn" onclick="return Validate()">Search</button>
 
 		</form>
+		
 
 	</div>
-
+<br>
+<br>
+<br>
 	<script type="text/javascript">
 		function Validate() {
 			var source = document.getElementById("source").value;
@@ -105,5 +108,43 @@
 			return true;
 		}
 	</script>
+	<div class="container">
+  <b><h2 align="center">Discover More Flights</h2></b>
+  <p> Hot Deals Now </p>
+
+ 
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="# target="_blank">
+          <img src="https://raw.githubusercontent.com/itsjustpavan/images/master/airplane2.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Flights To All Over the World are available</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" target="_blank">
+          <img src="https://raw.githubusercontent.com/itsjustpavan/images/master/download.jpg" alt="Nature" style="width:100% ">
+          <div class="caption">
+            <p>Book the flight to Pune , Offers Available Now</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" target="_blank">
+          <img src="https://raw.githubusercontent.com/itsjustpavan/images/master/airplane3.jpg" alt="Fjords" style="height: 170px">
+          <div class="caption">
+            <p>Book Flights at Cheaper Price </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
