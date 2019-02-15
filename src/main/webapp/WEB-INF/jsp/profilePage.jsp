@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,41 +13,85 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form action="profileDetails" method="get">
+
 <div class="container">
- <div class="form-group">
-      <label for="Full Name">Full Name:</label>
-      <input type="text" class="form-control" id="fullName" placeholder="Enter fullName" name="fullName">
-    </div>
- <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="contactNumber">Email:</label>
-      <input type="text" class="form-control" id="contactNumber" placeholder="Enter contactNumber" name="contactNumber">
-    </div>
-     <div class="form-group">
-      <label for="maritialStatus">maritialStatus:</label>
-      <input type="radio" class="form-control" id="maritialStatus" name="maritialStatus">male<br><input type="radio" class="form-control" id="maritialStatus" name="maritialStatus">female<br>
-    </div>
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      
+      <div class="col-md-9 personal-info">
+       <!--  <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+        </div> -->
+        <h3>Personal info</h3>  
+        <form   action="update"  class="form-horizontal" role="form">
+        <jstl:if test="${profile !=null}">
+        
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Full name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.fullName}" name="fullName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Gender:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.gender}" name="gender">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">ContactNumber:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.contactNumber}" name="contactNumber">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">DateOfBirth:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="date" value="${profile.dateOfBirth}" name="dateOfBirth">
+            </div>
+              </div>
+            
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.emailId}" name="emailId">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">UserName:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="${profile.userName}" name="userName">
+            </div>
+            <div class="form-group">
+            <label class="col-lg-3 control-label"><a href="addAddress.jsp">Add Address:</a></label>
+            <%-- <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.address}" name="address">
+            </div> --%>
+          </div>
+          </div>
+          </jstl:if>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Save Changes">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+          
+        </form>
+      </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</form>
+<hr>
 </body>
 </html>
