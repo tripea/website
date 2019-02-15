@@ -25,14 +25,14 @@
           <input type="file" class="form-control">
         </div>
       </div>
-      
+       <form   action="update"  class="form-horizontal" role="form">
       <div class="col-md-9 personal-info">
        <!--  <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <i class="fa fa-coffee"></i>
         </div> -->
         <h3>Personal info</h3>  
-        <form   action="update"  class="form-horizontal" role="form">
+       
         <jstl:if test="${profile !=null}">
         
           <div class="form-group">
@@ -59,7 +59,6 @@
               <input class="form-control" type="date" value="${profile.dateOfBirth}" name="dateOfBirth">
             </div>
               </div>
-            
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
@@ -69,29 +68,49 @@
           <div class="form-group">
             <label class="col-md-3 control-label">UserName:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="${profile.userName}" name="userName">
+              <input class="form-control" type="text" value="${profile.userName}" name="userName" readonly="readonly">
+            </div>
             </div>
             <div class="form-group">
-            <label class="col-lg-3 control-label"><a href="addAddress.jsp">Add Address:</a></label>
-            <%-- <div class="col-lg-8">
-              <input class="form-control" type="text" value="${profile.address}" name="address">
-            </div> --%>
+            <label class="col-lg-3 control-label">Street name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.address.streetName}" name="streetName">
+            </div>
           </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Street no:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.address.streetNo}" name="streetNo">
+            </div>
           </div>
-          </jstl:if>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">City:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.address.city}" name="city">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">PinCode:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="${profile.address.pincode}" name="pincode">
+            </div>
+          </div>
+            </jstl:if>          
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
               <input type="button" class="btn btn-primary" value="Save Changes">
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancel">
+
             </div>
+            
           </div>
-          
-        </form>
       </div>
+      </form>
   </div>
-</div>
+  
+ </div>
 <hr>
 </body>
 </html>

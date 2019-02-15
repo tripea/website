@@ -22,6 +22,7 @@ import com.tripeasy.web.TripEasy.entity.Profile;
  *
  */
 @Controller
+/* @RequestMapping("/profile") */
 public class ProfileResource {
 
 	@Autowired
@@ -36,10 +37,6 @@ public class ProfileResource {
 	public String signup() {
 		return "SignUp";
 	}
-	@RequestMapping("/edit")
-	public String edit() {
-		return "profilePage";
-	}
 
 	@RequestMapping("/signup")
 	public String createProfile(@ModelAttribute Profile profile, Model model) {
@@ -48,30 +45,23 @@ public class ProfileResource {
 		return "index";
 	}
 
-	/*@RequestMapping("/loginPage") 
-	public ModelAndView login(@ModelAttribute Profile profile,@RequestParam String userName,@RequestParam String password,@RequestParam Integer profileId) {
-		restTemplate.getForEntity("http://localhost:9090/profiles/profileId", Profile.class);
-	  if (profile.getUserName() == userName && profile.getPassword() == password) {
-	  return new ModelAndView("Login","message", "login successful"); 
-	  }
-	  else 
-	  {
-		  return new ModelAndView("Login","message", "Invalid credantials"); 
-	 }*/
+	/*
+	 * @RequestMapping("/loginPage") public ModelAndView login(@ModelAttribute
+	 * Profile profile,@RequestParam String userName,@RequestParam String
+	 * password,@RequestParam Integer profileId) {
+	 * restTemplate.getForEntity("http://localhost:9090/profiles/profileId",
+	 * Profile.class); if (profile.getUserName() == userName &&
+	 * profile.getPassword() == password) { return new
+	 * ModelAndView("Login","message", "login successful"); } else { return new
+	 * ModelAndView("Login","message", "Invalid credantials"); }
+	 */
 
-   @RequestMapping("/update")
-   public String editProfile(@ModelAttribute Profile profile,Model model) {
-	   restTemplate.put("http://localhost:9090/profiles", profile);
+	@RequestMapping("/update")
+	public String editProfile(@ModelAttribute Profile profile, Model model) {
+		restTemplate.put("http://localhost:9090/profiles", profile);
 		model.addAttribute("message", profile);
-	   return "profilePage";
-   }
+		return "profilePage";
+	}
 
-
-
-
-
-
-
-
+	
 }
-
