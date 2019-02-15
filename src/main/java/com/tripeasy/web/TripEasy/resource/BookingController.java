@@ -47,20 +47,32 @@ public class BookingController {
 		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
 
-	@RequestMapping("/customerInformation")
-	public String fillCustomerInformation() {
-		// TODO delete SYSO
-		System.out.println("inside customer info");
-		return "CustomersInformation";
+	/*
+	 * @RequestMapping("/guestsDetails") public String fillGuestDetails() { // TODO
+	 * delete SYSO System.out.println("inside guest info"); return "GuestDetails"; }
+	 */
+	
+	@RequestMapping("/passengerDetails")
+	public String fillPassengerDetails() {
+		//TODO delete SYSO
+		System.out.println("inside passenges details");
+		return "PassengerDetails";
+		
 	}
-
-	@RequestMapping("/bookhotel")
-	public String bookhotel(@RequestParam Booking booking) {
-		System.out.println("in booking");
-		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
-		// model.addAttribute("message", "Booking Successful");
-		// TODO delete this
-		return "hiiPoonam";
+	
+	@RequestMapping("/bookingInformation")
+	public String getBookingInformation() {
+		//TODO delete SYSO
+		System.out.println("inside booking information");
+		return "BookingInformation";
+		
 	}
+	/*
+	 * @RequestMapping("/bookhotel") public String bookhotel(@RequestParam Booking
+	 * booking) { System.out.println("in booking");
+	 * restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking,
+	 * null); // model.addAttribute("message", "Booking Successful"); // TODO delete
+	 * this return "hiiPoonam"; }
+	 */
 
 }
