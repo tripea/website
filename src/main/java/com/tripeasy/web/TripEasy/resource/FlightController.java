@@ -66,7 +66,6 @@ public class FlightController {
 	public String sel(Model model, @RequestParam Integer flightId,@RequestParam String[] cbseats) {
 		Set<Seat> seats = new LinkedHashSet<>();
 
-
 		ResponseEntity<Flight> f=flightService.getFlight(flightId);
 		Flight flight=f.getBody();
 		List<Seat> l=flight.getSeats();
@@ -95,9 +94,10 @@ public class FlightController {
 
 //		String[] selectedStudentIds = request.getParameterValues("selected");
 		model.addAttribute("message", "Ticket Booked Successfully");
-		return "hello";
+		return "redirect:/search/"+count;
 	}
 
+	
 	@RequestMapping("/bookFlight")
 	public String bookFlight(@RequestParam Integer flightId) {
 		return "BookFlight";
