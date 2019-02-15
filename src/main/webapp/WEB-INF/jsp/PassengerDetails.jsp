@@ -14,6 +14,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 	<form action="passengerDetails">
 		<div id="passengers">
 
@@ -39,6 +40,17 @@
 			<hr>
 		</div>
 	</form>
+=======
+  <form>
+    <div id="passengers">
+    
+      First Name : <input type="text"  id=""/> <br />
+      Last Name : <input type="text" id=""  /><br />
+      Age : 	  <input type="text" id=""  /> 
+    <hr>
+    </div>        
+  </form>
+>>>>>>> 96f0b957d5a78c6db152aa321cb00fdee1bceaae
 
 
 	<script type="text/javascript">
