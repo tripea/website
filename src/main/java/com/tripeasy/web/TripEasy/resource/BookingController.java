@@ -47,11 +47,19 @@ public class BookingController {
 		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
 
-	@RequestMapping("/customerInformation")
-	public String fillCustomerInformation() {
+	@RequestMapping("/guestsDetails")
+	public String fillGuestDetails() {
 		// TODO delete SYSO
-		System.out.println("inside customer info");
-		return "CustomersInformation";
+		System.out.println("inside guest info");
+		return "GuestDetails";
+	}
+	
+	@RequestMapping("/passengerDetails")
+	public String fillPassengerDetails() {
+		//TODO delete SYSO
+		System.out.println("inside passenges details");
+		return "PassengerDetails";
+		
 	}
 	/*
 	 * @RequestMapping("/bookhotel") public String bookhotel(@RequestParam Booking

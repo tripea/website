@@ -14,13 +14,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <form>
+  <form action="passengerDetails">
     <div id="passengers">
     	
       First Name : <input type="text"  id=""/> <br />
       Last Name : <input type="text" id=""  /><br />
       Age : <input type="text" id=""  /> 
-    
+    <hr>
     </div>        
   </form>
 

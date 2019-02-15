@@ -32,6 +32,7 @@
 				<th scope="col">CheckInDate and CheckOutDate</th>
 				<th scope="col">Flight Name and Seat Number</th>
 				<th scope="col">Number of passengers</th>
+				<th>
 			</tr>
 		<tbody>
 
