@@ -1,15 +1,19 @@
 package com.tripeasy.web.TripEasy.pojo;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
-/**
- * 
- * @author pparaska
- *
- */
+
+//import org.springframework.data.annotation.Id;
+//import org.springframework.stereotype.Component;
+
+//import com.tripeasy.bookings.bookingservice.hotelentity.Hotel;
+//import com.tripeasy.bookings.bookingservice.hotelentity.Room;
+
+//@Component
 public class Booking {
 
+	//@Id
 	private Integer bookingID;
 	private String bookingType;
 	private Object bookingDetails;
@@ -18,31 +22,22 @@ public class Booking {
 	private List<Customer> customers;
 	private Profile bookedBy;
 	private Hotel hotel;
+	private Room room;
 	private Flight flight;
 	private LocalDateTime checkInDate;
 	private LocalDateTime checkOutDate;
-	private Integer numberOfCustomers;
+	// private Integer numberOfCustomers;
+	private Integer numberOfGuest;
+	private Integer numberOfPassengers;
 
 	public Booking() {
 		super();
-
+		// TODO Auto-generated constructor stub
 	}
 
 	public Booking(Integer bookingID, String bookingType, Object bookingDetails, LocalDateTime dateOfBooking,
-			Double totalCost, ArrayList<Customer> customers, Profile bookedBy) {
-		super();
-		this.bookingID = bookingID;
-		this.bookingType = bookingType;
-		this.bookingDetails = bookingDetails;
-		this.dateOfBooking = dateOfBooking;
-		this.totalCost = totalCost;
-		this.customers = customers;
-		this.bookedBy = bookedBy;
-	}
-
-	public Booking(Integer bookingID, String bookingType, Object bookingDetails, LocalDateTime dateOfBooking,
-			Double totalCost, List<Customer> customers, Profile bookedBy, Hotel hotel, LocalDateTime checkInDate,
-			LocalDateTime checkOutDate) {
+			Double totalCost, List<Customer> customers, Profile bookedBy, Hotel hotel, Room room, Flight flight,
+			LocalDateTime checkInDate, LocalDateTime checkOutDate, Integer numberOfGuest, Integer numberOfPassengers) {
 		super();
 		this.bookingID = bookingID;
 		this.bookingType = bookingType;
@@ -52,26 +47,12 @@ public class Booking {
 		this.customers = customers;
 		this.bookedBy = bookedBy;
 		this.hotel = hotel;
-		this.checkInDate = checkInDate;
-		this.checkOutDate = checkOutDate;
-	}
-
-	public Booking(Integer bookingID, String bookingType, Object bookingDetails, LocalDateTime dateOfBooking,
-			Double totalCost, List<Customer> customers, Profile bookedBy, Hotel hotel, Flight flight,
-			LocalDateTime checkInDate, LocalDateTime checkOutDate, Integer numberOfCustomers) {
-		super();
-		this.bookingID = bookingID;
-		this.bookingType = bookingType;
-		this.bookingDetails = bookingDetails;
-		this.dateOfBooking = dateOfBooking;
-		this.totalCost = totalCost;
-		this.customers = customers;
-		this.bookedBy = bookedBy;
-		this.hotel = hotel;
+		this.room = room;
 		this.flight = flight;
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
-		this.numberOfCustomers = numberOfCustomers;
+		this.numberOfGuest = numberOfGuest;
+		this.numberOfPassengers = numberOfPassengers;
 	}
 
 	public Integer getBookingID() {
@@ -118,8 +99,8 @@ public class Booking {
 		return customers;
 	}
 
-	public void setCustomers(List<Customer> customers2) {
-		this.customers = customers2;
+	public void setCustomers(List<Customer> customers) {
+		this.customers = customers;
 	}
 
 	public Profile getBookedBy() {
@@ -138,6 +119,22 @@ public class Booking {
 		this.hotel = hotel;
 	}
 
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
 	public LocalDateTime getCheckInDate() {
 		return checkInDate;
 	}
@@ -154,20 +151,20 @@ public class Booking {
 		this.checkOutDate = checkOutDate;
 	}
 
-	public Flight getFlight() {
-		return flight;
+	public Integer getNumberOfGuest() {
+		return numberOfGuest;
 	}
 
-	public void setFlight(Flight flight) {
-		this.flight = flight;
+	public void setNumberOfGuest(Integer numberOfGuest) {
+		this.numberOfGuest = numberOfGuest;
 	}
 
-	public Integer getNumberOfCustomers() {
-		return numberOfCustomers;
+	public Integer getNumberOfPassengers() {
+		return numberOfPassengers;
 	}
 
-	public void setNumberOfCustomers(Integer numberOfCustomers) {
-		this.numberOfCustomers = numberOfCustomers;
+	public void setNumberOfPassengers(Integer numberOfPassengers) {
+		this.numberOfPassengers = numberOfPassengers;
 	}
 
 	@Override
@@ -184,7 +181,9 @@ public class Booking {
 		result = prime * result + ((dateOfBooking == null) ? 0 : dateOfBooking.hashCode());
 		result = prime * result + ((flight == null) ? 0 : flight.hashCode());
 		result = prime * result + ((hotel == null) ? 0 : hotel.hashCode());
-		result = prime * result + ((numberOfCustomers == null) ? 0 : numberOfCustomers.hashCode());
+		result = prime * result + ((numberOfGuest == null) ? 0 : numberOfGuest.hashCode());
+		result = prime * result + ((numberOfPassengers == null) ? 0 : numberOfPassengers.hashCode());
+		result = prime * result + ((room == null) ? 0 : room.hashCode());
 		result = prime * result + ((totalCost == null) ? 0 : totalCost.hashCode());
 		return result;
 	}
@@ -248,10 +247,20 @@ public class Booking {
 				return false;
 		} else if (!hotel.equals(other.hotel))
 			return false;
-		if (numberOfCustomers == null) {
-			if (other.numberOfCustomers != null)
+		if (numberOfGuest == null) {
+			if (other.numberOfGuest != null)
 				return false;
-		} else if (!numberOfCustomers.equals(other.numberOfCustomers))
+		} else if (!numberOfGuest.equals(other.numberOfGuest))
+			return false;
+		if (numberOfPassengers == null) {
+			if (other.numberOfPassengers != null)
+				return false;
+		} else if (!numberOfPassengers.equals(other.numberOfPassengers))
+			return false;
+		if (room == null) {
+			if (other.room != null)
+				return false;
+		} else if (!room.equals(other.room))
 			return false;
 		if (totalCost == null) {
 			if (other.totalCost != null)
@@ -265,8 +274,9 @@ public class Booking {
 	public String toString() {
 		return "Booking [bookingID=" + bookingID + ", bookingType=" + bookingType + ", bookingDetails=" + bookingDetails
 				+ ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", customers=" + customers
-				+ ", bookedBy=" + bookedBy + ", hotel=" + hotel + ", flight=" + flight + ", checkInDate=" + checkInDate
-				+ ", checkOutDate=" + checkOutDate + ", numberOfCustomers=" + numberOfCustomers + "]";
+				+ ", bookedBy=" + bookedBy + ", hotel=" + hotel + ", room=" + room + ", flight=" + flight
+				+ ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate + ", numberOfGuest=" + numberOfGuest
+				+ ", numberOfPassengers=" + numberOfPassengers + "]";
 	}
 
 }
