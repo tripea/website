@@ -20,7 +20,7 @@
 			</div>
 			<br> <br>
 			<button class="btn btn-info" role="button"
-				style="background-color: black; color: white;">Add Money</button>
+				style="background-color: black; color: white; size: 100px;">Add Money</button>
 		</div>
 	</div>
 </body>
