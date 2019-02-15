@@ -4,6 +4,7 @@
 
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ page isELIgnored="false"%>
+<%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
