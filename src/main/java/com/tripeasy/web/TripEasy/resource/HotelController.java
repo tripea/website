@@ -73,7 +73,8 @@ public class HotelController {
 	 */
 
 	@RequestMapping("/bookingForm")
-	public String bookingForm() {
+	public String bookingForm(@RequestParam Double roomprice,Model model) {
+		model.addAttribute("roomprice", roomprice);
 		return "BookHotel";
 	}
 
