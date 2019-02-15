@@ -55,16 +55,18 @@
 
 			<div class="form-group">
 				<b> <label class="whiteText">Enter City </label>
-				</b>: <input list="cities" class="form-control" list="cities"
+				 <input list="cities" class="form-control" list="cities"
 					name="city" required="required">
-				<datalist>
+				<datalist id="cities">
 					<jstl:forEach var="list" items="${hotelCityList}">
 						<option value="${list.city}">
 					</jstl:forEach>
 				</datalist>
 			</div>
+			
+	
 			<div class="input-group date">
-				<input type="text" class="form-control"><span
+				<input type="text" class="form-control" required="required" placeholder="dd/mm/yy" autocomplete="off"><span
 					class="input-group-addon"><i
 					class="glyphicon glyphicon-calendar"></i></span>
 			</div>
@@ -72,6 +74,51 @@
 
 			<button type="submit" class="btn">Search</button>
 		</form>
+	</div>
+	
+	<br>
+	<br>
+
+	<div class="container">
+		<b><h2 align="center">Discover More Hotels</h2></b>
+		<p>Hot Deals Now</p>
+
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<a href="# target="_blank"> <img
+						src="https://raw.githubusercontent.com/itsjustpavan/images/master/hotel1.jpg"
+						alt="Lights" style="width: 100%">
+						<div class="caption">
+							<p>Hotels All Over the India are available</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<a href="#" target="_blank"> <img
+						src="https://raw.githubusercontent.com/itsjustpavan/images/master/hotel2.jpg"
+						alt="Nature" style="width: 100%">
+						<div class="caption">
+							<p>Book Hotel in Mumbai , Offers Available Now</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<a href="#" target="_blank"> <img
+						src="https://raw.githubusercontent.com/itsjustpavan/images/master/hotel3.jpg"
+						alt="Fjords" style="height: 220px">
+						<div class="caption">
+							<p>Book Hotels at Cheaper Price</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
