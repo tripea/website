@@ -1,3 +1,10 @@
+
+<%@ page isELIgnored="false" language="java"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,8 +89,9 @@
 			</thead>
 
 			<tr class="rows">
-				<td>${roomprice}</td>
-				<td><input type="number" name="quantity" min="1" /></td>
+				<td><input type="number" id="first" value="${roomprice}" /></td>
+				<td><input type="number" id="second"
+					onclick="compute()" name="quantity" min="1"/></td>
 				<td>
 
 					<div class="col-sm-4">
@@ -106,20 +114,19 @@
 				</div>
 
 				</td>
-				<td id="finalAmount">${roomprice}</td>
+				<td id="finalAmount"></td>
 			</tr>
 
 
 			<script type="text/javascript">
 function compute(){
     var x=0; var y = 0; var z = 0;
-    for (i = 0; i < ${fn:length(cart.products)}; i++) {
-        y=document.getElementById("quantity"+i).value;
-        z=document.getElementById("price"+i).value;
+   
+        y=document.getElementById("first").value;
+        z=document.getElementById("second").value;
         x = parseDouble(x)+parseDouble(y*z);
-        document.getElementById("amount").value=x;
-    }
-}
+        document.getElementById("finalAmount").value=x;
+ }
 </script>
 		</table>
 
