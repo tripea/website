@@ -17,9 +17,20 @@
   <form action="passengerDetails">
     <div id="passengers">
     	
-      First Name : <input type="text"  id=""/> <br />
+     <!--  First Name : <input type="text"  id=""/> <br />
       Last Name : <input type="text" id=""  /><br />
-      Age : <input type="text" id=""  /> 
+      Age : <input type="text" id=""  />  -->
+      <label for="fName">First name:</label> <input type="text"
+				class="form-control" id="fName"> <label for="lName">Last
+				name:</label> <input type="text" class="form-control" id="lName"> <label
+				for="age">Age: </label> <input type="number" class="form-control"
+				id="age"> <label for="Gender">Gender:</label><select
+				name="Gender"><option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option></select>
+			<!-- <button type="submit" <a href="bookingInformation"
+				class="btn btn-primary">Submit</button> -->
+				Submit:<a href="bookingInformation"></a>
     <hr>
     </div>        
   </form>

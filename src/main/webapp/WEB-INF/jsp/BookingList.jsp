@@ -43,12 +43,11 @@
 					<td>${bookingList.dateOfBooking}</td>
 					<td>${bookingList.bookedBy.fullName}</td>
 					<td>${bookingList.hotel.hotelName} ${bookingList.room.roomNumber}</td>
-					<td><!-- <a href=guestsDetails> -->${bookingList.numberOfGuest}</a></td>
+					<td><!-- <a href=guestsDetails> -->${bookingList.numberOfGuest}</td>
 					<td>${bookingList.checkInDate}</td>
 					<td>${bookingList.checkOutDate}</td>
 					<td>${bookingList.flight.flightName}${bookingList.flight.seat.row}${bookingList.flight.seat.column}</td>
 					<td><a href="passengerDetails">${bookingList.numberOfPassengers}</a>
-				
 				</tr>
 			</jstl:forEach>
 		</tbody>
