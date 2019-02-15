@@ -43,4 +43,9 @@ public class SearchController {
 		return "redirect:http://localhost:8764/hotel/hotels?city="+city;
 
 	}
+	
+	@RequestMapping("details")
+	public String passengerDetails() {
+		return "PassengerDetails";
+	}
 }
