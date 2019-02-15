@@ -14,7 +14,38 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <form>
+	<h1>TRAVELLERS</h1>
+	<form action="passengerDetails">
+		<div id="passengers">
+
+			<!--  First Name : <input type="text"  id=""/> <br />
+      Last Name : <input type="text" id=""  /><br />
+      Age : <input type="text" id=""  />  -->
+			<table>
+				<tr>
+					<td><label for="fName">First name:</label> <input type="text"
+						class="form-control" id="fName"></td>
+					<td><label for="lName">Last name:</label> <input type="text"
+						class="form-control" id="lName"></td>
+				</tr>
+				<tr>
+					<td><label for="age">Age: </label> <input type="number"
+						class="form-control" id="age"></td>
+					<td><label for="Gender">Gender:</label><select name="Gender"><option
+								value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Other">Other</option></select>
+							</tr>
+						<tr><td>
+						<button type="submit" class="btn btn-primary">Submit</button></td>
+				</tr>
+
+				<hr>
+				</div>
+			</table>
+	</form>
+	<!-- <a href="bookingInformation">Submit</a> -->
+	<!--   <form>
     <div id="passengers">
     
       First Name : <input type="text"  id=""/> <br />
@@ -23,7 +54,7 @@
     <hr>
     </div>        
   </form>
-
+ -->
 
 	<script type="text/javascript">
     var participantsField = document.getElementById("passengers"),
