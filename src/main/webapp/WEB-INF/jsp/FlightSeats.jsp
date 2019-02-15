@@ -35,7 +35,7 @@ body {
 	<%-- ${seats } --%>
 	<h1>Select Seats</h1>
 
-
+	${seats }
 	<a href="">Book Flight</a>
 
 	<div class="container-fluid">
@@ -47,15 +47,19 @@ body {
 			<div class="col-lg-4">
 
 				<jstl:forEach var="seat" items="${seats }">
-					<jstl:if test="${seat.available }">
+					${seat.column}
+					<jstl:set var="abc" value="A" />
+						<jstl:if test="${seat.column eq abc}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
 
 
-
-						<input type="checkbox" class="myinput">
-					</jstl:if>
-					<jstl:if test="${!seat.available }">
-						<input class="occupied" type="checkbox" disabled="disabled">
-					</jstl:if>
+						</jstl:if>
 				</jstl:forEach>
 
 
@@ -67,9 +71,15 @@ body {
 					src="https://github.com/tripea/website-images/blob/master/tail.png?raw=true">
 			</div>
 
-			<input type="submit" value="">
-
 		</div>
+
+		<div class="row">
+
+			<div class="col-lg-4">
+				<input class="btn-success" type="submit" value="Book">
+			</div>
+		</div>
+
 	</div>
 </body>
 </html>
