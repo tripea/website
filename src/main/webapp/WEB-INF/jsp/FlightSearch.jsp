@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-<<<<<<< HEAD
 <%@ include file="Header.jsp" %>
-=======
-<%@ include file="Header.jsp"%>
->>>>>>> fb4b0205bee1d66b82f5ff096030b52edb514b6b
 <!DOCTYPE html>
 <html lang="en">
 <head>

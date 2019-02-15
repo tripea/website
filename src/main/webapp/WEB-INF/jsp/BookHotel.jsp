@@ -29,53 +29,122 @@
 		});
 	});
 </script>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: silver;
+}
 
+* {
+	box-sizing: border-box
+}
 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
 
-<!-- <script>
-	$(document).ready(
-			function() {
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
 
-				$(".updateAmount").change(
-						function() {
-							var row = $(this).parent().parent();
-							var price = row.find('td').eq(0).html();
-							var temp = price +price;
-							var qty = $(this).val();
-							var td = row.find('td').eq(4);
-							var result = price * qty;
-							//alert(result);
-							td.html(result);
-							var finalAmountTd = $('#finalAmount');
-							// To iterate all tr
-							var totalPrice = 0;
-							var rows = $(".rows");
-							//alert(rows.length);
-							rows.each(function() {
-								totalPrice = totalPrice
-										+ parseFloat($(this).find('td').eq(4)
-												.html());
+.whiteText {
+	color: green;
+}
 
-							});
-							finalAmountTd.html(totalPrice);
-							$('input[type="button"]').click(function(e) {
-								$(this).closest('tr').remove()
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
 
-							})
-						});
+/* Set a style for all buttons */
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
 
-			})
-</script>
- -->
+.required {
+	color: red;
+}
 
+button:hover {
+	opacity: 1;
+}
 
+/* Extra styles for the cancel button */
+.cancelbtn {
+	padding: 14px 20px;
+	background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+	float: left;
+	width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+	padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 100px) {
+	.cancelbtn, .signupbtn {
+		width: 100%;
+	}
+}
+</style>
 
 
 
 </head>
-<form id="form" action="removeProduct">
+<body>
+	<form action="removeProduct">
 
-	<body>
+
+
+
+		<div class="row">
+			<div class="col-sm-4">
+				<label class="whiteText" for="email"><b>Enter Email
+						Address<span class="required">*</span>
+				</b></label> <input type="text" placeholder="Enter Email"
+					pattern="[^ @]*@[^ @]*" name="email" value="" required="required">
+
+				<label class="whiteText" for="userName"><b>Enter Full
+						Name<span class="required">*</span>
+				</b></label> <input type="text" placeholder="Enter userName" name="userName"
+					required="required"> <label class="whiteText"
+					for="userName"><b>Enter Number OF Guests<span
+						class="required">*</span></b></label> <br>
+				<input type="number" placeholder="Enter Number OF Guests"
+					name="numberOfGusts" required="required">
+			</div>
+
+		</div>
+
+
+
 
 		<table class="table">
 			<thead>
@@ -88,49 +157,55 @@
 				</tr>
 			</thead>
 
-			<tr class="rows">
-				<td><input type="number" id="first" value="${roomprice}" /></td>
-				<td><input type="number" id="second"
-					onclick="compute()" name="quantity" min="1"/></td>
-				<td>
+			<tr>
 
-					<div class="col-sm-4">
-						<div class="input-group date">
-							<input type="text" class="form-control"><span
-								class="input-group-addon"><i
-								class="glyphicon glyphicon-calendar"></i></span>
-						</div>
-					</div>
-				</td>
-				<td><input type="number" name="quantity" min="1"
-					id="updateAmount" /></td>
+				<td><input type="number" id="roomPrice" value="${roomprice}"></td>
+				<td><input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}"
+					id="checkIn" class="datepicker" name="checkInDate" value="" /></td>
 
-				<div class="col-sm-4">
-					<div class="input-group date">
-						<input type="text" class="form-control updateAmount"><span
-							class="input-group-addon"><i
-							class="glyphicon glyphicon-calendar"></i></span>
-					</div>
-				</div>
-
-				</td>
-				<td id="finalAmount"></td>
+				<td><input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}"
+					onchange="compute()" id="checkOut" class="datepicker" name="checkOutDate"
+					value="" /></td>
+				<td><input type="number" name="finalAmount" id="finalAmount"
+					value="${roomprice}" readonly="readonly"></td>
 			</tr>
 
-
-			<script type="text/javascript">
-function compute(){
-    var x=0; var y = 0; var z = 0;
-   
-        y=document.getElementById("first").value;
-        z=document.getElementById("second").value;
-        x = parseDouble(x)+parseDouble(y*z);
-        document.getElementById("finalAmount").value=x;
- }
-</script>
 		</table>
 
-	</body>
-</form>
-</html>
+		<div class="clearfix">
+			<button type="button" class="cancelbtn">Cancel</button>
+			<button type="submit" class="signupbtn" >Pay Now</button>
+		</div>
 
+
+		<script>
+			function compute() {
+
+				var a = document.getElementById("checkIn").value;
+				var year = a.split("-")[0];
+				var month = a.split("-")[1];
+				var day = a.split("-")[2];
+				var str = month + "/" + day + "/" + year;
+				//alert(str);
+				var b = document.getElementById("checkOut").value;
+				var year1 = b.split("-")[0];
+				var month1 = b.split("-")[1];
+				var day1 = b.split("-")[2];
+				var str1 = month1 + "/" + day1 + "/" + year1;
+
+				var date1 = new Date(str);
+				var date2 = new Date(str1);
+				var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+				var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+				var roomPrice = document.getElementById("roomPrice").value;
+				var amt = parseInt(diffDays * roomPrice);
+				//alert(amt); 
+				document.getElementById("finalAmount").value = amt;
+
+			}
+		</script>
+
+	</form>
+</body>
+</html>
