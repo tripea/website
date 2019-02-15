@@ -16,11 +16,11 @@
 <body>
   <form>
     <div id="passengers">
-    	
+    
       First Name : <input type="text"  id=""/> <br />
       Last Name : <input type="text" id=""  /><br />
-      Age : <input type="text" id=""  /> 
-    
+      Age : 	  <input type="text" id=""  /> 
+    <hr>
     </div>        
   </form>
 
