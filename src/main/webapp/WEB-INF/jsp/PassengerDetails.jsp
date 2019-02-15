@@ -14,34 +14,38 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
+	<h1>TRAVELLERS</h1>
 	<form action="passengerDetails">
 		<div id="passengers">
 
 			<!--  First Name : <input type="text"  id=""/> <br />
       Last Name : <input type="text" id=""  /><br />
       Age : <input type="text" id=""  />  -->
-			<tr>
-				<td><label for="fName">First name:</label> <input type="text"
-					class="form-control" id="fName"></td>
-				<td><label for="lName">Last name:</label> <input type="text"
-					class="form-control" id="lName"></td>
-			</tr>
-			<tr>
-				<td><label for="age">Age: </label> <input type="number"
-					class="form-control" id="age"></td>
-				<td><label for="Gender">Gender:</label><select name="Gender"><option
-							value="Male">Male</option>
-						<option value="Female">Female</option>
-						<option value="Other">Other</option></select> <!-- <button type="submit" <a href="bookingInformation"
-				class="btn btn-primary">Submit</button> --></td>
-			</tr>
-			<a href="bookingInformation">Submit</a>
-			<hr>
-		</div>
+			<table>
+				<tr>
+					<td><label for="fName">First name:</label> <input type="text"
+						class="form-control" id="fName"></td>
+					<td><label for="lName">Last name:</label> <input type="text"
+						class="form-control" id="lName"></td>
+				</tr>
+				<tr>
+					<td><label for="age">Age: </label> <input type="number"
+						class="form-control" id="age"></td>
+					<td><label for="Gender">Gender:</label><select name="Gender"><option
+								value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Other">Other</option></select>
+							</tr>
+						<tr><td>
+						<button type="submit" class="btn btn-primary">Submit</button></td>
+				</tr>
+
+				<hr>
+				</div>
+			</table>
 	</form>
-=======
-  <form>
+	<!-- <a href="bookingInformation">Submit</a> -->
+	<!--   <form>
     <div id="passengers">
     
       First Name : <input type="text"  id=""/> <br />
@@ -50,8 +54,7 @@
     <hr>
     </div>        
   </form>
->>>>>>> 96f0b957d5a78c6db152aa321cb00fdee1bceaae
-
+ -->
 
 	<script type="text/javascript">
     var participantsField = document.getElementById("passengers"),
