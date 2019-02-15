@@ -1,6 +1,7 @@
 package com.tripeasy.web.TripEasy.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,13 @@ public interface FlightService {
 
 
 	ResponseEntity<Flight> getFlight(Integer flightId);
+
+
+	ResponseEntity<Flight> updateSelectedSeats(Integer flightId, Flight flight);
+
+
+	Boolean withdrawMoneyFromUserWallet(Integer profileId, Double totalPrice);
+
+
 
 }

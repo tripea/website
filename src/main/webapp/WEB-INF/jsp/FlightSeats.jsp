@@ -28,6 +28,27 @@ body {
 	background-color: gray;
 	padding: 10px;
 }
+
+.column-A{
+	background-color: #ddd
+}
+
+.block1{
+margin-top: 25px;
+margin-bottom: 25px;
+}
+
+.block2{
+
+margin-top: 25px;
+margin-bottom: 25px;
+}
+
+.block3{
+
+margin-top: 25px;
+margin-bottom: 25px;
+}
 </style>
 
 </head>
@@ -35,9 +56,9 @@ body {
 	<%-- ${seats } --%>
 	<h1>Select Seats</h1>
 
-	${seats }
 	<a href="">Book Flight</a>
-
+<form action="/flight/selected">
+<input name="flightId" value=6>
 	<div class="container-fluid">
 		<div class="row seats">
 			<div class="col-lg-4">
@@ -46,13 +67,15 @@ body {
 			</div>
 			<div class="col-lg-4">
 
-				<jstl:forEach var="seat" items="${seats }">
-					${seat.column}
-					<jstl:set var="abc" value="A" />
-						<jstl:if test="${seat.column eq abc}">
+<div class="block1">
+				<div class="column-A">
+					<jstl:forEach var="seat" items="${seats }">
+					
+										
+						<jstl:if test="${seat.column eq 65}">
 
 							<jstl:if test="${seat.available}">
-								<input type="checkbox">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
 							</jstl:if>
 							<jstl:if test="${!seat.available}">
 								<input class="occupied" type="checkbox" disabled="disabled">
@@ -60,26 +83,163 @@ body {
 
 
 						</jstl:if>
-				</jstl:forEach>
+					</jstl:forEach>
+				</div>
 
+				<div class="column-B">
+					<jstl:forEach var="seat" items="${seats }">
 
+						<jstl:if test="${seat.column eq 66}">
 
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
 
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+
+				<div class="column-C">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 67}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+</div>
+
+<div class="block2">
+				<div class="column-D">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 68}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+
+				<div class="column-E">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 69}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+
+				<div class="column-F">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 70}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+</div>
+
+<div class="block3">
+				<div class="column-G">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 71}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+
+				<div class="column-H">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 72}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+
+				</div>
+
+				<div class="column-I">
+					<jstl:forEach var="seat" items="${seats }">
+
+						<jstl:if test="${seat.column eq 73}">
+
+							<jstl:if test="${seat.available}">
+								<input type="checkbox" name="cbseats" value="${seat.column} ${seat.row}">
+							</jstl:if>
+							<jstl:if test="${!seat.available}">
+								<input class="occupied" type="checkbox" disabled="disabled">
+							</jstl:if>
+
+						</jstl:if>
+					</jstl:forEach>
+				</div>
+</div>
 			</div>
 			<div class="col-lg-4">
 				<img alt="tail"
 					src="https://github.com/tripea/website-images/blob/master/tail.png?raw=true">
 			</div>
-
 		</div>
 
 		<div class="row">
 
 			<div class="col-lg-4">
-				<input class="btn-success" type="submit" value="Book">
+				<input class="btn-success" type="submit" value="Book Ticket">
 			</div>
 		</div>
 
 	</div>
+	</form>
 </body>
 </html>
