@@ -81,7 +81,7 @@
 					</datalist>
 			</div>
 			<div class="input-group date">
-				<input type="text" class="form-control" placeholder="dd/mm/yy"><span
+				<input type="text" class="form-control" placeholder="dd/mm/yy" required="required"><span
 					class="input-group-addon"><i
 					class="glyphicon glyphicon-calendar"></i></span>
 			</div>

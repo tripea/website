@@ -66,7 +66,7 @@
 			
 	
 			<div class="input-group date">
-				<input type="text" class="form-control"><span
+				<input type="text" class="form-control" required="required" placeholder="dd/mm/yy"><span
 					class="input-group-addon"><i
 					class="glyphicon glyphicon-calendar"></i></span>
 			</div>
