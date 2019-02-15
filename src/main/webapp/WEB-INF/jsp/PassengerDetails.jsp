@@ -14,31 +14,25 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form>
-		<div id="Participentfieldwrap">
-			<div class="form-group">
-				<label for="usr">Name:</label> <input type="text"
-					class="form-control" id="usr">
-				<div class="form-group">
-					<label for="usr">LastName:</label> <input type="text"
-						class="form-control" id="usr">
-					<div class="form-group">
-						<label for="usr">Age:</label> <input type="text"
-							class="form-control" id="usr">
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
+  <form>
+    <div id="passengers">
+    	
+      First Name : <input type="text"  id=""/> <br />
+      Last Name : <input type="text" id=""  /><br />
+      Age : <input type="text" id=""  /> 
+    
+    </div>        
+  </form>
+
 
 	<script type="text/javascript">
-    var participantsField = document.getElementById("Participentfieldwrap"),
-        form = document.getElementsByTagName("
-			form")[0], ContestantNum = 4, i;
-			for (i = 0; i < ContestantNum; i++) {
-				var clone = participantsField.cloneNode(true);
-				form.appendChild(clone);
-			}
-		</script>
+    var participantsField = document.getElementById("passengers"),
+        form = document.getElementsByTagName("form")[0],
+        ContestantNum =  ${numberOf},i;
+    for(i=1; i<ContestantNum; i++){
+      var clone = participantsField.cloneNode(true);
+      form.appendChild(clone);
+    }
+  </script>
 </body>
 </html>
