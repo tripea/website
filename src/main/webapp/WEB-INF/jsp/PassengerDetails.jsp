@@ -30,7 +30,7 @@
 				<option value="Other">Other</option></select>
 			<!-- <button type="submit" <a href="bookingInformation"
 				class="btn btn-primary">Submit</button> -->
-				Submit:<a href="bookingInformation"></a>
+				Submit:<a href="bookingInformation">Submit</a>
     <hr>
     </div>        
   </form>
