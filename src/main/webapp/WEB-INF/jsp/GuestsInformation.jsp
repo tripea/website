@@ -15,12 +15,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("numberOfGuest").click(function(){
-        
-    });
-    </script>
 <body>
 	<form class="form-inline" action="customerInformation">
 		<label for="fName">First name:</label> <input type="text"
@@ -33,5 +27,5 @@ $(document).ready(function(){
 			<option value="Other">Other</option></select>
 		<button type="submit" href="bookingInformation"class="btn btn-primary">Submit</button>
 	</form>
-</body>
+	</body>
 </html>

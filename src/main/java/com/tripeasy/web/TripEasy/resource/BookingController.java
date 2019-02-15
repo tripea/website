@@ -53,14 +53,12 @@ public class BookingController {
 		System.out.println("inside customer info");
 		return "CustomersInformation";
 	}
-
-	@RequestMapping("/bookhotel")
-	public String bookhotel(@RequestParam Booking booking) {
-		System.out.println("in booking");
-		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
-		// model.addAttribute("message", "Booking Successful");
-		// TODO delete this
-		return "hiiPoonam";
-	}
+	/*
+	 * @RequestMapping("/bookhotel") public String bookhotel(@RequestParam Booking
+	 * booking) { System.out.println("in booking");
+	 * restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking,
+	 * null); // model.addAttribute("message", "Booking Successful"); // TODO delete
+	 * this return "hiiPoonam"; }
+	 */
 
 }

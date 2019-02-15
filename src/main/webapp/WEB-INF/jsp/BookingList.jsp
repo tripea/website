@@ -37,7 +37,7 @@
 			<jstl:forEach var="bookingList" items="${bookingList}">
 				<tr>
 					<!-- <th scope="row"></th> -->
-					<td><a href="customerInformation">${bookingList.bookingID}</a></td>
+					<td><a href="customerInformation">${bookingList.bookin}</a></td>
 					<td>${bookingList.bookingType}</td>
 					<td>${bookingList.dateOfBooking}</td>
 					<td>${bookingList.bookedBy.fullName}</td>
