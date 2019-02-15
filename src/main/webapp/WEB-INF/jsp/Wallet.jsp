@@ -50,7 +50,7 @@ Latest compiled JavaScript
 			</div>
 			<br>
 			<div class="col-sm-6" style="float: left;">
-				<a href="/addMoney" class="btn btn-info" role="button"
+				<a href="/wallet/addMoney" class="btn btn-info" role="button"
 					style="background-color: black;">Add Money</a>
 
 			</div>

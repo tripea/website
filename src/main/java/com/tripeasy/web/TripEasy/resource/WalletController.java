@@ -46,6 +46,6 @@ public class WalletController {
 	public String AddMoney() {
 		ModelAndView modelAndView;
 		modelAndView=new ModelAndView("AddMoney.jsp");
-		return "AddMoney.jsp";
+		return "AddMoney";
 				}
 }
