@@ -63,9 +63,9 @@
 				<b> <label class="whiteText"> Source</label><span
 					class="required">*</span>: <input list="cities"
 					class="form-control" list="cities" name="source"
-					required="required" id="source"> <datalist>
+					required="required" id="source" autocomplete="off"> <datalist>
 						<jstl:forEach var="list" items="${flightList}">
-							<option value="${list.city} (${list.code}) ">
+							<option value="${list.city}(${list.code})">
 						</jstl:forEach>
 					</datalist>
 			</div>
@@ -74,14 +74,14 @@
 				<b> <label class="whiteText"> Destination</label><span
 					class="required">*</span>: <input list="cities"
 					class="form-control" list="cities" name="destination"
-					id="destination" required="required"> <datalist id="cities">
+					id="destination" required="required" autocomplete="off"> <datalist id="cities">
 						<jstl:forEach var="list" items="${flightList}">
-							<option value="${list.city} (${list.code}) ">
+							<option value="${list.city}(${list.code})">
 						</jstl:forEach>
 					</datalist>
 			</div>
 			<div class="input-group date">
-				<input type="text" class="form-control" placeholder="dd/mm/yy"><span
+				<input type="text" class="form-control" placeholder="dd/mm/yy" required="required"><span
 					class="input-group-addon"><i
 					class="glyphicon glyphicon-calendar"></i></span>
 			</div>
