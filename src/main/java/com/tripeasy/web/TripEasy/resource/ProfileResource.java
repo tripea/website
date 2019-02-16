@@ -33,7 +33,7 @@ public class ProfileResource {
 		return "Login";
 	}
 
-	@RequestMapping("/s")
+	@RequestMapping("/signUpPage")
 	public String signup() {
 		return "SignUp";
 	}

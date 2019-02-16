@@ -35,7 +35,7 @@ a {padding: 10px 10px; display:inline-block;}
 				<li><a href="/bookings/getAllBookings">Booking History</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/s"><span class="glyphicon glyphicon-user"></span>
+				<li><a href="/signUpPage"><span class="glyphicon glyphicon-user"></span>
 						Sign Up</a></li>
 				<li><a href="logout"><span
 						class="glyphicon glyphicon-log-out"></span> Logout</a></li>

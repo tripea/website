@@ -31,7 +31,7 @@
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <i class="fa fa-coffee"></i>
         </div> -->
-        <h3>Personal info</h3>  
+        <h3 align="center">Personal info</h3>  
        
         <jstl:if test="${profile !=null}">
         
