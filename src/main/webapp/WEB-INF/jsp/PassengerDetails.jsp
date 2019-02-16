@@ -35,15 +35,20 @@
 								value="Male">Male</option>
 							<option value="Female">Female</option>
 							<option value="Other">Other</option></select>
-							</tr>
-						<tr><td>
-						<button type="submit" class="btn btn-primary">Submit</button></td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</td>
 				</tr>
 
 				<hr>
 				</div>
 			</table>
 	</form>
+	<div>
+		<a href="bookingInformation">Booking Information</a>
+	</div>
 	<!-- <a href="bookingInformation">Submit</a> -->
 	<!--   <form>
     <div id="passengers">

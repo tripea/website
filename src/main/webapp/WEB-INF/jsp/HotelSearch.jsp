@@ -54,19 +54,19 @@
 		<form class="form-inline" action="searchHotel" method="get">
 
 			<div class="form-group">
-				<b> <label class="whiteText">Enter City </label>
-				 <input list="cities" class="form-control" list="cities"
-					name="city" required="required">
-				<datalist id="cities">
-					<jstl:forEach var="list" items="${hotelCityList}">
-						<option value="${list.city}">
-					</jstl:forEach>
-				</datalist>
+				<b> <label class="whiteText">Enter City </label> <input
+					list="cities" class="form-control" list="cities" name="city"
+					required="required"> <datalist id="cities">
+						<jstl:forEach var="list" items="${hotelCityList}">
+							<option value="${list.city}">
+						</jstl:forEach>
+					</datalist>
 			</div>
-			
-	
+
+
 			<div class="input-group date">
-				<input type="text" class="form-control" required="required" placeholder="dd/mm/yy" autocomplete="off"><span
+				<input type="text" class="form-control" required="required"
+					placeholder="dd/mm/yy" autocomplete="off"><span
 					class="input-group-addon"><i
 					class="glyphicon glyphicon-calendar"></i></span>
 			</div>
@@ -75,7 +75,7 @@
 			<button type="submit" class="btn">Search</button>
 		</form>
 	</div>
-	
+
 	<br>
 	<br>
 

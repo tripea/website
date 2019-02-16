@@ -51,11 +51,13 @@ p.resort {
 
 <body style="background-color: #5E4485">
 	<div class="container-fluid">
+	<jstl:forEach var="hotelList" items="${hotelList}">
 		<div style="width: auto; padding: 10px; position: relative;">
-			<jstl:forEach var="hotelList" items="${hotelList}">
+			
 
 				<%-- <jstl:forEach var="photos" items="${hotelList.photos}"> --%>
-					<div class="row hotel">
+				<div class = "row">
+					<div class="<!-- row --> hotel">
 						<%-- <a href ="/hotel/getHotel?hotelId=${hotelList.hotelId}"> --%>
 						<div class="col-sm-5">
 							<div class="container">
@@ -63,7 +65,6 @@ p.resort {
 								<br> <img class="img-responsive" src=${first}
 									alt=${hotelList.hotelName} width="460"
 									height="345">
-									
 									
 									
 									
@@ -89,16 +90,18 @@ p.resort {
 
 						<!--     <div class="col-sm-4" style="background-color:lavenderblush;"> -->
 						<h4>INCLUDED IN THIS PRICE</h4>
-						<jstl:forEach var="room" items="${hotelList.rooms}">
-							<jstl:if test="room."></jstl:if>
+						<%-- <jstl:forEach var="room" items="${hotelList.rooms}"> --%>
+							 
+							<jstl:set var="room" value="${hotelList.rooms[0]}"/>
 							<h2>${room.price}</h2>
 							<p>per night</p>
 							<p>LOGIN & UNLOCK A SECRET DEAL!
 							<p>
-						</jstl:forEach>
+					<%-- 	</jstl:forEach> --%>
 
 						<!-- </div> -->
 
+					</div>
 					</div>
 		</div>
 
