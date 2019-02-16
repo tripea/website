@@ -119,33 +119,29 @@ button:hover {
 
 </head>
 <body>
-	<form action="removeProduct">
+	<form action="saveHotel" method="get">
 
+ 		<div class="row">
 
-
-
-		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-8">
 				<label class="whiteText" for="email"><b>Enter Email
 						Address<span class="required">*</span>
 				</b></label> <input type="text" placeholder="Enter Email"
-					pattern="[^ @]*@[^ @]*" name="email" value="" required="required">
+					pattern="[^ @]*@[^ @]*" name="emailId" value="" required="required">
 
 				<label class="whiteText" for="userName"><b>Enter Full
 						Name<span class="required">*</span>
-				</b></label> <input type="text" placeholder="Enter userName" name="userName"
+				</b></label> <input type="text" placeholder="Enter Full Name" name="fullName"
 					required="required"> <label class="whiteText"
 					for="userName"><b>Enter Number OF Guests<span
-						class="required">*</span></b></label> <br>
-				<input type="number" placeholder="Enter Number OF Guests"
-					name="numberOfGusts" required="required">
+						class="required">*</span></b></label> <br> <input type="number"
+					placeholder="Enter Number OF Guests" name="numberOfGuest"
+					required="required">
 			</div>
 
 		</div>
 
-
-
-
+ 
 		<table class="table">
 			<thead>
 				<tr>
@@ -159,13 +155,14 @@ button:hover {
 
 			<tr>
 
-				<td><input type="number" id="roomPrice" value="${roomprice}"></td>
+				<td><input type="number" id="roomPrice" readonly="readonly"
+					value="${roomprice}"></td>
 				<td><input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}"
 					id="checkIn" class="datepicker" name="checkInDate" value="" /></td>
 
 				<td><input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}"
-					onchange="compute()" id="checkOut" class="datepicker" name="checkOutDate"
-					value="" /></td>
+					onchange="compute()" id="checkOut" class="datepicker"
+					name="checkOutDate" value="" /></td>
 				<td><input type="number" name="finalAmount" id="finalAmount"
 					value="${roomprice}" readonly="readonly"></td>
 			</tr>
@@ -174,9 +171,8 @@ button:hover {
 
 		<div class="clearfix">
 			<button type="button" class="cancelbtn">Cancel</button>
-			<button type="submit" class="signupbtn" >Pay Now</button>
+			<button type="submit" class="signupbtn">Pay Now</button>
 		</div>
-
 
 		<script>
 			function compute() {
@@ -208,4 +204,5 @@ button:hover {
 
 	</form>
 </body>
+
 </html>

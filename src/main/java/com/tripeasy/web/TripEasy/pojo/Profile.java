@@ -2,6 +2,8 @@ package com.tripeasy.web.TripEasy.pojo;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Profile {
 
 	private Integer profileId;
@@ -10,10 +12,16 @@ public class Profile {
 	private String emailId;
 	private String contactNumber;
 	private String gender;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfBirth;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate checkInDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate checkOutDate;
 	private String maritialStatus;
 	private Address address;
 	private Integer numberOfGuest;
+	private Double finalAmount;
 	private Integer numberOfPassengers;
 	public Profile() {
 		super();
@@ -32,6 +40,55 @@ public class Profile {
 		this.dateOfBirth = dateOfBirth;
 		this.maritialStatus = maritialStatus;
 		this.address = address;
+	}
+
+	
+	public Profile(Integer profileId, String photo, String fullName, String emailId, String contactNumber,
+			String gender, LocalDate dateOfBirth, LocalDate checkInDate, LocalDate checkOutDate, String maritialStatus,
+			Address address, Integer numberOfGuest, Double finalAmount, Integer numberOfPassengers) {
+		super();
+		this.profileId = profileId;
+		this.photo = photo;
+		this.fullName = fullName;
+		this.emailId = emailId;
+		this.contactNumber = contactNumber;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.checkInDate = checkInDate;
+		this.checkOutDate = checkOutDate;
+		this.maritialStatus = maritialStatus;
+		this.address = address;
+		this.numberOfGuest = numberOfGuest;
+		this.finalAmount = finalAmount;
+		this.numberOfPassengers = numberOfPassengers;
+	}
+
+	public LocalDate getCheckInDate() {
+		return checkInDate;
+	}
+
+	public void setCheckInDate(LocalDate checkInDate) {
+		this.checkInDate = checkInDate;
+	}
+
+	public LocalDate getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutDate(LocalDate checkOutDate) {
+		this.checkOutDate = checkOutDate;
+	}
+
+	public Double getFinalAmount() {
+		return finalAmount;
+	}
+
+	public void setFinalAmount(Double finalAmount) {
+		this.finalAmount = finalAmount;
+	}
+
+	public void setNumberOfPassengers(Integer numberOfPassengers) {
+		this.numberOfPassengers = numberOfPassengers;
 	}
 
 	public Integer getProfileId() {

@@ -1,7 +1,5 @@
 package com.tripeasy.web.TripEasy.resource;
 
- 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +44,8 @@ public class HotelController {
 
 	@RequestMapping("/getHotel")
 	public ModelAndView getHotel(@RequestParam("hotelId") Integer hotelId) {
-		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId, Hotel.class);
+		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId,
+				Hotel.class);
 		staticHotel = hotel.getBody();
 		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
@@ -73,14 +72,15 @@ public class HotelController {
 	 */
 
 	@RequestMapping("/bookingForm")
-	public String bookingForm(@RequestParam Double roomprice,Model model) {
+	public String bookingForm(@RequestParam Double roomprice, Model model) {
 		model.addAttribute("roomprice", roomprice);
 		return "BookHotel";
 	}
 
-	@RequestMapping(value = "/saveHotel", method = RequestMethod.GET)
+	@RequestMapping(value = "/bookingForm/saveHotel", method = RequestMethod.GET)
 	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
 		System.out.println("In save " + staticHotel);
+		System.out.println("In save " + profile);
 		System.out.println("In save " + staticHotel.getHotelId());
 		bookingID++;
 		Booking booking = new Booking();
@@ -93,8 +93,8 @@ public class HotelController {
 		System.out.println("below post");
 		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
-		model.addAttribute("message", "Bokking Successful!");
-		return "success";
+		model.addAttribute("message", "Booking Successful!");
+		return "hotelbooksuccess";
 	}
 
 	@RequestMapping("/hotels")
