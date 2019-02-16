@@ -271,10 +271,11 @@ public class Profile {
 	public String toString() {
 		return "Profile [profileId=" + profileId + ", photo=" + photo + ", fullName=" + fullName + ", emailId="
 				+ emailId + ", contactNumber=" + contactNumber + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
-				+ ", maritialStatus=" + maritialStatus + ", address=" + address + ", numberOfGuest=" + numberOfGuest
-				+ ", numberOfPassengers=" + numberOfPassengers + "]";
+				+ ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate + ", maritialStatus="
+				+ maritialStatus + ", address=" + address + ", numberOfGuest=" + numberOfGuest + ", finalAmount="
+				+ finalAmount + ", numberOfPassengers=" + numberOfPassengers + "]";
 	}
-	
-	
+
+		
 
 }
