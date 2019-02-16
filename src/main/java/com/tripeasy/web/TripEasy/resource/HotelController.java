@@ -93,6 +93,10 @@ public class HotelController {
 		System.out.println("below post");
 		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
+//		restTemplate.put("http://10.246.92.192:8080/wallet/payMoney?"
+//				+ "senderProfileId=2&receiverProfileId=1&amount="+profile.getFinalAmount()+"&transactionRemarks=ToMM&"
+//						+ "transactionType=Booking"
+	//			, null);
 		model.addAttribute("message", "Booking Successful!");
 		return "hotelbooksuccess";
 	}
