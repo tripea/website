@@ -83,6 +83,7 @@ public class HotelController {
 
 	@RequestMapping(value = "/bookingForm/saveHotel", method = RequestMethod.GET)
 	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
+		System.out.println("prof "+ profile.getCheckInDate());
 		System.out.println("In save " + staticHotel);
 		System.out.println("In save " + profile);
 		System.out.println("In save " + staticHotel.getHotelId());
@@ -93,7 +94,7 @@ public class HotelController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " + booking);
 
-		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
+		restTemplate.postForEntity("http://localhost:7878/bookings", booking, null);
 		System.out.println("below post");
 		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
