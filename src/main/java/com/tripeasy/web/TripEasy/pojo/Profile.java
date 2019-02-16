@@ -166,14 +166,68 @@ public class Profile {
 	 
 	 
 
+	/*
+	 * @Override public int hashCode() { final int prime = 31; int result = 1;
+	 * result = prime * result + ((address == null) ? 0 : address.hashCode());
+	 * result = prime * result + ((contactNumber == null) ? 0 :
+	 * contactNumber.hashCode()); result = prime * result + ((dateOfBirth == null) ?
+	 * 0 : dateOfBirth.hashCode()); result = prime * result + ((emailId == null) ? 0
+	 * : emailId.hashCode()); result = prime * result + ((fullName == null) ? 0 :
+	 * fullName.hashCode()); result = prime * result + ((gender == null) ? 0 :
+	 * gender.hashCode()); result = prime * result + ((maritialStatus == null) ? 0 :
+	 * maritialStatus.hashCode()); result = prime * result + ((numberOfGuest ==
+	 * null) ? 0 : numberOfGuest.hashCode()); result = prime * result +
+	 * ((numberOfPassengers == null) ? 0 : numberOfPassengers.hashCode()); result =
+	 * prime * result + ((photo == null) ? 0 : photo.hashCode()); result = prime *
+	 * result + ((profileId == null) ? 0 : profileId.hashCode()); return result; }
+	 * 
+	 * @Override public boolean equals(Object obj) { if (this == obj) return true;
+	 * if (obj == null) return false; if (getClass() != obj.getClass()) return
+	 * false; Profile other = (Profile) obj; if (address == null) { if
+	 * (other.address != null) return false; } else if
+	 * (!address.equals(other.address)) return false; if (contactNumber == null) {
+	 * if (other.contactNumber != null) return false; } else if
+	 * (!contactNumber.equals(other.contactNumber)) return false; if (dateOfBirth ==
+	 * null) { if (other.dateOfBirth != null) return false; } else if
+	 * (!dateOfBirth.equals(other.dateOfBirth)) return false; if (emailId == null) {
+	 * if (other.emailId != null) return false; } else if
+	 * (!emailId.equals(other.emailId)) return false; if (fullName == null) { if
+	 * (other.fullName != null) return false; } else if
+	 * (!fullName.equals(other.fullName)) return false; if (gender == null) { if
+	 * (other.gender != null) return false; } else if (!gender.equals(other.gender))
+	 * return false; if (maritialStatus == null) { if (other.maritialStatus != null)
+	 * return false; } else if (!maritialStatus.equals(other.maritialStatus)) return
+	 * false; if (numberOfGuest == null) { if (other.numberOfGuest != null) return
+	 * false; } else if (!numberOfGuest.equals(other.numberOfGuest)) return false;
+	 * if (numberOfPassengers == null) { if (other.numberOfPassengers != null)
+	 * return false; } else if
+	 * (!numberOfPassengers.equals(other.numberOfPassengers)) return false; if
+	 * (photo == null) { if (other.photo != null) return false; } else if
+	 * (!photo.equals(other.photo)) return false; if (profileId == null) { if
+	 * (other.profileId != null) return false; } else if
+	 * (!profileId.equals(other.profileId)) return false; return true; }
+	 */
+
+	
+	
+	
+	
+	
+	public Integer getNumberOfGuest() {
+		return numberOfGuest;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((checkInDate == null) ? 0 : checkInDate.hashCode());
+		result = prime * result + ((checkOutDate == null) ? 0 : checkOutDate.hashCode());
 		result = prime * result + ((contactNumber == null) ? 0 : contactNumber.hashCode());
 		result = prime * result + ((dateOfBirth == null) ? 0 : dateOfBirth.hashCode());
 		result = prime * result + ((emailId == null) ? 0 : emailId.hashCode());
+		result = prime * result + ((finalAmount == null) ? 0 : finalAmount.hashCode());
 		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((maritialStatus == null) ? 0 : maritialStatus.hashCode());
@@ -198,6 +252,16 @@ public class Profile {
 				return false;
 		} else if (!address.equals(other.address))
 			return false;
+		if (checkInDate == null) {
+			if (other.checkInDate != null)
+				return false;
+		} else if (!checkInDate.equals(other.checkInDate))
+			return false;
+		if (checkOutDate == null) {
+			if (other.checkOutDate != null)
+				return false;
+		} else if (!checkOutDate.equals(other.checkOutDate))
+			return false;
 		if (contactNumber == null) {
 			if (other.contactNumber != null)
 				return false;
@@ -212,6 +276,11 @@ public class Profile {
 			if (other.emailId != null)
 				return false;
 		} else if (!emailId.equals(other.emailId))
+			return false;
+		if (finalAmount == null) {
+			if (other.finalAmount != null)
+				return false;
+		} else if (!finalAmount.equals(other.finalAmount))
 			return false;
 		if (fullName == null) {
 			if (other.fullName != null)
@@ -249,10 +318,6 @@ public class Profile {
 		} else if (!profileId.equals(other.profileId))
 			return false;
 		return true;
-	}
-
-	public Integer getNumberOfGuest() {
-		return numberOfGuest;
 	}
 
 	public void setNumberOfGuest(Integer numberOfGuest) {

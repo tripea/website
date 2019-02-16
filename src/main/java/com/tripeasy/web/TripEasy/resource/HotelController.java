@@ -1,5 +1,6 @@
 package com.tripeasy.web.TripEasy.resource;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,9 @@ public class HotelController {
 		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId,
 				Hotel.class);
 		staticHotel = hotel.getBody();
+		ResponseEntity<Booking[]> bookingList = restTemplate.getForEntity("http://10.246.92.145:7878/bookings/?hotelId=" + hotelId, Booking[].class);
+		List<Booking> bookings = Arrays.asList(bookingList.getBody());
+		System.out.println("booking list = " +bookingList.getBody().length+" size : "+bookings.size());
 		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
 	}
@@ -96,7 +100,7 @@ public class HotelController {
 //		restTemplate.put("http://10.246.92.192:8080/wallet/payMoney?"
 //				+ "senderProfileId=2&receiverProfileId=1&amount="+profile.getFinalAmount()+"&transactionRemarks=ToMM&"
 //						+ "transactionType=Booking"
-	//			, null);
+//			, null);
 		model.addAttribute("message", "Booking Successful!");
 		return "hotelbooksuccess";
 	}
@@ -106,7 +110,7 @@ public class HotelController {
 		System.out.println("in search " + city);
 
 		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels/?city=" + city, List.class);
-
+		
 		System.out.println("In app controller " + hotelList);
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
