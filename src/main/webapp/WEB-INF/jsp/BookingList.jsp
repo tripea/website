@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html>
 <!-- <head>
@@ -16,7 +17,7 @@ Latest compiled JavaScript
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Booking History</title>
 </head>
 <body>
 	<table class="table">

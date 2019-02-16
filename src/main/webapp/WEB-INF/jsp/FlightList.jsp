@@ -57,7 +57,7 @@ body {
 				<div class="col-lg-1">Price</div>
 
 
-				<a class="col-lg-2" href="bookFlight?flightId=${flight.flightId}">Book</a>
+				<a class="col-lg-2" href="selectSeats?flightId=${flight.flightId}">Book</a>
 
 
 			</div>
