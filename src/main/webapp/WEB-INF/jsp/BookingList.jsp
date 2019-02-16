@@ -45,7 +45,7 @@ Latest compiled JavaScript
 					<th scope="col">Date of Booking</th>
 					<th scope="col">Booked by</th>
 					<th scope="col">Hotel Name and Room Number</th>
-					<th scope="col">Number of Guests</th>
+					<!-- <th scope="col">Number of Guests</th> -->
 					<th scope="col">CheckIn Date</th>
 					<th scope="col">CheckOut Date</th>
 					<th scope="col">Flight Name and Seat Number</th>
@@ -62,10 +62,10 @@ Latest compiled JavaScript
 						<td>${bookingList.bookedBy.fullName}</td>
 						<td>${bookingList.hotel.hotelName}
 							${bookingList.room.roomNumber}</td>
-						<td>
-							<!-- <a href=guestsDetails> -->${bookingList.numberOfGuest}</td>
-						<td>${bookingList.checkInDate}</td>
-						<td>${bookingList.checkOutDate}</td>
+						<%-- <td>
+							<!-- <a href=guestsDetails> -->${bookingList.numberOfGuest}</td> --%>
+						<td>${bookingList.bookedBy.checkInDate}</td>
+						<td>${bookingList.bookedBy.checkOutDate}</td>
 						<td>${bookingList.flight.flightName}${bookingList.flight.seat.row}${bookingList.flight.seat.column}</td>
 						<td><a href="passengerDetails">${bookingList.numberOfPassengers}</a>
 					</tr>
