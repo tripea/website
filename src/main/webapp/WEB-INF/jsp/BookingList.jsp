@@ -43,6 +43,7 @@ Latest compiled JavaScript
 					<th scope="col">Booking Id</th>
 					<th scope="col">Booking Type</th>
 					<th scope="col">Date of Booking</th>
+					<th scope="col">Profile Id</th>
 					<th scope="col">Booked by</th>
 					<th scope="col">Hotel Name and Room Number</th>
 					<!-- <th scope="col">Number of Guests</th> -->
@@ -59,6 +60,7 @@ Latest compiled JavaScript
 						<td>${bookingList.bookingID}</td>
 						<td>${bookingList.bookingType}</td>
 						<td>${bookingList.dateOfBooking}</td>
+						<td>${bookingList.bookedBy.profileId}</td>
 						<td>${bookingList.bookedBy.fullName}</td>
 						<td>${bookingList.hotel.hotelName}
 							${bookingList.room.roomNumber}</td>

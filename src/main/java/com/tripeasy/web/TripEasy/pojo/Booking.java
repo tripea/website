@@ -24,10 +24,10 @@ public class Booking {
 	private Hotel hotel;
 	private Room room;
 	private Flight flight;
-	// private LocalDateTime checkInDate;
-	// private LocalDateTime checkOutDate;
-	// private Integer numberOfCustomers;
-	// private Integer numberOfGuest;
+	private LocalDateTime checkInDate;
+	 private LocalDateTime checkOutDate;
+	private Integer numberOfCustomers;
+	private Integer numberOfGuest;
 	private Integer numberOfPassengers;
 
 	public Booking() {
@@ -36,8 +36,7 @@ public class Booking {
 	}
 
 	public Booking(Integer bookingID, String bookingType, Object bookingDetails, LocalDateTime dateOfBooking,
-			Double totalCost, List<Customer> customers, Profile bookedBy, Hotel hotel, Room room, Flight flight,
-			Integer numberOfPassengers) {
+			Double totalCost, List<Customer> customers, Profile bookedBy, Hotel hotel, Room room, Flight flight) {
 		super();
 		this.bookingID = bookingID;
 		this.bookingType = bookingType;
@@ -49,6 +48,46 @@ public class Booking {
 		this.hotel = hotel;
 		this.room = room;
 		this.flight = flight;
+		// this.numberOfPassengers = numberOfPassengers;
+	}
+
+	public LocalDateTime getCheckInDate() {
+		return checkInDate;
+	}
+
+	public void setCheckInDate(LocalDateTime checkInDate) {
+		this.checkInDate = checkInDate;
+	}
+
+	public LocalDateTime getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutDate(LocalDateTime checkOutDate) {
+		this.checkOutDate = checkOutDate;
+	}
+
+	public Integer getNumberOfCustomers() {
+		return numberOfCustomers;
+	}
+
+	public void setNumberOfCustomers(Integer numberOfCustomers) {
+		this.numberOfCustomers = numberOfCustomers;
+	}
+
+	public Integer getNumberOfGuest() {
+		return numberOfGuest;
+	}
+
+	public void setNumberOfGuest(Integer numberOfGuest) {
+		this.numberOfGuest = numberOfGuest;
+	}
+
+	public Integer getNumberOfPassengers() {
+		return numberOfPassengers;
+	}
+
+	public void setNumberOfPassengers(Integer numberOfPassengers) {
 		this.numberOfPassengers = numberOfPassengers;
 	}
 
@@ -132,14 +171,6 @@ public class Booking {
 		this.flight = flight;
 	}
 
-	public Integer getNumberOfPassengers() {
-		return numberOfPassengers;
-	}
-
-	public void setNumberOfPassengers(Integer numberOfPassengers) {
-		this.numberOfPassengers = numberOfPassengers;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -152,7 +183,6 @@ public class Booking {
 		result = prime * result + ((dateOfBooking == null) ? 0 : dateOfBooking.hashCode());
 		result = prime * result + ((flight == null) ? 0 : flight.hashCode());
 		result = prime * result + ((hotel == null) ? 0 : hotel.hashCode());
-		result = prime * result + ((numberOfPassengers == null) ? 0 : numberOfPassengers.hashCode());
 		result = prime * result + ((room == null) ? 0 : room.hashCode());
 		result = prime * result + ((totalCost == null) ? 0 : totalCost.hashCode());
 		return result;
@@ -207,12 +237,7 @@ public class Booking {
 				return false;
 		} else if (!hotel.equals(other.hotel))
 			return false;
-		if (numberOfPassengers == null) {
-			if (other.numberOfPassengers != null)
-				return false;
-		} else if (!numberOfPassengers.equals(other.numberOfPassengers))
-			return false;
-		if (room == null) {
+				if (room == null) {
 			if (other.room != null)
 				return false;
 		} else if (!room.equals(other.room))
@@ -229,8 +254,9 @@ public class Booking {
 	public String toString() {
 		return "Booking [bookingID=" + bookingID + ", bookingType=" + bookingType + ", bookingDetails=" + bookingDetails
 				+ ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", customers=" + customers
-				+ ", bookedBy=" + bookedBy + ", hotel=" + hotel + ", room=" + room + ", flight=" + flight
-				+ ", numberOfPassengers=" + numberOfPassengers + "]";
+				+ ", bookedBy=" + bookedBy + ", hotel=" + hotel + ", room=" + room + ", flight=" + flight + "]";
 	}
+
+
 
 }
