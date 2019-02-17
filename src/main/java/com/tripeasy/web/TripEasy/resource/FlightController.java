@@ -32,13 +32,11 @@ import com.tripeasy.web.TripEasy.service.NotificationService;
 public class FlightController {
 
 	@Autowired
-<<<<<<< HEAD
 	private NotificationService notificationService;
 	
-=======
-	NotificationService notificationService;
 
->>>>>>> cda35bc621c54df5cc932d222c4224480acf6daf
+
+
 	@Autowired
 	FlightService flightService;
 
