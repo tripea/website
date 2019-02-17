@@ -1,5 +1,8 @@
 package com.tripeasy.web.TripEasy.resource;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,10 +29,12 @@ public class HotelController {
 	private RestTemplate restTemplate;
 
 	private static Integer bookingID;
-
+	private static Integer bookingCounter;
+	private static Integer bookingListSize;
 	static {
-		bookingID = 10;
+		bookingID = 100;
 	}
+
 	private static Hotel staticHotel = new Hotel();
 
 	@RequestMapping("/addhotel")
@@ -48,9 +53,40 @@ public class HotelController {
 		ResponseEntity<Hotel> hotel = restTemplate.getForEntity("http://10.246.92.124:9095/hotels/" + hotelId,
 				Hotel.class);
 		staticHotel = hotel.getBody();
-		ResponseEntity<Booking[]> bookingList = restTemplate.getForEntity("http://10.246.92.145:7878/bookings/?hotelId=" + hotelId, Booking[].class);
+
+		ResponseEntity<Booking[]> bookingList = restTemplate
+				.getForEntity("http://10.246.92.145:7878/bookings/?hotelId=" + hotelId, Booking[].class);
 		List<Booking> bookings = Arrays.asList(bookingList.getBody());
-		System.out.println("booking list = " +bookingList.getBody().length+" size : "+bookings.size());
+		System.out.println("booking list = " + bookingList.getBody().length + " size : " + bookings.size());
+		System.out.println("booking list = " + bookingList);
+		bookingListSize =  bookingList.getBody().length;
+		
+	 
+		LocalDate checkOutDate = null;
+		for (Booking booking : bookings) {
+			checkOutDate = booking.getBookedBy().getCheckOutDate();
+
+			System.out.println("bok  =" + booking);
+			LocalDate currenetDate = LocalDate.now();
+			System.out.println(" currenetDate  " + currenetDate);
+			System.out.println(" checkOutDate  " + checkOutDate);
+
+			if (checkOutDate.compareTo(currenetDate)==0) {
+				System.out.println("it is working r");
+				
+			}
+
+		}
+
+//		LocalDate currenetDate = LocalDateTime.now().toLocalDate();
+//		System.out.println("currenet date = " +currenetDate);
+//		System.out.println("check out  date 1 = " +checkOutDateInLocalDateForm);
+//		System.out.println("check out  date 2 = " +checkOutDateInLocalDateForm);
+//		if(checkOutDateInLocalDateForm.compareTo(currenetDate)==0) {
+//			System.out.println("it is working r");
+//			System.out.println( LocalDateTime.now());
+//		}
+
 		System.out.println(hotel.getBody().getTotalAvailableRooms());
 		return new ModelAndView("HotelInfo", "hotel", hotel.getBody());
 	}
@@ -83,7 +119,7 @@ public class HotelController {
 
 	@RequestMapping(value = "/bookingForm/saveHotel", method = RequestMethod.GET)
 	public String saveHotelBooking(@ModelAttribute Profile profile, Model model) {
-		System.out.println("prof "+ profile.getCheckInDate());
+		System.out.println("prof " + profile.getCheckInDate());
 		System.out.println("In save " + staticHotel);
 		System.out.println("In save " + profile);
 		System.out.println("In save " + staticHotel.getHotelId());
@@ -94,7 +130,7 @@ public class HotelController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " + booking);
 
-		restTemplate.postForEntity("http://localhost:7878/bookings", booking, null);
+		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
 		System.out.println("below post");
 		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
@@ -111,7 +147,7 @@ public class HotelController {
 		System.out.println("in search " + city);
 
 		List<Hotel> hotelList = restTemplate.getForObject("http://10.246.92.124:9095/hotels/?city=" + city, List.class);
-		
+
 		System.out.println("In app controller " + hotelList);
 		return new ModelAndView("HotelList", "hotelList", hotelList);
 	}
