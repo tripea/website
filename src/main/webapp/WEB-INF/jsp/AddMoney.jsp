@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-
+<form>
 		<div style="text-align: center; border: 1px #5E4485">
 			<h4
 				style="font-family: Arial, Helvetica, sans-serif; font-size: 2vw; color: black;">
@@ -19,12 +19,14 @@
 					class="form-control" id="usr">
 			</div>
 			<br> <br>
-			<button class="btn btn-info" role="button"
-				style="background-color: black; color: white; size: 100px;">Submit</button>
-				<jstl var="addMoney" item="addMoney">
-				<p>{$addMoney.addMoney}</p>
+			
+				<button class="btn btn-info" role="button"
+					style="background-color: black; color: white; size: 100px;">Submit</button>
+				<jstl var="wallet" item="${wallet.currentBalance}">
+			<tr>{$wallet.currentBalance}</tr>
 				</jstl>
+			</form>
+				
 		</div>
-	</div>
 </body>
 </html>
