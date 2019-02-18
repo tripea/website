@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -26,10 +27,18 @@ public class WalletController {
 	@Autowired
 	RestTemplate restTemplate;
 
+	@RequestMapping("/add")
+	public String SubmitButton(@RequestParam Integer profileId, @RequestParam String transactionRemarks,
+			@RequestParam String transactionType, @RequestParam Integer amount) {
+		restTemplate.put("http://10.246.92.163:8080/wallet/" + profileId + "/?amount=" + amount + "&transactionRemarks="
+				+ transactionRemarks + "&transactionType=" + transactionType, Wallet.class);
+		return "redirect:/";
+	}
+
 	@RequestMapping("/statements")
 	public String getStatement(Model model, @RequestParam Integer profileId) {
-		ResponseEntity<Set> statement = 
-				restTemplate.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId,Set.class);
+		ResponseEntity<Set> statement = restTemplate
+				.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId, Set.class);
 		model.addAttribute("statements", statement.getBody());
 		return "Wallet";
 	}
@@ -42,10 +51,10 @@ public class WalletController {
 		return "Wallet";
 
 	}
+
 	@RequestMapping("/addMoney")
-	public String AddMoney() {
-		ModelAndView modelAndView;
-		modelAndView=new ModelAndView("AddMoney.jsp");
-		return "AddMoney";
-				}
+	public ModelAndView AddMoney() {
+		// ModelAndView modelAndView=new ModelAndView("AddMoney.jsp");
+		return new ModelAndView("AddMoney");
+	}
 }
