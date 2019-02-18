@@ -1,12 +1,11 @@
 package com.tripeasy.web.TripEasy.resource;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tripeasy.web.TripEasy.pojo.Booking;
 import com.tripeasy.web.TripEasy.pojo.Hotel;
 import com.tripeasy.web.TripEasy.pojo.Profile;
+import com.tripeasy.web.TripEasy.pojo.Wallet;
 
 @Controller
 @RequestMapping("/hotel")
@@ -130,14 +130,22 @@ public class HotelController {
 		booking.setBookedBy(profile);
 		System.out.println("In save booking is " + booking);
 
+		
+		Double amount = profile.getFinalAmount();
+		try {
+		ResponseEntity<Double> output = restTemplate.postForEntity("http://10.246.92.163:8080/wallet/payMoney?senderProfileId="+96+
+				"&receiverProfileId=75&amount="+amount+"&transactionRemarks=HotelBooking&transactionType=Debit",null, Double.class);
 		restTemplate.postForEntity("http://10.246.92.145:7878/bookings", booking, null);
 		System.out.println("below post");
 		restTemplate.put("http://10.246.92.124:9095/hotels/" + staticHotel.getHotelId() + "?numberOfGuest="
 				+ profile.getNumberOfGuest() + "&bookRoom=" + true, null);
-//		restTemplate.put("http://10.246.92.192:8080/wallet/payMoney?"
-//				+ "senderProfileId=2&receiverProfileId=1&amount="+profile.getFinalAmount()+"&transactionRemarks=ToMM&"
-//						+ "transactionType=Booking"
-//			, null);
+		}catch (Exception e) {
+
+			model.addAttribute("message", "Insufficient Fund!");
+			return "hotelbooksuccess";
+		}
+		
+		
 		model.addAttribute("message", "Booking Successful!");
 		return "hotelbooksuccess";
 	}
