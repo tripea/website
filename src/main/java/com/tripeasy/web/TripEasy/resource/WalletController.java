@@ -43,9 +43,8 @@ public class WalletController {
 
 	}
 	@RequestMapping("/addMoney")
-	public String AddMoney() {
-		ModelAndView modelAndView;
-		modelAndView=new ModelAndView("AddMoney.jsp");
-		return "AddMoney";
+	public ModelAndView AddMoney() {
+	//	ModelAndView modelAndView=new ModelAndView("AddMoney.jsp");
+		return new ModelAndView("AddMoney");
 				}
 }

@@ -15,12 +15,15 @@
 				style="font-family: Arial, Helvetica, sans-serif; font-size: 2vw; color: black;">
 				Add Money</h4>
 			<div class="form-group" style="font-size: 2vw;">
-				<label for="usr">Amount:</label> <input type="text"
+				<label for="usr">Enter Amount(In Rupees):</label> <input type="text"
 					class="form-control" id="usr">
 			</div>
 			<br> <br>
 			<button class="btn btn-info" role="button"
-				style="background-color: black; color: white; size: 100px;">Add Money</button>
+				style="background-color: black; color: white; size: 100px;">Submit</button>
+				<jstl var="addMoney" item="addMoney">
+				<p>{$addMoney.addMoney}</p>
+				</jstl>
 		</div>
 	</div>
 </body>
