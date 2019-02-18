@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="Header.jsp"%>
+<%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +65,7 @@
 					class="form-control" list="cities" name="source"
 					required="required" id="source" autocomplete="off"> <datalist>
 						<jstl:forEach var="list" items="${flightList}">
-							<option value="${list.city} (${list.code}) ">
+							<option value="${list.city}(${list.code})">
 						</jstl:forEach>
 					</datalist>
 			</div>
@@ -76,7 +76,7 @@
 					class="form-control" list="cities" name="destination"
 					id="destination" required="required" autocomplete="off"> <datalist id="cities">
 						<jstl:forEach var="list" items="${flightList}">
-							<option value="${list.city} (${list.code}) ">
+							<option value="${list.city}(${list.code})">
 						</jstl:forEach>
 					</datalist>
 			</div>

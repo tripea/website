@@ -3,6 +3,7 @@ package com.tripeasy.web.TripEasy.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -30,6 +31,30 @@ public class FlightServiceImpl implements FlightService {
 	@Override
 	public Booking bookFlight(Booking booking) {
 		return restTemplate.postForObject("http://10.246.92.145:7878/bookings/type/?bookingType=flight", booking, Booking.class);
+	}
+
+
+	@Override
+	public ResponseEntity<Flight> getFlight(Integer flightId) {
+		String url="http://10.246.92.123:7070/flight/"+flightId;
+		return restTemplate.getForEntity(url, Flight.class);
+	}
+
+	@Override
+	public ResponseEntity<Flight> updateSelectedSeats(Integer flightId,Flight flight) {
+		String url="http://10.246.92.123:7070/flight";
+		
+		restTemplate.postForEntity(url, flight, Flight.class);
+		return new ResponseEntity<Flight>(flight,HttpStatus.OK);
+	}
+//senderProfileId, @RequestParam int receiverProfileId,            @RequestParam Double amount, @RequestParam String transactionRemarks,
+//    @RequestParam String transactionType
+	@Override
+	public Boolean withdrawMoneyFromUserWallet(Integer profileId, Double totalPrice) {
+		String url="http://10.246.92.163:8080/wallet/payMoney?senderProfileId="+profileId+
+				"&receiverProfileId=75&amount="+totalPrice+"&transactionRemarks=FlightBooking&transactionType=Debit";
+		restTemplate.postForEntity(url, null, Double.class);
+		return true;
 	}
 
 
