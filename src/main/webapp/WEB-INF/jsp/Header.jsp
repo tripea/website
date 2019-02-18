@@ -36,7 +36,7 @@ a {padding: 10px 10px; display:inline-block;}
 
 				<li><a href="/search/searchFlights"><!-- <span class="fab fa-avianex" style='margin-right:10px;font-size:24px;color:white;'></span> -->Flight Booking</a></li>
 				<li><a 	href="/search/searchHotels">Hotel Booking</a></li>
-				<li><a href="/bookings/getAllBookings">Booking History</a></li>
+				<li><a href="/bookings/profileId">Booking History</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

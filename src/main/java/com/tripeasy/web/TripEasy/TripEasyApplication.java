@@ -23,6 +23,7 @@ public class TripEasyApplication extends SpringBootServletInitializer {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+<<<<<<< HEAD
 	
 	 @Override
 	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -31,6 +32,15 @@ public class TripEasyApplication extends SpringBootServletInitializer {
 	 
 	 
 	
+=======
+
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+		return bCryptPasswordEncoder;
+	}
+
+>>>>>>> 893fb73ba48f7f9951c32534eb4e341cdb1d35b3
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
 //		http.logout()
