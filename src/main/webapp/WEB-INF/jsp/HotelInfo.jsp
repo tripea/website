@@ -481,16 +481,29 @@ translateY
 							       </jstl:if>
 							<jstl:if test="${hotel.totalAvailableRooms != 0}">
 							 <strong> Only ${hotel.totalAvailableRooms} rooms are available</strong> 
+							 	
+							 	<jstl:forEach items="${hotel.rooms}" var="roomNumber">
+							 	<jstl:if test="${roomNumber.roomNumber==1}">
+										 <p>${roomNumber.price}</p>
+										 
+										 <div class="panel-footer">
+									<a href="bookingForm">
+						
+										<button class="btn btn-lg">Book Now</button></a>
+							</div>
+							       </jstl:if>
+							 		
+							 	</jstl:forEach>
+							 
 								</jstl:if>
 							</p>
-
+ 
 
 
 						</div>
-						<div class="panel-footer">
-						<a href="bookingForm">
-							<button class="btn btn-lg">Book Now</button></a>
-						</div>
+						   
+						   
+						   
 					</div>
 				</div>
 
@@ -512,7 +525,7 @@ translateY
 							<div class="col-sm-6 ">
 								<p>
 
-									<a href=""><strong>More Reviews </strong><br></a>
+									<a href="#reviews"><strong>More Reviews </strong><br></a>
 								</p>
 							</div>
 						</div>
@@ -614,7 +627,7 @@ translateY
 											</tbody>
 										</table>
 									</td>
-									<td>${room.price}<a href=""> <br>Select Room
+									<td>${room.price}<a href="bookingForm/?roomprice=${room.price}"> <br>Book Room
 									</a></td>
 
 								</tr>
@@ -708,9 +721,7 @@ translateY
       
          <p> ${hotel.description}</p>
         
-        
-      
-    </div>
+      </div>
      
      
   </div><br>
@@ -729,7 +740,7 @@ translateY
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+        <h4>"" </h4>
       </div>
       <jstl:forEach var="review" items="${hotel.review}">
       <div class="item">

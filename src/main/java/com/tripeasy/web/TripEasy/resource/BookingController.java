@@ -47,25 +47,32 @@ public class BookingController {
 		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
 
+	@RequestMapping("/getBookingDetailsByProfile")
+	public ModelAndView getBookingDetailsByProfile() {
+		Booking booking = restTemplate.getForObject("http://10.246.92.145:7878/bookings/bookingByProfile/",
+				Booking.class);
+		return new ModelAndView("BookingInformation", "bookingInformation", booking);
+	}
+
 	/*
 	 * @RequestMapping("/guestsDetails") public String fillGuestDetails() { // TODO
 	 * delete SYSO System.out.println("inside guest info"); return "GuestDetails"; }
 	 */
-	
+
 	@RequestMapping("/passengerDetails")
 	public String fillPassengerDetails() {
-		//TODO delete SYSO
+		// TODO delete SYSO
 		System.out.println("inside passenges details");
 		return "PassengerDetails";
-		
+
 	}
-	
+
 	@RequestMapping("/bookingInformation")
 	public String getBookingInformation() {
-		//TODO delete SYSO
+		// TODO delete SYSO
 		System.out.println("inside booking information");
 		return "BookingInformation";
-		
+
 	}
 	/*
 	 * @RequestMapping("/bookhotel") public String bookhotel(@RequestParam Booking
