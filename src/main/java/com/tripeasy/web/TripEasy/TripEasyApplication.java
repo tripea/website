@@ -22,10 +22,10 @@ public class TripEasyApplication /* extends WebSecurityConfigurerAdapter */ {
 
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
-	    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-	    return bCryptPasswordEncoder;
+		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+		return bCryptPasswordEncoder;
 	}
-	
+
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
 //		http.logout()
