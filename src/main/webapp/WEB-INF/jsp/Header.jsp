@@ -36,9 +36,13 @@ a {padding: 10px 10px; display:inline-block;}
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+
+				<li><a href="/profiles"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+
 			<li><a href="/wallet/wallet?profileId=85"><span class="glyphicon glyphicon-credit-card"></span>
 						Wallet</a></li>
-				<li><a href="/s"><span class="glyphicon glyphicon-user"></span>
+				<li><a href="/signUpPage"><span class="glyphicon glyphicon-user"></span>
+
 						Sign Up</a></li>
 				<li><a href="logout"><span
 						class="glyphicon glyphicon-log-out"></span> Logout</a></li>
