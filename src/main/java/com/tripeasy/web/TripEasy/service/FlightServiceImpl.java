@@ -47,8 +47,6 @@ public class FlightServiceImpl implements FlightService {
 		restTemplate.postForEntity(url, flight, Flight.class);
 		return new ResponseEntity<Flight>(flight,HttpStatus.OK);
 	}
-//senderProfileId, @RequestParam int receiverProfileId,            @RequestParam Double amount, @RequestParam String transactionRemarks,
-//    @RequestParam String transactionType
 	@Override
 	public Boolean withdrawMoneyFromUserWallet(Integer profileId, Double totalPrice) {
 		String url="http://10.246.92.163:8080/wallet/payMoney?senderProfileId="+profileId+

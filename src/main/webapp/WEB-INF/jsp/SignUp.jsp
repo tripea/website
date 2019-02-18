@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ 
 <%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -93,15 +94,15 @@ button:hover {
 	</head>
 <body>
 
-<form action="signup" method="get">
+<form action="signup" method="GET" >
    
   <div class="container">
     <h1 class="whiteText">Sign Up</h1>
     <p class="whiteText">Please fill in this form to create an account.</p>
     <hr>
 
-    <label class="whiteText"  for="email"><b>Email<span class="required">*</span></b></label>
-    <input type="text" placeholder="Enter Email"  pattern="[^ @]*@[^ @]*" name="email" value="" required="required">
+    <label class="whiteText"  for="emailId"><b>Email<span class="required">*</span></b></label>
+    <input type="text" placeholder="Enter Email"  pattern="[^ @]*@[^ @]*" name="emailId" value="" required="required">
       <label class="whiteText"  for="userName"><b>UserName<span class="required">*</span></b></label>
     <input type="text" placeholder="Enter userName" name="userName" required="required">
      
@@ -115,7 +116,7 @@ button:hover {
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
     
-    <p class="whiteText">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <p class="whiteText">By creating an account you agree to our <a href="/TermsAndPrivacy.jsp" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
