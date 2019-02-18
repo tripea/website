@@ -1,11 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: TripEasy
 Implementation-Version: 0.0.1-SNAPSHOT
-<<<<<<< HEAD
 Built-By: shuraut
-=======
-Built-By: shabzsha
->>>>>>> 2d5170e85bdaac1b47834c06275ac5fb1e0fa48c
 Implementation-Vendor-Id: com.tripeasy.web
 Build-Jdk: 1.8.0_121
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
