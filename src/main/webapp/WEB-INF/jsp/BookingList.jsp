@@ -50,7 +50,7 @@ Latest compiled JavaScript
 					<th scope="col">CheckIn Date</th>
 					<th scope="col">CheckOut Date</th>
 					<th scope="col">Flight Name and Seat Number</th>
-					<th scope="col">Number of Passengers</th>
+					<!-- <th scope="col">Number of Passengers</th> -->
 				</tr>
 			</thead>
 			<tbody>
@@ -69,7 +69,7 @@ Latest compiled JavaScript
 						<td>${bookingList.bookedBy.checkInDate}</td>
 						<td>${bookingList.bookedBy.checkOutDate}</td>
 						<td>${bookingList.flight.flightName}${bookingList.flight.seat.row}${bookingList.flight.seat.column}</td>
-						<td><a href="passengerDetails">${bookingList.numberOfPassengers}</a>
+
 					</tr>
 				</jstl:forEach>
 			</tbody>
