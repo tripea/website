@@ -19,11 +19,26 @@
 					Add Money</h4>
 				<div class="form-group" style="font-size: 2vw;">
 					<label for="usr">
-					profileId:<input type="number" name="profileId">
-					transactionRemarks:<input type="text" name="transactionRemarks">
-					transactionType:<input type="text" name="transactionType">
-					Enter Amount(In Rupees):</label> <input
+					<table>
+					<tr>
+				<td>
+					Enter profile Id:<input type="number"  class="form-control" name="profileId">
+					</td></tr>
+					<tr>
+					<td>
+					Transaction Remarks:<input type="text"  class="form-control" name="transactionRemarks">
+					</td></tr>
+					<tr>
+					<td>
+					Transaction Type:<input type="text"  class="form-control" name="transactionType"></td></tr>
+					<tr>
+					<td>
+					Enter Amount(In Rupees):
+					</td>
+					</tr>
+					</table></label> <input
 						type="text" class="form-control" id="usr" name="amount">
+						
 				</div>
 				<br> <br>
 				<button class="btn btn-info" role="button"

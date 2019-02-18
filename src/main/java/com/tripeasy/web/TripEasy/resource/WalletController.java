@@ -30,17 +30,15 @@ public class WalletController {
 	@RequestMapping("/add")
 	public String SubmitButton(@RequestParam Integer profileId, @RequestParam String transactionRemarks,
 			@RequestParam String transactionType, @RequestParam Integer amount) {
-		ResponseEntity<Wallet> wall = restTemplate.getForEntity(
-				"http://10.246.92.163:8080/wallet/" + profileId + "/?amount=" + amount + "&transactionRemarks="
-						+ transactionRemarks + "&transactionType=" + transactionType,
-				Wallet.class);
-		return "AddMoney";
+		restTemplate.put("http://10.246.92.163:8080/wallet/" + profileId + "/?amount=" + amount + "&transactionRemarks="
+				+ transactionRemarks + "&transactionType=" + transactionType, Wallet.class);
+		return "redirect:/";
 	}
 
 	@RequestMapping("/statements")
 	public String getStatement(Model model, @RequestParam Integer profileId) {
-		ResponseEntity<Set> statement = restTemplate.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId,
-				Set.class);
+		ResponseEntity<Set> statement = restTemplate
+				.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId, Set.class);
 		model.addAttribute("statements", statement.getBody());
 		return "Wallet";
 	}
