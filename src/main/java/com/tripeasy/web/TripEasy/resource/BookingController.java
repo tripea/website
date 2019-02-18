@@ -1,5 +1,6 @@
 package com.tripeasy.web.TripEasy.resource;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,20 +39,27 @@ public class BookingController {
 
 	private static Booking staticBooking = new Booking();
 
-	@RequestMapping("/getAllBookings")
-	public ModelAndView getAllBookings() {
-		// TODO delete SYSO
-		System.out.println("inside get all bookings");
-		List<Booking> bookingList = restTemplate.getForObject("http://10.246.92.145:7878/bookings", List.class);
-		// return new ModelAndView("BookingList", "bookingList", bookingList);
-		return new ModelAndView("BookingList", "bookingList", bookingList);
+	/*
+	 * @RequestMapping("/getAllBookings") public ModelAndView getAllBookings() { //
+	 * TODO delete SYSO System.out.println("inside get all bookings"); List<Booking>
+	 * bookingList = restTemplate.getForObject("http://10.246.92.145:7878/bookings",
+	 * List.class); // return new ModelAndView("BookingList", "bookingList",
+	 * bookingList); return new ModelAndView("BookingList", "bookingList",
+	 * bookingList); }
+	 */
+
+	@RequestMapping("/profileId")
+	public String enterProfileId() {
+		System.out.println("inside Profile Id");
+		return "ProfileId";
 	}
 
-	@RequestMapping("/getBookingDetailsByProfile")
-	public ModelAndView getBookingDetailsByProfile() {
-		Booking booking = restTemplate.getForObject("http://10.246.92.145:7878/bookings/bookingByProfile/",
-				Booking.class);
-		return new ModelAndView("BookingInformation", "bookingInformation", booking);
+	@RequestMapping("/getBookingDetailsByProfileId")
+	public ModelAndView getBookingDetailsByProfile(@RequestParam("profileId") Integer profileId) {
+		System.out.println("Inside get by profile Id");
+		List<Booking> bookingList = restTemplate
+				.getForObject("http://10.246.92.145:7878/bookings/profile/?profileId=" + profileId, List.class);
+		return new ModelAndView("BookingList", "bookingList", bookingList);
 	}
 
 	/*
@@ -67,13 +75,13 @@ public class BookingController {
 
 	}
 
-	@RequestMapping("/bookingInformation")
-	public String getBookingInformation() {
-		// TODO delete SYSO
-		System.out.println("inside booking information");
-		return "BookingInformation";
-
-	}
+	/*
+	 * @RequestMapping("/bookingInformation") public String getBookingInformation()
+	 * { // TODO delete SYSO System.out.println("inside booking information");
+	 * return "BookingInformation";
+	 * 
+	 * }
+	 */
 	/*
 	 * @RequestMapping("/bookhotel") public String bookhotel(@RequestParam Booking
 	 * booking) { System.out.println("in booking");
