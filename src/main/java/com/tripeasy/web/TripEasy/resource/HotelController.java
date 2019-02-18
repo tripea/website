@@ -25,6 +25,11 @@ import com.tripeasy.web.TripEasy.pojo.Wallet;
 @RequestMapping("/hotel")
 public class HotelController {
 
+	@RequestMapping("/")
+	public String index() {
+		return "index";
+	}
+
 	@Autowired
 	private RestTemplate restTemplate;
 

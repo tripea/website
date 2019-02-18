@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <title>Header</title>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -41,15 +45,42 @@ a {padding: 10px 10px; display:inline-block;}
 
 			<li><a href="/wallet/wallet?profileId=85"><span class="glyphicon glyphicon-credit-card"></span>
 						Wallet</a></li>
-				<li><a href="/signUpPage"><span class="glyphicon glyphicon-user"></span>
+				<!-- <li><a href="/signUpPage"><span class="glyphicon glyphicon-user"></span>
 
-						Sign Up</a></li>
-				<li><a href="logout"><span
-						class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						Sign Up</a></li> -->
+			<!-- 	<li><a href="logout"><span
+						class="glyphicon glyphicon-log-out"></span> Logout</a></li> -->
+						<li>
+
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form id="logoutForm" method="POST" action="${contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        <p style="color: white">Welcome ${pageContext.request.userPrincipal.name}  <a onclick="document.forms['logoutForm'].submit()">Logout</a></p>
+
+    </c:if>
+
+</li>
 			</ul>
 		</div>
+		
+		<%-- <div class="container">
+
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form id="logoutForm" method="POST" action="${contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+
+    </c:if>
+
+</div> --%>
+		
 	</nav>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
