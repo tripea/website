@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -25,13 +26,20 @@ import com.tripeasy.web.TripEasy.pojo.Wallet;
 public class WalletController {
 	@Autowired
 	RestTemplate restTemplate;
-	
-	@RequestMapping()
-	public ModelAndView SubmitButton(@RequestParam account) {}
+
+	@RequestMapping("/add")
+	public String SubmitButton(@RequestParam Integer profileId, @RequestParam String transactionRemarks,
+			@RequestParam String transactionType, @RequestParam Integer amount) {
+		ResponseEntity<Wallet> wall = restTemplate.getForEntity(
+				"http://10.246.92.163:8080/wallet/" + profileId + "/?amount=" + amount + "&transactionRemarks="
+						+ transactionRemarks + "&transactionType=" + transactionType,
+				Wallet.class);
+		return "AddMoney";
+	}
 
 	@RequestMapping("/statements")
 	public String getStatement(Model model, @RequestParam Integer profileId) {
-		ResponseEntity<Set> statement = restTemplate.getForEntity("http://localhost:8080/wallet?profileId=" + profileId,
+		ResponseEntity<Set> statement = restTemplate.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId,
 				Set.class);
 		model.addAttribute("statements", statement.getBody());
 		return "Wallet";
@@ -40,7 +48,7 @@ public class WalletController {
 	@RequestMapping("/wallet")
 	public String getWallet(Model model, @RequestParam Integer profileId) {
 		ResponseEntity<Wallet> wallet = restTemplate
-				.getForEntity("http://localhost:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
+				.getForEntity("http://10.246.92.163:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
 		model.addAttribute("wallet", wallet.getBody());
 		return "Wallet";
 
@@ -51,4 +59,4 @@ public class WalletController {
 		// ModelAndView modelAndView=new ModelAndView("AddMoney.jsp");
 		return new ModelAndView("AddMoney");
 	}
-	}
+}

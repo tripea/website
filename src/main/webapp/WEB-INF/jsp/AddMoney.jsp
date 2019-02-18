@@ -10,22 +10,25 @@
 </head>
 <body>
 	<div class="container">
-		<form action="Wallet" method="GET">
+		<form action="add">
+		
+		
 			<div style="text-align: center; border: 1px #5E4485">
 				<h4
 					style="font-family: Arial, Helvetica, sans-serif; font-size: 2vw; color: black;">
 					Add Money</h4>
 				<div class="form-group" style="font-size: 2vw;">
-					<label for="usr">Enter Amount(In Rupees):</label> <input
-						type="text" class="form-control" id="usr">
+					<label for="usr">
+					profileId:<input type="number" name="profileId">
+					transactionRemarks:<input type="text" name="transactionRemarks">
+					transactionType:<input type="text" name="transactionType">
+					Enter Amount(In Rupees):</label> <input
+						type="text" class="form-control" id="usr" name="amount">
 				</div>
 				<br> <br>
-
 				<button class="btn btn-info" role="button"
 					style="background-color: black; color: white; size: 100px;">Submit</button>
-				<table>
-					<tr>${wallet.currentBalance}</tr>
-				</table>
+
 			</div>
 		</form>
 	</div>
