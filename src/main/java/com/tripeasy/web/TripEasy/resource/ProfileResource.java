@@ -45,7 +45,7 @@ public class ProfileResource {
 
 	@RequestMapping("/signup")
 	public String createProfile(@ModelAttribute Profile profile, Model model) {
-		restTemplate.postForEntity("http://localhost:9090/profiles", profile, Profile.class);
+		restTemplate.postForEntity("http://10.246.92.165:9090/profiles", profile, Profile.class);
 		model.addAttribute("message", "success!");
 		return "index";
 	}
@@ -53,13 +53,13 @@ public class ProfileResource {
  
 	@RequestMapping("/update")
 	public String editProfile(@ModelAttribute Profile profile, Model model) {
-		restTemplate.put("http://localhost:9090/profiles", profile);
+		restTemplate.put("http://10.246.92.165:9090/profiles", profile);
 		model.addAttribute("message", profile);
 		return "profilePage";
 	}
 	@RequestMapping("/profiles")
 	public String Profile(@ModelAttribute Profile profile, Model model) {
-		restTemplate.put("http://localhost:9090/profiles", profile);
+		restTemplate.put("http://10.246.92.165:9090/profiles", profile);
 		model.addAttribute("message", profile);
 		return "Profile";
 	}
