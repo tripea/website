@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>Bootstrap Example</title>
+<h1>Enter Profile Id</h1>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -14,15 +15,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Enter Profile Id</h1>
-	Profile Id:${ProfileId.profileId} 
-	<%-- ${bookingInformation.bookedBy.profileId} --%>
-	<label><input type="number", name="profileId"></label>
 
-	<label><a
-		href="getBookingDetailsByProfileId/?profileId=${bookingList.bookedBy.profileId}">Booking
-			Information</a>
-	</label>
-
+	<form action="getBookingDetailsByProfileId">
+		ProfileId:<input type="number" name="profileId" />
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 </body>
 </html>
