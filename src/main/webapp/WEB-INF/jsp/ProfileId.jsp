@@ -15,9 +15,9 @@
 </head>
 <body>
 	<h1>Enter Profile Id</h1>
-	Profile Id:${bookingList.bookedBy.profileId} 
+	Profile Id:${ProfileId.profileId} 
 	<%-- ${bookingInformation.bookedBy.profileId} --%>
-	<label><input type="number"></label>
+	<label><input type="number", name="profileId"></label>
 
 	<label><a
 		href="getBookingDetailsByProfileId/?profileId=${bookingList.bookedBy.profileId}">Booking
