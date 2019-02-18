@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -9,24 +10,24 @@
 </head>
 <body>
 	<div class="container">
-<form>
-		<div style="text-align: center; border: 1px #5E4485">
-			<h4
-				style="font-family: Arial, Helvetica, sans-serif; font-size: 2vw; color: black;">
-				Add Money</h4>
-			<div class="form-group" style="font-size: 2vw;">
-				<label for="usr">Enter Amount(In Rupees):</label> <input type="text"
-					class="form-control" id="usr">
-			</div>
-			<br> <br>
-			
+		<form action="Wallet" method="GET">
+			<div style="text-align: center; border: 1px #5E4485">
+				<h4
+					style="font-family: Arial, Helvetica, sans-serif; font-size: 2vw; color: black;">
+					Add Money</h4>
+				<div class="form-group" style="font-size: 2vw;">
+					<label for="usr">Enter Amount(In Rupees):</label> <input
+						type="text" class="form-control" id="usr">
+				</div>
+				<br> <br>
+
 				<button class="btn btn-info" role="button"
 					style="background-color: black; color: white; size: 100px;">Submit</button>
-				<jstl var="wallet" item="${wallet.currentBalance}">
-			<tr>{$wallet.currentBalance}</tr>
-				</jstl>
-			</form>
-				
-		</div>
+				<table>
+					<tr>${wallet.currentBalance}</tr>
+				</table>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

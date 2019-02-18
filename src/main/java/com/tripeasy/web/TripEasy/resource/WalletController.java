@@ -25,11 +25,14 @@ import com.tripeasy.web.TripEasy.pojo.Wallet;
 public class WalletController {
 	@Autowired
 	RestTemplate restTemplate;
+	
+	@RequestMapping()
+	public ModelAndView SubmitButton(@RequestParam account) {}
 
 	@RequestMapping("/statements")
 	public String getStatement(Model model, @RequestParam Integer profileId) {
-		ResponseEntity<Set> statement = 
-				restTemplate.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId,Set.class);
+		ResponseEntity<Set> statement = restTemplate.getForEntity("http://localhost:8080/wallet?profileId=" + profileId,
+				Set.class);
 		model.addAttribute("statements", statement.getBody());
 		return "Wallet";
 	}
@@ -37,14 +40,15 @@ public class WalletController {
 	@RequestMapping("/wallet")
 	public String getWallet(Model model, @RequestParam Integer profileId) {
 		ResponseEntity<Wallet> wallet = restTemplate
-				.getForEntity("http://10.246.92.163:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
+				.getForEntity("http://localhost:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
 		model.addAttribute("wallet", wallet.getBody());
 		return "Wallet";
 
 	}
+
 	@RequestMapping("/addMoney")
 	public ModelAndView AddMoney() {
-	//	ModelAndView modelAndView=new ModelAndView("AddMoney.jsp");
+		// ModelAndView modelAndView=new ModelAndView("AddMoney.jsp");
 		return new ModelAndView("AddMoney");
-				}
-}
+	}
+	}
