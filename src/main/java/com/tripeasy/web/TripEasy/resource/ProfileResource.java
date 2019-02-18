@@ -38,10 +38,9 @@ public class ProfileResource {
 		return "SignUp";
 	}
 
-	
-	  @RequestMapping("/profile") 
-	  public String profile() { 
-		  return "Profile"; }
+	/*
+	 * @RequestMapping("/profile") public String profile() { return "Profile"; }
+	 */
 	 
 
 	@RequestMapping("/signup")
