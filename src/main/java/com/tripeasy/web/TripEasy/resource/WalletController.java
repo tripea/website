@@ -29,7 +29,7 @@ public class WalletController {
 	@RequestMapping("/statements")
 	public String getStatement(Model model, @RequestParam Integer profileId) {
 		ResponseEntity<Set> statement = 
-				restTemplate.getForEntity("http://localhost:8080/wallet?profileId=" + profileId,Set.class);
+				restTemplate.getForEntity("http://10.246.92.163:8080/wallet?profileId=" + profileId,Set.class);
 		model.addAttribute("statements", statement.getBody());
 		return "Wallet";
 	}
@@ -37,7 +37,7 @@ public class WalletController {
 	@RequestMapping("/wallet")
 	public String getWallet(Model model, @RequestParam Integer profileId) {
 		ResponseEntity<Wallet> wallet = restTemplate
-				.getForEntity("http://localhost:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
+				.getForEntity("http://10.246.92.163:8080/wallet/getWallet?profileId=" + profileId, Wallet.class);
 		model.addAttribute("wallet", wallet.getBody());
 		return "Wallet";
 
